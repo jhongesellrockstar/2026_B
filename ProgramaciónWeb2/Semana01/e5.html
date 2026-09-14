@@ -1,0 +1,46 @@
+<!-- DESARROLLAR UN LOGIN DONDE LOS USUARIOS
+ Y PASSWORDS SE NCUENTAN DENTRO DE UNA VARIABLE
+ TIPO ARREGLO. -->
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>LOGIN</title>
+</head>
+<body>
+    <form action="">
+        <label for="usuario">Usuario</label>
+        <input type="text" name="usuario" id="usuario"><br>
+        <label for="password">Password</label>
+        <input type="password" name="password" id="password"><br><br>
+
+        <input onclick="login()" type="button" value="Ingresar">
+    </form>
+    
+    <script>
+
+    function login(){
+        let usuario = document.getElementById("usuario").value;
+        let usuarios = ['admin', 'user1', 'user2'];
+        let verifica = false;
+        for(let i = 0; i < usuarios.length; i++){
+            console.log(usuarios[i]);
+            if(usuarios[i] == 'admin' && password == i ){
+                verifica = true;
+                break;
+            }else{
+                verifica = false;   
+            }
+        }
+
+        if(verifica == true){
+            alert("Bienvenido");                
+        }else{
+            alert("Usuario o contraseña incorrecta");           
+        }
+    }
+    </script>
+</body>
+</html>

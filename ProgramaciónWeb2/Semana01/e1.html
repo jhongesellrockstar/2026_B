@@ -1,0 +1,27 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Ejemplo 1</title>
+    <script>
+        function cambiarColor(){
+            document.getElementById('cuerpo').style.backgroundColor = 'gray';
+        }
+    </script>
+    <script src="myFunctions.js"></script>
+
+</head>
+<body id="cuerpo">
+
+    <h1 id="titulo">MIS MASCOTAS</h1>
+    <button type="button" onclick="imagen1()">Imagen 1</button>
+    <button type="button" onclick="imagen2()">Imagen 2</button>
+    <button type="button" onclick="document.getElementById('titulo').style.fontSize = '60px'">Aumentar Fuente</button>
+    <button type="button" onclick="cambiarColor()">Cambiar color</button>
+    <div>
+        <img src="" alt="" id="imagen">
+    </div>
+
+</body>
+</html>

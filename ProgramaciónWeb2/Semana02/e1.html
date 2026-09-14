@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>HOLA MUNDO</title>
+    <script>
+
+        function escribirNombreCompleto(){
+            document.getElementById('nombrecompleto').innerHTML = "HERBERT JUNIOR GRADOS ESPINOZA";
+        }
+
+    </script>
+</head>
+<body>
+
+    <h2>Cambiando imagenes</h2>
+
+    <button onclick="document.getElementById('img').src= 'imagenes/apagado.jpg'  ">Apagado</button>
+  
+    <button onclick="document.getElementById('img').src= 'imagenes/encendido.avif'  ">Encendido</button>
+
+    <img id="img" src="imagenes/apagado.jpg" alt="" >
+
+
+    <button onclick="escribirNombreCompleto()" >Escribir nombre</button>
+    <h1 id="nombrecompleto"></h1>
+    
+</body>
+</html>

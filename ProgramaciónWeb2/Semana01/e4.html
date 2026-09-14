@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>CALCULADORA</title>
+    <script>
+        let resultado = 0;
+        function sumar(){
+            let num1 = document.getElementById("num1").value;
+            let num2 = document.getElementById("num2").value;                  
+
+            resultado = parseFloat(num1) + parseFloat(num2);
+            document.getElementById("resultado").innerHTML = "El resultado es: " + resultado;
+        }
+
+        function restar(){
+            let num1 = document.getElementById("num1").value;
+            let num2 = document.getElementById("num2").value;    
+            resultado = parseFloat(num1) - parseFloat(num2);       
+                    
+            document.getElementById("resultado").innerHTML = "El resultado es: " + resultado;
+        }
+
+        function multiplicar(){
+            let num1 = document.getElementById("num1").value;
+            let num2 = document.getElementById("num2").value;    
+            resultado = parseFloat(num1) * parseFloat(num2);       
+                    
+            document.getElementById("resultado").innerHTML = "El resultado es: " + resultado;
+        }
+
+        function dividir(){
+            let num1 = document.getElementById("num1").value;
+            let num2 = document.getElementById("num2").value;    
+            resultado = parseFloat(num1) / parseFloat(num2);       
+                    
+            document.getElementById("resultado").innerHTML = "El resultado es: " + resultado;
+        }   
+
+        if(resultado > 0){    
+                alert();
+               document.getElementById('imagen').src = 'img1.jfif'
+      
+        }
+    </script>   
+
+
+</head>
+<body>
+    
+    <h1>Mi calculadora basica</h1>
+    <form action="">
+        <label for="num1">Ingresa numero 1</label>
+        <input type="number" name="num1" id="num1"><br>
+        <label for="num2">Ingresa numero 2</label>
+        <input type="number" name="num2" id="num2"><br><br>
+
+        <input type="button" value="Sumar" onclick="sumar()">
+        <input type="button" value="Restar" onclick="restar()">
+        <input type="button" value="Multiplicar" onclick="multiplicar()">
+        <input type="button" value="Dividir" onclick="dividir()">
+
+        <div id="resultado"></div>
+            <img id="imagen" src="" alt="">
+    </form>
+
+
+</body>
+</html>
