@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de invitados</title>
+    <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+    <main>
+        <header>
+            <p class="curso">Programación Web 2 · Semana 02</p>
+            <h1>Registro de invitados</h1>
+            <p>Organiza tu evento y descarga la lista de invitados en un archivo de texto.</p>
+        </header>
+        <!-- novalidate permite mostrar todos los errores junto a sus campos con JavaScript. -->
+        <form id="formulario" novalidate>
+            <section aria-labelledby="titulo-evento">
+                <h2 id="titulo-evento">1. Datos del evento</h2>
+                <p class="ayuda">Todos los campos son obligatorios.</p>
+                <div class="campos-evento">
+                    <div class="campo">
+                        <label for="evento">Nombre del evento</label>
+                        <input id="evento" name="evento" type="text" required aria-describedby="error-evento">
+                        <small id="error-evento" class="error" aria-live="polite"></small>
+                    </div>
+                    <div class="campo">
+                        <label for="fecha">Fecha</label>
+                        <input id="fecha" name="fecha" type="date" required aria-describedby="error-fecha">
+                        <small id="error-fecha" class="error" aria-live="polite"></small>
+                    </div>
+                    <div class="campo">
+                        <label for="lugar">Lugar</label>
+                        <input id="lugar" name="lugar" type="text" required aria-describedby="error-lugar">
+                        <small id="error-lugar" class="error" aria-live="polite"></small>
+                    </div>
+                </div>
+            </section>
+            <section aria-labelledby="titulo-invitados">
+                <h2 id="titulo-invitados">2. Lista de invitados</h2>
+                <p class="ayuda">Agrega de 1 a 50 invitados por vez. Los nuevos bloques se añaden al final.</p>
+                <div class="agregar">
+                    <div class="campo">
+                        <label for="cantidad">Cantidad de invitados</label>
+                        <input id="cantidad" name="cantidad" type="number" min="1" max="50" step="1" value="3" required aria-describedby="error-cantidad">
+                        <small id="error-cantidad" class="error" aria-live="polite"></small>
+                    </div>
+                    <button id="agregar-invitados" type="button">Agregar invitados</button>
+                </div>
+                <p id="error-invitados" class="error" aria-live="polite"></p>
+                <p id="total" class="ayuda" aria-live="polite">Invitados registrados: 0</p>
+                <div id="invitados"></div>
+            </section>
+            <footer>
+                <p class="ayuda">Guardar descarga la información como <strong>invitados.txt</strong>.</p>
+                <button type="submit">Guardar</button>
+                <p id="estado" role="status"></p>
+            </footer>
+        </form>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>

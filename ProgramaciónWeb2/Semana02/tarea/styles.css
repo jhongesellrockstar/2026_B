@@ -1,0 +1,78 @@
+* { box-sizing: border-box; }
+body {
+    margin: 0;
+    padding: 32px 20px;
+    background: #f1f4f8;
+    color: #243348;
+    font-family: Arial, sans-serif;
+    line-height: 1.5;
+}
+main {
+    max-width: 1080px;
+    margin: 0 auto;
+    padding: 30px;
+    background: #fff;
+    border: 1px solid #dbe2eb;
+    border-radius: 12px;
+    box-shadow: 0 4px 16px #2333480a;
+}
+.curso { color: #315e95; font-size: 14px; font-weight: bold; margin: 0; }
+h1 { font-size: 30px; margin: 6px 0; }
+header > p:last-child { color: #566477; margin: 0 0 24px; }
+h2 { font-size: 20px; margin: 0 0 6px; }
+section { border-top: 1px solid #dbe2eb; padding: 20px 0; }
+.ayuda { color: #566477; font-size: 14px; margin: 0 0 14px; }
+.campos-evento { display: grid; grid-template-columns: 1.2fr 0.8fr 1.2fr; gap: 16px; }
+.campo { min-width: 0; }
+label { display: block; margin-bottom: 5px; font-size: 14px; font-weight: bold; }
+input, select {
+    width: 100%;
+    min-width: 0;
+    padding: 10px;
+    border: 1px solid #aebccc;
+    border-radius: 6px;
+    font: inherit;
+    background: #fff;
+    color: #243348;
+}
+input:focus, select:focus, button:focus-visible { outline: 3px solid #b4d3f7; outline-offset: 2px; }
+button {
+    padding: 11px 18px;
+    border: 0;
+    border-radius: 6px;
+    background: #285d98;
+    color: #fff;
+    font: inherit;
+    font-weight: bold;
+    cursor: pointer;
+}
+button:hover { background: #1e4877; }
+.agregar { display: flex; gap: 16px; align-items: flex-start; }
+.agregar .campo { width: 210px; }
+.agregar button { margin-top: 26px; }
+#invitados { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.invitado { padding: 16px; border: 1px solid #d2dce8; border-radius: 8px; background: #f8fafc; }
+.cabecera-invitado { display: flex; justify-content: space-between; align-items: center; margin-bottom: 12px; }
+h3 { margin: 0; font-size: 17px; }
+.eliminar { background: #fce9e9; color: #9e2424; padding: 4px 11px; }
+.eliminar:hover { background: #f6d4d4; }
+.invitado .campo { margin-bottom: 10px; }
+.error { display: block; color: #b02020; font-size: 13px; margin-top: 4px; }
+.error:empty { display: none; }
+[aria-invalid="true"] { border-color: #b02020; }
+#total { margin-top: 12px; }
+footer { border-top: 1px solid #dbe2eb; padding-top: 18px; }
+#estado { margin: 10px 0 0; font-size: 14px; }
+@media (max-width: 850px) {
+    #invitados { grid-template-columns: repeat(2, 1fr); }
+    .campos-evento { grid-template-columns: 1fr; }
+}
+@media (max-width: 560px) {
+    body { padding: 12px; }
+    main { padding: 18px; }
+    h1 { font-size: 25px; }
+    #invitados { grid-template-columns: 1fr; }
+    .agregar { flex-direction: column; gap: 10px; }
+    .agregar .campo, .agregar button { width: 100%; }
+    .agregar button { margin-top: 0; }
+}
