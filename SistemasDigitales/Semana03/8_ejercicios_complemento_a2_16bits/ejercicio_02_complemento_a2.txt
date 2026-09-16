@@ -1,0 +1,129 @@
+EJERCICIO 2 - RESTA MEDIANTE COMPLEMENTO A 2
+Sistemas Digitales - Operaciones con 16 bits
+==============================================================================
+
+1. NÚMEROS ENTEROS ALEATORIOS SELECCIONADOS
+
+A = 6010
+B = 8725
+
+2. CONVERSIÓN DE DECIMAL A BINARIO
+
+A = 6010(10) = 1011101111010(2)
+B = 8725(10) = 10001000010101(2)
+
+3. REPRESENTACIÓN DE A Y B EN 16 BITS
+
+A = 0001 0111 0111 1010
+B = 0010 0010 0001 0101
+
+4. RESTA A - B MEDIANTE COMPLEMENTO A 2
+
+Paso 1. Escribir A y B en binario de 16 bits:
+A = 0001 0111 0111 1010
+B = 0010 0010 0001 0101
+
+Paso 2. Calcular el complemento a 1 de B invirtiendo cada bit:
+B                     = 0010 0010 0001 0101
+Complemento a 1 de B  = 1101 1101 1110 1010
+
+Paso 3. Calcular el complemento a 2 de B sumando 1:
+Complemento a 1 de B  = 1101 1101 1110 1010
+                      + 0000 0000 0000 0001
+Complemento a 2 de B  = 1101 1101 1110 1011
+
+Paso 4. Sumar A + complemento a 2 de B:
+      0001 0111 0111 1010
+    + 1101 1101 1110 1011
+      -------------------
+      1111 0101 0110 0101    acarreo final = 0
+
+No aparece acarreo externo por la izquierda. El resultado conserva sus 16 bits.
+
+Resultado binario A - B = 1111 0101 0110 0101
+Resultado decimal A - B = -2715
+
+El resultado es negativo porque el bit más significativo es 1.
+Para obtener su magnitud, se aplica complemento a 2 al resultado:
+Resultado                   = 1111 0101 0110 0101
+Complemento a 1            = 0000 1010 1001 1010
+Complemento a 2 (+1)       = 0000 1010 1001 1011
+Magnitud decimal            = 2715
+Por tanto: A - B            = -2715
+
+5. RESTA B - A MEDIANTE COMPLEMENTO A 2
+
+Paso 1. Escribir B y A en binario de 16 bits:
+B = 0010 0010 0001 0101
+A = 0001 0111 0111 1010
+
+Paso 2. Calcular el complemento a 1 de A:
+A                     = 0001 0111 0111 1010
+Complemento a 1 de A  = 1110 1000 1000 0101
+
+Paso 3. Calcular el complemento a 2 de A sumando 1:
+Complemento a 1 de A  = 1110 1000 1000 0101
+                      + 0000 0000 0000 0001
+Complemento a 2 de A  = 1110 1000 1000 0110
+
+Paso 4. Sumar B + complemento a 2 de A:
+      0010 0010 0001 0101
+    + 1110 1000 1000 0110
+      -------------------
+      0000 1010 1001 1011    acarreo final = 1
+
+El acarreo final es 1. En 16 bits se descarta el acarreo externo.
+
+Resultado binario B - A = 0000 1010 1001 1011
+Resultado decimal B - A = 2715
+
+El bit más significativo es 0, por lo tanto el resultado es positivo.
+
+6. IDENTIFICACIÓN DE RESULTADOS NEGATIVOS
+
+En complemento a 2 con 16 bits, el bit de más a la izquierda es el bit de signo:
+0 = número no negativo
+1 = número negativo
+
+Si el resultado comienza con 1, se invierten los 16 bits y se suma 1.
+El valor obtenido es la magnitud; finalmente se antepone el signo menos.
+
+7. COMPROBACIÓN DIRECTA EN DECIMAL
+
+A - B = 6010 - 8725 = -2715
+B - A = 8725 - 6010 = 2715
+
+8. COMPARACIÓN DE LOS RESULTADOS
+
+A - B = -2715
+B - A = 2715
+
+Los resultados tienen igual magnitud y signos opuestos porque:
+B - A = -(A - B)
+Al intercambiar minuendo y sustraendo, el resultado cambia de signo.
+
+9. SUMAS BINARIAS BIT POR BIT Y ORDENADAS
+
+A - B:
+      0001011101111010
+    + 1101110111101011
+      ----------------
+      1111010101100101    acarreo = 0
+
+B - A:
+      0010001000010101
+    + 1110100010000110
+      ----------------
+      0000101010011011    acarreo = 1
+
+10. TABLA RESUMEN
+
+Operación   Resultado binario (16 bits)    Decimal   Acarreo
+------------------------------------------------------------
+A - B       1111010101100101                 -2715         0
+B - A       0000101010011011                  2715         1
+
+VERIFICACIÓN FINAL
+A - B calculado por complemento a 2 = -2715 = -2715  CORRECTO
+B - A calculado por complemento a 2 = 2715 = 2715  CORRECTO
+Todos los valores han sido comprobados matemáticamente.

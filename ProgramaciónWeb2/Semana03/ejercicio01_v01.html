@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Registro de invitados</title>
+    <link rel="stylesheet" href="ejercicio01_auxiliar.css">
+</head>
+<body>
+    <main>
+        <header>
+            <p class="curso">Ejercicio</p>
+            <h1>Saber mas</h1>
+            <p>Recopilación de datos</p>
+        </header>
+        <!-- Cuerpo del formulario -->
+        <form id="formulario" novalidate>
+            <section aria-labelledby="titulo-evento">
+                <h2 id="titulo-evento">1. Datos del evento</h2>
+                <p class="ayuda">Todos los campos son obligatorios.</p>
+                <div class="campos-evento">
+                    <div class="campo">
+                        <label for="evento">Nombre del evento</label>
+                        <input id="evento" name="evento" type="text" required aria-describedby="error-evento">
+                        <small id="error-evento" class="error" aria-live="polite"></small>
+                    </div>
+                    <div class="campo">
+                        <label for="fecha">Fecha</label>
+                        <input id="fecha" name="fecha" type="date" required aria-describedby="error-fecha">
+                        <small id="error-fecha" class="error" aria-live="polite"></small>
+                    </div>
+                    <div class="campo">
+                        <label for="lugar">Lugar</label>
+                        <input id="lugar" name="lugar" type="text" required aria-describedby="error-lugar">
+                        <small id="error-lugar" class="error" aria-live="polite"></small>
+                    </div>
+                </div>
+            </section>
+
+
+        </form>
+    </main>
+    <script src="ejercicio01_auxiliar.js"></script>
+</body>
+</html>
