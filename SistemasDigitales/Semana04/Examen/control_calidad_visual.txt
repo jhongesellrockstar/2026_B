@@ -1,0 +1,25 @@
+CONTROL VISUAL — 22/09/2026
+
+Se abrieron y revisaron las tres imágenes PNG maestras después de generarlas.
+Las copias por estudiante son idénticas a las maestras.
+
+problema01_7402_circuito.png:
+- Tres símbolos NOR reconocibles, con entradas dobles y burbuja de negación.
+- Uniones de Y y T identificadas mediante puntos negros.
+- Fórmulas, etiquetas y DIP-14 completos, sin texto cortado.
+- Pines y conexiones coinciden con el enunciado; cuarta puerta no utilizada.
+
+problema02_7483_cascada.png:
+- Seis bloques consecutivos, de 7483-1 (LSB) a 7483-6 (MSB).
+- Flechas de acarreo no atraviesan textos; Cin y Cout separados.
+- Reconstrucción en orden inverso: 1111 1110 0100 0010 0111 0101.
+
+problema02_suma_binaria.png:
+- Tipografía monoespaciada; cuatro filas alineadas por columna.
+- La fila c_i indica acarreo entrante; c_24 = 0 se explica en la leyenda.
+- Suma y operandos legibles, sin recortes.
+
+Los tres diseños emplean negro, blanco y gris; no requieren interpretación de colores.
+Esta revisión visual corresponde a la versión entregada. Tras modificar el diseño,
+se deben volver a abrir los tres PNG; la comprobación automática de límites no
+sustituye la inspección de solapamientos y conexiones.

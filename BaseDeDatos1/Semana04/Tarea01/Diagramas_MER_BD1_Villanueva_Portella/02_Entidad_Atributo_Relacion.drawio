@@ -1,0 +1,72 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.6 Chrome/144.0.7559.236 Electron/40.8.4 Safari/537.36" version="29.6.6">
+  <diagram id="02_Entidad_Atributo_Relacion" name="02_Entidad_Atributo_Relacion">
+    <mxGraphModel dx="1426" dy="841" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="760" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="t" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=26;fontColor=#005596;fontFamily=Arial;whiteSpace=wrap;" value="&lt;b&gt;Entidad, atributo y relación&lt;/b&gt;" vertex="1">
+          <mxGeometry height="55" width="1080" x="60" y="25" as="geometry" />
+        </mxCell>
+        <mxCell id="al" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fillColor=#EAF2F8;strokeColor=#005596;strokeWidth=2;fontColor=#333333;fontFamily=Arial;fontSize=17;" value="&lt;b&gt;ALUMNO&lt;/b&gt;" vertex="1">
+          <mxGeometry height="70" width="190" x="170" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="cu" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fillColor=#EAF2F8;strokeColor=#005596;strokeWidth=2;fontColor=#333333;fontFamily=Arial;fontSize=17;" value="&lt;b&gt;CURSO&lt;/b&gt;" vertex="1">
+          <mxGeometry height="70" width="190" x="840" y="280" as="geometry" />
+        </mxCell>
+        <mxCell id="rel" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FBEAEC;strokeColor=#C9252C;strokeWidth=2;fontColor=#333333;fontFamily=Arial;fontSize=15;" value="&lt;b&gt;SE MATRICULA&lt;/b&gt;" vertex="1">
+          <mxGeometry height="80" width="160" x="520" y="275" as="geometry" />
+        </mxCell>
+        <mxCell id="a1" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#005596;strokeWidth=2;fontColor=#333333;fontFamily=Arial;fontSize=14;" value="&lt;u&gt;codigo_alumno&lt;/u&gt;" vertex="1">
+          <mxGeometry height="55" width="180" x="120" y="145" as="geometry" />
+        </mxCell>
+        <mxCell id="a2" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#005596;strokeWidth=2;fontColor=#333333;fontFamily=Arial;fontSize=14;" value="nombres" vertex="1">
+          <mxGeometry height="55" width="170" x="65" y="390" as="geometry" />
+        </mxCell>
+        <mxCell id="a3" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#005596;strokeWidth=2;fontColor=#333333;fontFamily=Arial;fontSize=14;" value="apellidos" vertex="1">
+          <mxGeometry height="55" width="170" x="250" y="410" as="geometry" />
+        </mxCell>
+        <mxCell id="c1" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#005596;strokeWidth=2;fontColor=#333333;fontFamily=Arial;fontSize=14;" value="&lt;u&gt;codigo_curso&lt;/u&gt;" vertex="1">
+          <mxGeometry height="55" width="180" x="820" y="145" as="geometry" />
+        </mxCell>
+        <mxCell id="c2" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#005596;strokeWidth=2;fontColor=#333333;fontFamily=Arial;fontSize=14;" value="nombre_curso" vertex="1">
+          <mxGeometry height="55" width="170" x="930" y="400" as="geometry" />
+        </mxCell>
+        <mxCell id="ea1" edge="1" parent="1" source="a1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;strokeWidth=2;endArrow=none;" target="al" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ea2" edge="1" parent="1" source="a2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;strokeWidth=2;endArrow=none;" target="al" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="150" y="370" />
+              <mxPoint x="240" y="370" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="ea3" edge="1" parent="1" source="a3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;strokeWidth=2;endArrow=none;" target="al" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ec1" edge="1" parent="1" source="c1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;strokeWidth=2;endArrow=none;" target="cu" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ec2" edge="1" parent="1" source="c2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;strokeWidth=2;endArrow=none;" target="cu" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="er1" edge="1" parent="1" source="al" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;strokeWidth=2;endArrow=none;" target="rel" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="er2" edge="1" parent="1" source="rel" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;strokeWidth=2;endArrow=none;" target="cu" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="n1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacing=10;fillColor=#F4F7FA;strokeColor=#C7D2DE;strokeWidth=1;fontColor=#333333;fontFamily=Arial;fontSize=14;" value="Entidad: objeto del mundo real" vertex="1">
+          <mxGeometry height="55" width="280" x="110" y="565" as="geometry" />
+        </mxCell>
+        <mxCell id="n2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacing=10;fillColor=#F4F7FA;strokeColor=#C7D2DE;strokeWidth=1;fontColor=#333333;fontFamily=Arial;fontSize=14;" value="Atributo: característica de una entidad" vertex="1">
+          <mxGeometry height="55" width="300" x="460" y="565" as="geometry" />
+        </mxCell>
+        <mxCell id="n3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacing=10;fillColor=#F4F7FA;strokeColor=#C7D2DE;strokeWidth=1;fontColor=#333333;fontFamily=Arial;fontSize=14;" value="Relación: asociación entre entidades" vertex="1">
+          <mxGeometry height="55" width="300" x="810" y="565" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

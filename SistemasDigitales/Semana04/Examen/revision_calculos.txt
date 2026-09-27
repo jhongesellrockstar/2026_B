@@ -1,0 +1,12 @@
+REVISIÓN DE CÁLCULOS
+No se encontraron discrepancias en los ocho originales.
+Los textos originales se conservan; solo se agregan enlaces a gráficos.
+
+OK: solucionarios_8_estudiantes_sistemas_digitales\estudiante1_solucionario.txt — datos, seis etapas y resultado coinciden.
+OK: solucionarios_8_estudiantes_sistemas_digitales\estudiante2_solucionario.txt — datos, seis etapas y resultado coinciden.
+OK: solucionarios_8_estudiantes_sistemas_digitales\estudiante3_solucionario.txt — datos, seis etapas y resultado coinciden.
+OK: solucionarios_8_estudiantes_sistemas_digitales\estudiante4_solucionario.txt — datos, seis etapas y resultado coinciden.
+OK: solucionarios_8_estudiantes_sistemas_digitales\estudiante5_solucionario.txt — datos, seis etapas y resultado coinciden.
+OK: solucionarios_8_estudiantes_sistemas_digitales\estudiante6_solucionario.txt — datos, seis etapas y resultado coinciden.
+OK: solucionarios_8_estudiantes_sistemas_digitales\estudiante7_solucionario.txt — datos, seis etapas y resultado coinciden.
+OK: solucionarios_8_estudiantes_sistemas_digitales\estudiante8_solucionario.txt — datos, seis etapas y resultado coinciden.

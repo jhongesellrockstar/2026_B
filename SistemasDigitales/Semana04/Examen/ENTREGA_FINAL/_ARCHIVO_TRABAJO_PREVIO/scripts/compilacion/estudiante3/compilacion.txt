@@ -1,0 +1,47 @@
+This is XeTeX, Version 3.141592653-2.6-0.999997 (MiKTeX 25.12) (preloaded format=xelatex.fmt)
+ restricted \write18 enabled.
+entering extended mode
+(solucionario_final.tex
+LaTeX2e <2025-11-01>
+L3 programming layer <2025-12-24>
+(C:\Users\ACER\AppData\Local\Programs\MiKTeX\tex/latex/base\article.cls
+Document Class: article 2025/01/22 v1.4n Standard LaTeX document class
+(C:\Users\ACER\AppData\Local\Programs\MiKTeX\tex/latex/base\size10.clo))
+(C:\Users\ACER\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.sty
+(C:\Users\ACER\AppData\Local\Programs\MiKTeX\tex/latex/graphics\keyval.sty)
+(C:\Users\ACER\AppData\Local\Programs\MiKTeX\tex/generic/iftex\ifvtex.sty
+(C:\Users\ACER\AppData\Local\Programs\MiKTeX\tex/generic/iftex\iftex.sty))
+(C:\Users\ACER\AppData\Local\Programs\MiKTeX\tex/latex/geometry\geometry.cfg))
+(C:\Users\ACER\AppData\Local\Programs\MiKTeX\tex/latex/fontspec\fontspec.sty
+(C:\Users\ACER\AppData\Local\Programs\MiKTeX\tex/latex/l3packages/xparse\xparse
+.sty (C:\Users\ACER\AppData\Local\Programs\MiKTeX\tex/latex/l3kernel\expl3.sty
+(C:\Users\ACER\AppData\Local\Programs\MiKTeX\tex/latex/l3backend\l3backend-xete
+x.def)))
+(C:\Users\ACER\AppData\Local\Programs\MiKTeX\tex/latex/fontspec\fontspec-xetex.
+sty (C:\Users\ACER\AppData\Local\Programs\MiKTeX\tex/latex/base\fontenc.sty)
+(C:\Users\ACER\AppData\Local\Programs\MiKTeX\tex/latex/fontspec\fontspec.cfg)))
+(C:\Users\ACER\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsmath.sty
+For additional information on amsmath, use the `?' option.
+(C:\Users\ACER\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amstext.sty
+(C:\Users\ACER\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsgen.sty))
+(C:\Users\ACER\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsbsy.sty)
+(C:\Users\ACER\AppData\Local\Programs\MiKTeX\tex/latex/amsmath\amsopn.sty))
+(C:\Users\ACER\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amssymb.sty
+(C:\Users\ACER\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\amsfonts.sty))
+(C:\Users\ACER\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphicx.sty
+(C:\Users\ACER\AppData\Local\Programs\MiKTeX\tex/latex/graphics\graphics.sty
+(C:\Users\ACER\AppData\Local\Programs\MiKTeX\tex/latex/graphics\trig.sty)
+(C:\Users\ACER\AppData\Local\Programs\MiKTeX\tex/latex/graphics-cfg\graphics.cf
+g)
+(C:\Users\ACER\AppData\Local\Programs\MiKTeX\tex/latex/graphics-def\xetex.def))
+) (C:\Users\ACER\AppData\Local\Programs\MiKTeX\tex/latex/booktabs\booktabs.sty)
+ (C:\Users\ACER\AppData\Local\Programs\MiKTeX\tex/latex/tools\array.sty)
+(C:\Users\ACER\AppData\Local\Programs\MiKTeX\tex/latex/fancyhdr\fancyhdr.sty)
+(solucionario_final.aux)
+*geometry* driver: auto-detecting
+*geometry* detected driver: xetex
+(C:\Users\ACER\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsa.fd)
+(C:\Users\ACER\AppData\Local\Programs\MiKTeX\tex/latex/amsfonts\umsb.fd)
+[1] [2] [3] [4] (solucionario_final.aux) )
+Output written on solucionario_final.pdf (4 pages).
+Transcript written on solucionario_final.log.

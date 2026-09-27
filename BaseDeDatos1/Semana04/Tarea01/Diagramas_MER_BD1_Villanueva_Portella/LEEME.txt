@@ -1,0 +1,13 @@
+ARCHIVOS DRAW.IO – BASE DE DATOS I / MODELO ENTIDAD-RELACIÓN
+
+Contenido:
+- 15 archivos .drawio individuales.
+- 1 archivo multipágina: Diagramas_MER_BD1_Villanueva_Portella.drawio
+
+Uso:
+1. Abra diagrams.net / draw.io Desktop.
+2. Archivo > Abrir desde > Dispositivo y seleccione el .drawio.
+3. Para insertar en PowerPoint: Archivo > Exportar como > SVG (recomendado) o PNG.
+4. Mantenga el archivo .drawio como fuente editable.
+
+Los diagramas fueron construidos con estilo académico, fondo blanco y una paleta azul/rojo/gris inspirada en la UNAC.

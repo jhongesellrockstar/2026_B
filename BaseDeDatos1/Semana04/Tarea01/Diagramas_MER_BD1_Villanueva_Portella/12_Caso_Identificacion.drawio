@@ -1,0 +1,37 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.6 Chrome/144.0.7559.236 Electron/40.8.4 Safari/537.36" version="29.6.6">
+  <diagram id="12_Caso_Identificacion" name="12_Caso_Identificacion">
+    <mxGraphModel dx="1426" dy="841" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="760" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="t" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=26;fontColor=#005596;fontFamily=Arial;whiteSpace=wrap;" value="&lt;b&gt;Caso práctico: Sistema de matrícula universitaria&lt;/b&gt;" vertex="1">
+          <mxGeometry height="55" width="1080" x="60" y="25" as="geometry" />
+        </mxCell>
+        <mxCell id="c0" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fillColor=#FFFFFF;strokeColor=#005596;strokeWidth=2;fontColor=#333333;fontFamily=Arial;fontSize=15;" value="ALUMNO&amp;lt;br&amp;gt;&amp;lt;hr&amp;gt;codigo_alumno&amp;lt;br&amp;gt;nombres&amp;lt;br&amp;gt;correo" vertex="1">
+          <mxGeometry height="170" width="300" x="10" y="155" as="geometry" />
+        </mxCell>
+        <mxCell id="c1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fillColor=#FFFFFF;strokeColor=#005596;strokeWidth=2;fontColor=#333333;fontFamily=Arial;fontSize=15;" value="ASIGNATURA&amp;lt;br&amp;gt;&amp;lt;hr&amp;gt;codigo_asignatura&amp;lt;br&amp;gt;nombre&amp;lt;br&amp;gt;creditos" vertex="1">
+          <mxGeometry height="170" width="330" x="330" y="155" as="geometry" />
+        </mxCell>
+        <mxCell id="c2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fillColor=#FFFFFF;strokeColor=#005596;strokeWidth=2;fontColor=#333333;fontFamily=Arial;fontSize=15;" value="DOCENTE&amp;lt;br&amp;gt;&amp;lt;hr&amp;gt;codigo_docente&amp;lt;br&amp;gt;nombres" vertex="1">
+          <mxGeometry height="170" width="230" x="670" y="155" as="geometry" />
+        </mxCell>
+        <mxCell id="c3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fillColor=#FFFFFF;strokeColor=#005596;strokeWidth=2;fontColor=#333333;fontFamily=Arial;fontSize=15;" value="SECCIÓN&amp;lt;br&amp;gt;&amp;lt;hr&amp;gt;codigo_seccion&amp;lt;br&amp;gt;periodo" vertex="1">
+          <mxGeometry height="170" width="220" x="940" y="155" as="geometry" />
+        </mxCell>
+        <mxCell id="r" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=18;fontColor=#005596;fontFamily=Arial;whiteSpace=wrap;" value="Reglas de negocio" vertex="1">
+          <mxGeometry height="45" width="1040" x="80" y="390" as="geometry" />
+        </mxCell>
+        <mxCell id="r1" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacing=10;fillColor=#EAF2F8;strokeColor=#005596;strokeWidth=1;fontColor=#333333;fontFamily=Arial;fontSize=14;" value="1. Un alumno puede matricularse en varias secciones." vertex="1">
+          <mxGeometry height="55" width="940" x="130" y="465" as="geometry" />
+        </mxCell>
+        <mxCell id="r2" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacing=10;fillColor=#FFFFFF;strokeColor=#D7DEE7;strokeWidth=1;fontColor=#333333;fontFamily=Arial;fontSize=14;" value="2. Una sección corresponde a una asignatura." vertex="1">
+          <mxGeometry height="55" width="940" x="130" y="535" as="geometry" />
+        </mxCell>
+        <mxCell id="r3" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacing=10;fillColor=#FBEAEC;strokeColor=#C9252C;strokeWidth=1;fontColor=#333333;fontFamily=Arial;fontSize=14;" value="3. Un docente puede enseñar una o varias secciones." vertex="1">
+          <mxGeometry height="55" width="940" x="130" y="605" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

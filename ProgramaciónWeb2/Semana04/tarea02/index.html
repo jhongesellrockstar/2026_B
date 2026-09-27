@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Buscador de Pokémon</title>
+</head>
+<body>
+    <h1>Buscador de Pokémon</h1>
+    <label for="pokemon">Pokémon:</label>
+    <input type="text" id="pokemon">
+    <button id="buscar" type="button">Buscar</button>
+    <div id="resultado" aria-live="polite"></div>
+
+    <script>
+        const boton = document.getElementById("buscar");
+        const resultado = document.getElementById("resultado");
+
+        boton.addEventListener("click", buscarPokemon);
+
+        async function buscarPokemon() {
+            // Obtiene el nombre o número escrito por el usuario.
+            const nombre = document.getElementById("pokemon").value.trim().toLowerCase();
+
+            if (nombre === "") {
+                resultado.textContent = "Ingrese un Pokémon.";
+                return;
+            }
+
+            boton.disabled = true;
+            resultado.textContent = "Buscando...";
+
+            try {
+                // Consulta PokéAPI y convierte el JSON en un objeto JavaScript.
+                const respuesta = await fetch("https://pokeapi.co/api/v2/pokemon/" + encodeURIComponent(nombre) + "/");
+
+                if (!respuesta.ok) {
+                    if (respuesta.status === 404) {
+                        resultado.textContent = "Pokémon no encontrado.";
+                    } else {
+                        resultado.textContent = "Error al consultar la API.";
+                    }
+                    return;
+                }
+
+                const datos = await respuesta.json();
+
+                // Crea el HTML fijo y coloca los datos como texto.
+                resultado.innerHTML = '<p id="nombre"></p><p id="numero"></p><p id="altura"></p><p id="peso"></p><img id="imagen" alt="">';
+                document.getElementById("nombre").textContent = "Nombre: " + datos.name;
+                document.getElementById("numero").textContent = "ID: " + datos.id;
+                document.getElementById("altura").textContent = "Altura: " + datos.height;
+                document.getElementById("peso").textContent = "Peso: " + datos.weight;
+
+                const imagen = document.getElementById("imagen");
+                if (datos.sprites.front_default) {
+                    imagen.src = datos.sprites.front_default;
+                    imagen.alt = "Imagen de " + datos.name;
+                } else {
+                    imagen.hidden = true;
+                }
+            } catch (error) {
+                resultado.textContent = "Error al consultar la API.";
+            } finally {
+                boton.disabled = false;
+            }
+        }
+    </script>
+</body>
+</html>

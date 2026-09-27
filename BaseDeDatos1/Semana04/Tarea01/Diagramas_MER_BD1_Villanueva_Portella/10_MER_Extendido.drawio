@@ -1,0 +1,40 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.6 Chrome/144.0.7559.236 Electron/40.8.4 Safari/537.36" version="29.6.6">
+  <diagram id="10_MER_Extendido" name="10_MER_Extendido">
+    <mxGraphModel dx="1426" dy="841" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="760" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="t" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=26;fontColor=#005596;fontFamily=Arial;whiteSpace=wrap;" value="&lt;b&gt;Generalización, especialización y herencia&lt;/b&gt;" vertex="1">
+          <mxGeometry height="55" width="1080" x="60" y="25" as="geometry" />
+        </mxCell>
+        <mxCell id="pers" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fillColor=#EAF2F8;strokeColor=#005596;strokeWidth=2;fontColor=#333333;fontFamily=Arial;fontSize=17;" value="&lt;b&gt;PERSONA&amp;lt;br&amp;gt;id_persona&amp;lt;br&amp;gt;nombres&amp;lt;br&amp;gt;apellidos&lt;/b&gt;" vertex="1">
+          <mxGeometry height="120" width="650" x="320" y="130" as="geometry" />
+        </mxCell>
+        <mxCell id="isa" parent="1" style="triangle;direction=south;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#C9252C;strokeWidth=2;fontColor=#C9252C;fontFamily=Arial;fontSize=16;fontStyle=1;" value="ISA" vertex="1">
+          <mxGeometry height="70" width="90" x="565" y="320" as="geometry" />
+        </mxCell>
+        <mxCell id="alu" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fillColor=#EAF2F8;strokeColor=#005596;strokeWidth=2;fontColor=#333333;fontFamily=Arial;fontSize=17;" value="&lt;b&gt;ALUMNO&amp;lt;br&amp;gt;codigo_alumno&lt;/b&gt;" vertex="1">
+          <mxGeometry height="90" width="260" x="260" y="470" as="geometry" />
+        </mxCell>
+        <mxCell id="doc" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fillColor=#EAF2F8;strokeColor=#005596;strokeWidth=2;fontColor=#333333;fontFamily=Arial;fontSize=17;" value="&lt;b&gt;DOCENTE&amp;lt;br&amp;gt;codigo_docente&lt;/b&gt;" vertex="1">
+          <mxGeometry height="90" width="260" x="700" y="470" as="geometry" />
+        </mxCell>
+        <mxCell id="ei" edge="1" parent="1" source="pers" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;strokeWidth=2;endArrow=none;" target="isa" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ea" edge="1" parent="1" source="isa" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;strokeWidth=2;endArrow=none;" target="alu" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ed" edge="1" parent="1" source="isa" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;strokeWidth=2;endArrow=none;" target="doc" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="n" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=10;fillColor=#EAF2F8;strokeColor=#005596;strokeWidth=1;fontColor=#333333;fontFamily=Arial;fontSize=14;" value="ALUMNO y DOCENTE heredan los atributos comunes definidos en PERSONA." vertex="1">
+          <mxGeometry height="60" width="560" x="320" y="625" as="geometry" />
+        </mxCell>
+        <mxCell id="l" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacing=10;fillColor=#FFFFFF;strokeColor=#D7DEE7;strokeWidth=1;fontColor=#333333;fontFamily=Arial;fontSize=13;" value="Generalización: reúne características comunes.&lt;br&gt;Especialización: define subtipos particulares.&lt;br&gt;Herencia: los subtipos reciben atributos del supertipo." vertex="1">
+          <mxGeometry height="150" width="280" x="70" y="250" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

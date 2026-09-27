@@ -1,0 +1,99 @@
+ESTUDIANTE 3 - SOLUCIONARIO PRÁCTICA 01 - SISTEMAS DIGITALES
+============================================================================
+
+NOTA DE ESTUDIO:
+Este solucionario desarrolla los mismos ejercicios con una organización propia de pasos.
+Conviene que cada estudiante pueda explicar oralmente cada identidad y cada acarreo.
+
+PROBLEMA 1. FUNCIÓN LÓGICA CON 7402
+----------------------------------------------------------------------------
+Dato interpretado del enunciado:
+F(X,Y,Z,W) = NOR(X̅YZ, X̅YZ̅)
+Equivalente a:
+F = ¬[(X̅YZ) + (X̅YZ̅)]
+
+Método: Enfoque de equivalencias
+Trabajo con equivalencias booleanas y, al final, verifico que la implementación use únicamente puertas NOR.
+
+1) Identifico dos productos que solo difieren en Z y Z̅:
+   X̅YZ + X̅YZ̅
+2) Al factorizar X̅Y:
+   X̅Y(Z + Z̅) = X̅Y(1) = X̅Y
+3) La salida NOR complementa ese resultado:
+   F = (X̅Y)̅
+4) De Morgan transforma el producto complementado en suma:
+   F = X + Y̅
+
+IMPLEMENTACIÓN USANDO SOLO NOR DEL 7402
+
+El 7402 contiene cuatro compuertas NOR de dos entradas. Se necesitan tres:
+
+Compuerta 1: obtener Y̅
+   Y̅ = NOR(Y,Y)
+
+Compuerta 2: obtener el complemento de F
+   T = NOR(X,Y̅) = ¬(X + Y̅)
+
+Compuerta 3: invertir T para recuperar F
+   F = NOR(T,T) = ¬T = X + Y̅
+
+Resultado final:
+   F = X + Y̅
+   Se utilizan 3 de las 4 compuertas NOR disponibles en un 7402.
+
+Conexión funcional sugerida del encapsulado DIP-14 del 7402:
+   Gate 1: pines 2 y 3 reciben Y; salida pin 1 = Y̅
+   Gate 2: pin 5 recibe X y pin 6 recibe Y̅; salida pin 4 = T
+   Gate 3: pines 8 y 9 reciben T; salida pin 10 = F
+   Alimentación: VCC pin 14, GND pin 7
+   La cuarta NOR queda libre.
+
+PROBLEMA 2. SUMA N + M CON SUMADORES 7483
+----------------------------------------------------------------------------
+N = 7968574
+M = 8694583
+
+Conversión a binario de 24 bits:
+N = 0111 1001 1001 0111 0011 1110
+M = 1000 0100 1010 1011 0011 0111
+
+Agrupo ambos operandos en 6 palabras de 4 bits y proceso las etapas de derecha a izquierda.
+
+Se requieren 6 integrados 7483 porque cada uno suma 4 bits y los datos ocupan 24 bits.
+El primer bloque (menos significativo) trabaja con C_in = 0.
+
+Etapas desde el nibble menos significativo:
+
+Etapa 1: 1110 + 0111 + Cin(0) = 0101, Cout = 1
+Etapa 2: 0011 + 0011 + Cin(1) = 0111, Cout = 0
+Etapa 3: 0111 + 1011 + Cin(0) = 0010, Cout = 1
+Etapa 4: 1001 + 1010 + Cin(1) = 0100, Cout = 1
+Etapa 5: 1001 + 0100 + Cin(1) = 1110, Cout = 0
+Etapa 6: 0111 + 1000 + Cin(0) = 1111, Cout = 0
+
+Detalle numérico de cada etapa:
+  E1: 14 + 7 + 0 = 21 -> salida 0101, acarreo 1
+  E2: 3 + 3 + 1 = 7 -> salida 0111, acarreo 0
+  E3: 7 + 11 + 0 = 18 -> salida 0010, acarreo 1
+  E4: 9 + 10 + 1 = 20 -> salida 0100, acarreo 1
+  E5: 9 + 4 + 1 = 14 -> salida 1110, acarreo 0
+  E6: 7 + 8 + 0 = 15 -> salida 1111, acarreo 0
+
+Reconstrucción de la salida, desde la etapa más significativa a la menos significativa:
+   1111 1110 0100 0010 0111 0101
+Resultado binario: 111111100100001001110101
+Resultado agrupado: 1111 1110 0100 0010 0111 0101
+Resultado decimal: 16663157
+
+COMPROBACIÓN DECIMAL
+7968574 + 8694583 = 16663157
+
+COMPROBACIÓN HEXADECIMAL (útil para revisar los nibbles)
+N = 0x79973E
+M = 0x84AB37
+S = 0xFE4275
+
+CONCLUSIÓN
+1. La función lógica se reduce a F = X + Y̅ y puede implementarse con tres NOR del 7402.
+2. La suma N + M necesita seis 7483 en cascada para procesar los 24 bits.
+3. La suma obtenida es 1111 1110 0100 0010 0111 0101₂ = 16663157₁₀.

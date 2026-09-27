@@ -1,0 +1,77 @@
+[
+  {
+    "original": "generar_diagramas.py",
+    "archivo": "_ARCHIVO_TRABAJO_PREVIO\\scripts\\generar_diagramas.py",
+    "sha256": "12babdbe827ac4a8dd967fcdc0543cb4cab5ad5e1214f05764c770023ee384ad"
+  },
+  {
+    "original": "verificar_operaciones.py",
+    "archivo": "_ARCHIVO_TRABAJO_PREVIO\\scripts\\verificar_operaciones.py",
+    "sha256": "cb29910ff40e284156d098d8268b5fa2fd0ff931a08dd6ece8926993dd5e8a0b"
+  },
+  {
+    "original": "requirements.txt",
+    "archivo": "_ARCHIVO_TRABAJO_PREVIO\\scripts\\requirements.txt",
+    "sha256": "aa4dc72b9ea3f7022a2eccb266fb97bc9087b00a41df601f9b00ced889451ee1"
+  },
+  {
+    "original": "problema01_7402_circuito.png",
+    "archivo": "_ARCHIVO_TRABAJO_PREVIO\\diagramas_raiz\\problema01_7402_circuito.png",
+    "sha256": "27ad51bca124e0b94be95a2661e5a5157e5583b3d4da80b2b6b136daa19f1fd6"
+  },
+  {
+    "original": "problema01_7402_circuito.svg",
+    "archivo": "_ARCHIVO_TRABAJO_PREVIO\\diagramas_raiz\\problema01_7402_circuito.svg",
+    "sha256": "4ed1cbda6e37869c31ba2752827b49ff4aa5573847a60c49713715e8513b1868"
+  },
+  {
+    "original": "problema02_7483_cascada.png",
+    "archivo": "_ARCHIVO_TRABAJO_PREVIO\\diagramas_raiz\\problema02_7483_cascada.png",
+    "sha256": "0f50ee0ed29bb457cedfcc5c24e436bb5f1bda6133be7d334851b0ee12414dcf"
+  },
+  {
+    "original": "problema02_7483_cascada.svg",
+    "archivo": "_ARCHIVO_TRABAJO_PREVIO\\diagramas_raiz\\problema02_7483_cascada.svg",
+    "sha256": "e3df3e1e87df44f3c6d0d42bc9adc8fe81ab7467052719a5c9c5a279d7609813"
+  },
+  {
+    "original": "problema02_suma_binaria.png",
+    "archivo": "_ARCHIVO_TRABAJO_PREVIO\\diagramas_raiz\\problema02_suma_binaria.png",
+    "sha256": "38a09a5e5e07f5ab6878bec844e08ee4270f72350c8648e1684709d055507ab8"
+  },
+  {
+    "original": "problema02_suma_binaria.svg",
+    "archivo": "_ARCHIVO_TRABAJO_PREVIO\\diagramas_raiz\\problema02_suma_binaria.svg",
+    "sha256": "367b29c4e87e99c231fcaaefd00bebfc1f8580a476e39d2884baf3466a0c5ed0"
+  },
+  {
+    "original": "control_calidad_visual.txt",
+    "archivo": "_ARCHIVO_TRABAJO_PREVIO\\verificaciones\\control_calidad_visual.txt",
+    "sha256": "f409045eb4a1ed33008111a4a2afd3e0c31f42ff505e9a796c843a92256c6537"
+  },
+  {
+    "original": "revision_calculos.txt",
+    "archivo": "_ARCHIVO_TRABAJO_PREVIO\\verificaciones\\revision_calculos.txt",
+    "sha256": "057c52b55a9d14698169584ab99eb460b1f406ab8a37fbf444ee41dc6b8539c9"
+  },
+  {
+    "original": "verificacion_diagramas.txt",
+    "archivo": "_ARCHIVO_TRABAJO_PREVIO\\verificaciones\\verificacion_diagramas.txt",
+    "sha256": "bdc7a2841b1cb966ee2ee231733565984cd4edc90fa5ebe945658e731605c303"
+  },
+  {
+    "original": "LEEME_diagramas.txt",
+    "archivo": "_ARCHIVO_TRABAJO_PREVIO\\verificaciones\\LEEME_diagramas.txt",
+    "sha256": "242c72f69c7e88d8dd30d9f4564c6221cac5514eddcee15812d4a8f5d7fba174"
+  },
+  {
+    "original": "Captura de pantalla 2026-09-22 155914.png",
+    "archivo": "_ARCHIVO_TRABAJO_PREVIO\\otros\\Captura de pantalla 2026-09-22 155914.png",
+    "sha256": "e06f4393c72fd44a0d4c742ec42be7f6678e10b28226cb6d56b9478793b1d75c"
+  },
+  {
+    "original": "WhatsApp Image 2026-09-22 at 3.36.11 PM.jpeg",
+    "archivo": "_ARCHIVO_TRABAJO_PREVIO\\otros\\WhatsApp Image 2026-09-22 at 3.36.11 PM.jpeg",
+    "sha256": "4c20d389af63c7cd02a3d27e5c94b52a901a0e09c0b4d948e5a26924c52bf926"
+  }
+]

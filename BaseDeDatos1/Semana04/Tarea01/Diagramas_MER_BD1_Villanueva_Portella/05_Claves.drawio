@@ -1,0 +1,61 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.6 Chrome/144.0.7559.236 Electron/40.8.4 Safari/537.36" version="29.6.6">
+  <diagram id="05_Claves" name="05_Claves">
+    <mxGraphModel dx="1426" dy="841" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="760" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="t" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=26;fontColor=#005596;fontFamily=Arial;whiteSpace=wrap;" value="&lt;b&gt;Claves en el diseño de bases de datos&lt;/b&gt;" vertex="1">
+          <mxGeometry height="55" width="1080" x="60" y="25" as="geometry" />
+        </mxCell>
+        <mxCell id="h1" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=18;fontColor=#005596;fontFamily=Arial;whiteSpace=wrap;" value="Modelo conceptual" vertex="1">
+          <mxGeometry height="40" width="430" x="90" y="105" as="geometry" />
+        </mxCell>
+        <mxCell id="h2" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=18;fontColor=#005596;fontFamily=Arial;whiteSpace=wrap;" value="Modelo relacional" vertex="1">
+          <mxGeometry height="40" width="430" x="680" y="105" as="geometry" />
+        </mxCell>
+        <mxCell id="al" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fillColor=#EAF2F8;strokeColor=#005596;strokeWidth=2;fontColor=#333333;fontFamily=Arial;fontSize=17;" value="&lt;b&gt;ALUMNO&lt;/b&gt;" vertex="1">
+          <mxGeometry height="80" width="200" x="210" y="300" as="geometry" />
+        </mxCell>
+        <mxCell id="ka" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#005596;strokeWidth=2;fontColor=#333333;fontFamily=Arial;fontSize=14;" value="&lt;u&gt;codigo_alumno&lt;/u&gt;" vertex="1">
+          <mxGeometry height="55" width="180" x="65" y="175" as="geometry" />
+        </mxCell>
+        <mxCell id="kd" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#005596;strokeWidth=2;fontColor=#333333;fontFamily=Arial;fontSize=14;" value="dni" vertex="1">
+          <mxGeometry height="55" width="140" x="380" y="175" as="geometry" />
+        </mxCell>
+        <mxCell id="kc" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#005596;strokeWidth=2;fontColor=#333333;fontFamily=Arial;fontSize=14;" value="correo_institucional" vertex="1">
+          <mxGeometry height="55" width="200" x="480" y="312.5" as="geometry" />
+        </mxCell>
+        <mxCell id="kn" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#005596;strokeWidth=2;fontColor=#333333;fontFamily=Arial;fontSize=14;" value="nombres" vertex="1">
+          <mxGeometry height="55" width="170" x="100" y="425" as="geometry" />
+        </mxCell>
+        <mxCell id="eka" edge="1" parent="1" source="ka" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;strokeWidth=2;endArrow=none;" target="al" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ekd" edge="1" parent="1" source="kd" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;strokeWidth=2;endArrow=none;" target="al" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ekc" edge="1" parent="1" source="kc" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;strokeWidth=2;endArrow=none;" target="al" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="ekn" edge="1" parent="1" source="kn" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;strokeWidth=2;endArrow=none;" target="al" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="cand" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=left;verticalAlign=middle;spacing=10;fillColor=#EAF2F8;strokeColor=#005596;strokeWidth=1;fontColor=#333333;fontFamily=Arial;fontSize=13;" value="Clave primaria seleccionada: codigo_alumno&lt;br&gt;Claves candidatas: codigo_alumno, dni, correo_institucional" vertex="1">
+          <mxGeometry height="95" width="470" x="85" y="535" as="geometry" />
+        </mxCell>
+        <mxCell id="car" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fillColor=#FFFFFF;strokeColor=#005596;strokeWidth=2;fontColor=#333333;fontFamily=Arial;fontSize=15;" value="CARRERA&amp;lt;br&amp;gt;&amp;lt;hr&amp;gt;&amp;lt;b&amp;gt;PK&amp;lt;/b&amp;gt; id_carrera&amp;lt;br&amp;gt;nombre" vertex="1">
+          <mxGeometry height="130" width="310" x="720" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="alt" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fillColor=#FFFFFF;strokeColor=#005596;strokeWidth=2;fontColor=#333333;fontFamily=Arial;fontSize=15;" value="ALUMNO&amp;lt;br&amp;gt;&amp;lt;hr&amp;gt;&amp;lt;b&amp;gt;PK&amp;lt;/b&amp;gt; codigo_alumno&amp;lt;br&amp;gt;nombres&amp;lt;br&amp;gt;&amp;lt;b&amp;gt;FK&amp;lt;/b&amp;gt; id_carrera" vertex="1">
+          <mxGeometry height="155" width="310" x="720" y="415" as="geometry" />
+        </mxCell>
+        <mxCell id="fk" edge="1" parent="1" source="alt" style="edgeStyle=orthogonalEdgeStyle;rounded=0;html=1;strokeColor=#005596;strokeWidth=2;endArrow=block;endFill=1;" target="car" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="fn" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=10;fillColor=#FBEAEC;strokeColor=#C9252C;strokeWidth=1;fontColor=#333333;fontFamily=Arial;fontSize=13;" value="La clave foránea se materializa al transformar las relaciones del modelo conceptual al esquema relacional." vertex="1">
+          <mxGeometry height="65" width="450" x="650" y="615" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

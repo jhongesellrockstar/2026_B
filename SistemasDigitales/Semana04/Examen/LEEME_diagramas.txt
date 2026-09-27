@@ -1,0 +1,29 @@
+DIAGRAMAS DE LA PRÁCTICA 01
+
+Ejecutar desde esta carpeta:
+    python verificar_operaciones.py
+    python generar_diagramas.py
+
+Si se prepara otro entorno Python:
+    python -m pip install -r requirements.txt
+
+No fue necesario instalar dependencias en el entorno de entrega.
+Graphviz es opcional: se detecta dot en PATH y ubicaciones habituales de Windows.
+Sin dot, se calculan las posiciones en Python y se dibujan formas vectoriales
+propias con Matplotlib. No se usan imágenes de Internet ni capturas de datasheets.
+Los SVG contienen contornos vectoriales de letras para conservar la tipografía.
+
+Contenido:
+- Tres diagramas maestros, cada uno en PNG de 300 DPI y SVG.
+- estudiante1/ hasta estudiante8/: seis archivos por estudiante.
+- solucionarios_8_estudiantes_sistemas_digitales/: TXT en su ubicación original,
+  con rutas relativas ../estudianteN/... al final.
+- backup_txt_originales/: ocho originales sin modificaciones.
+- revision_calculos.txt: revisión de los ocho solucionarios.
+- verificacion_diagramas.txt: resultados y lista de los 54 archivos gráficos.
+- control_calidad_visual.txt: revisión visual de los tres tipos de diagramas.
+
+Los diagramas de todos los estudiantes son idénticos; no se alteran operaciones.
+La regeneración conserva los respaldos y evita duplicar la sección de gráficos.
+Si un solucionario se modifica y difiere de los valores verificados, el script
+se detiene con un mensaje en lugar de propagar ese dato a los diagramas.

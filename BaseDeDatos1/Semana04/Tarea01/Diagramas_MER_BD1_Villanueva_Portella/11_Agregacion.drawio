@@ -1,0 +1,49 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.6 Chrome/144.0.7559.236 Electron/40.8.4 Safari/537.36" version="29.6.6">
+  <diagram id="11_Agregacion" name="11_Agregacion">
+    <mxGraphModel dx="1426" dy="841" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="760" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="t" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=26;fontColor=#005596;fontFamily=Arial;whiteSpace=wrap;" value="&lt;b&gt;Agregación en el Modelo ER Extendido&lt;/b&gt;" vertex="1">
+          <mxGeometry height="55" width="1080" x="60" y="25" as="geometry" />
+        </mxCell>
+        <mxCell id="emp" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fillColor=#EAF2F8;strokeColor=#005596;strokeWidth=2;fontColor=#333333;fontFamily=Arial;fontSize=17;" value="&lt;b&gt;EMPLEADO&lt;/b&gt;" vertex="1">
+          <mxGeometry height="70" width="190" x="150" y="330" as="geometry" />
+        </mxCell>
+        <mxCell id="tra" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FBEAEC;strokeColor=#C9252C;strokeWidth=2;fontColor=#333333;fontFamily=Arial;fontSize=15;" value="&lt;b&gt;TRABAJA_EN&lt;/b&gt;" vertex="1">
+          <mxGeometry height="75" width="150" x="460" y="327.5" as="geometry" />
+        </mxCell>
+        <mxCell id="pro" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fillColor=#EAF2F8;strokeColor=#005596;strokeWidth=2;fontColor=#333333;fontFamily=Arial;fontSize=17;" value="&lt;b&gt;PROYECTO&lt;/b&gt;" vertex="1">
+          <mxGeometry height="70" width="190" x="780" y="330" as="geometry" />
+        </mxCell>
+        <mxCell id="a" edge="1" parent="1" source="emp" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;strokeWidth=2;endArrow=none;" target="tra" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="b" edge="1" parent="1" source="tra" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;strokeWidth=2;endArrow=none;" target="pro" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="box" parent="1" style="rounded=1;whiteSpace=wrap;html=1;fillColor=none;strokeColor=#005596;strokeWidth=2;dashed=1;" value="" vertex="1">
+          <mxGeometry height="220" width="920" x="100" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="agg" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=14;fontColor=#005596;fontFamily=Arial;whiteSpace=wrap;" value="AGREGACIÓN" vertex="1">
+          <mxGeometry height="30" width="150" x="115" y="260" as="geometry" />
+        </mxCell>
+        <mxCell id="ger" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fillColor=#EAF2F8;strokeColor=#005596;strokeWidth=2;fontColor=#333333;fontFamily=Arial;fontSize=17;" value="&lt;b&gt;GERENTE&lt;/b&gt;" vertex="1">
+          <mxGeometry height="70" width="190" x="490" y="590" as="geometry" />
+        </mxCell>
+        <mxCell id="sup" parent="1" style="rhombus;whiteSpace=wrap;html=1;fillColor=#FBEAEC;strokeColor=#C9252C;strokeWidth=2;fontColor=#333333;fontFamily=Arial;fontSize=15;" value="&lt;b&gt;SUPERVISA&lt;/b&gt;" vertex="1">
+          <mxGeometry height="70" width="170" x="500" y="490" as="geometry" />
+        </mxCell>
+        <mxCell id="g" edge="1" parent="1" source="ger" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;strokeWidth=2;endArrow=none;" target="sup" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="n" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=10;fillColor=#FBEAEC;strokeColor=#C9252C;strokeWidth=1;fontColor=#333333;fontFamily=Arial;fontSize=14;" value="Un gerente supervisa la participación de un empleado en un proyecto." vertex="1">
+          <mxGeometry height="80" width="330" x="760" y="535" as="geometry" />
+        </mxCell>
+        <mxCell id="f" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=10;fillColor=#FFFFFF;strokeColor=#D7DEE7;strokeWidth=1;fontColor=#333333;fontFamily=Arial;fontSize=12;" value="La agregación permite tratar una relación y sus entidades participantes como una unidad de nivel superior." vertex="1">
+          <mxGeometry height="50" width="760" x="220" y="675" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

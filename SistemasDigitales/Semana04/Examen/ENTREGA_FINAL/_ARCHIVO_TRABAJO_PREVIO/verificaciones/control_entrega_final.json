@@ -1,0 +1,73 @@
+{
+  "fecha": "2026-09-22T16:29:45-05:00",
+  "motor": "C:\\Users\\ACER\\AppData\\Local\\Programs\\MiKTeX\\miktex\\bin\\x64\\xelatex.EXE",
+  "pdf": [
+    {
+      "estudiante": 1,
+      "paginas": 4,
+      "bytes": 1108422,
+      "contenido": "OK",
+      "margenes": "OK",
+      "sha256": "4524fba1c25fdbdf0e737cd12eae6ba2ea2b87254d2c64fbaa130e0a70d0f36a"
+    },
+    {
+      "estudiante": 2,
+      "paginas": 4,
+      "bytes": 1108516,
+      "contenido": "OK",
+      "margenes": "OK",
+      "sha256": "2c7fdc2099533366dbefd08f683c3a31a907d3ff386d7fa37d882696e58b5381"
+    },
+    {
+      "estudiante": 3,
+      "paginas": 4,
+      "bytes": 1108537,
+      "contenido": "OK",
+      "margenes": "OK",
+      "sha256": "e47ccd248f24ad0fa728a96609880f1b569e88ead11bc0a07e04ed840271fe32"
+    },
+    {
+      "estudiante": 4,
+      "paginas": 4,
+      "bytes": 1108546,
+      "contenido": "OK",
+      "margenes": "OK",
+      "sha256": "4a5c7e32633070508cd13c25033a02f77635026b9402996689683b7726f6d3f2"
+    },
+    {
+      "estudiante": 5,
+      "paginas": 4,
+      "bytes": 1108813,
+      "contenido": "OK",
+      "margenes": "OK",
+      "sha256": "cb3ed4cb38beb709ab17567b4ea1e20da8301c0e435e46e45b52f5aae173d885"
+    },
+    {
+      "estudiante": 6,
+      "paginas": 4,
+      "bytes": 1108421,
+      "contenido": "OK",
+      "margenes": "OK",
+      "sha256": "4a9b16856549ee3695591e0b33ede5fc1f2a66871b2b5ac3e29cacac03b31e66"
+    },
+    {
+      "estudiante": 7,
+      "paginas": 4,
+      "bytes": 1108395,
+      "contenido": "OK",
+      "margenes": "OK",
+      "sha256": "af869ef2890737bd026afb411f7cc51ecd1f5da64883fe7db360ee57051fa2a8"
+    },
+    {
+      "estudiante": 8,
+      "paginas": 4,
+      "bytes": 1108854,
+      "contenido": "OK",
+      "margenes": "OK",
+      "sha256": "ea8d405094e341d6bfd898d5bda4f313da85610201ca66482b32968f1d2daf52"
+    }
+  ],
+  "txt_identicos": 8,
+  "archivos_previos_sin_cambios": 80,
+  "png_resumen": 0
+}

@@ -1,0 +1,75 @@
+<mxfile host="Electron" agent="Mozilla/5.0 (Windows NT 10.0; Win64; x64) AppleWebKit/537.36 (KHTML, like Gecko) draw.io/29.6.6 Chrome/144.0.7559.236 Electron/40.8.4 Safari/537.36" version="29.6.6">
+  <diagram id="04_Tipos_Atributos" name="04_Tipos_Atributos">
+    <mxGraphModel dx="1426" dy="841" grid="1" gridSize="10" guides="1" tooltips="1" connect="1" arrows="1" fold="1" page="1" pageScale="1" pageWidth="1200" pageHeight="760" math="0" shadow="0">
+      <root>
+        <mxCell id="0" />
+        <mxCell id="1" parent="0" />
+        <mxCell id="t" parent="1" style="text;html=1;align=center;verticalAlign=middle;fontSize=26;fontColor=#005596;fontFamily=Arial;whiteSpace=wrap;" value="&lt;b&gt;Tipos de atributos en el Modelo ER&lt;/b&gt;" vertex="1">
+          <mxGeometry height="55" width="1080" x="60" y="25" as="geometry" />
+        </mxCell>
+        <mxCell id="p" parent="1" style="rounded=0;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;fillColor=#EAF2F8;strokeColor=#005596;strokeWidth=2;fontColor=#333333;fontFamily=Arial;fontSize=17;" value="&lt;b&gt;PERSONA&lt;/b&gt;" vertex="1">
+          <mxGeometry height="75" width="190" x="505" y="380" as="geometry" />
+        </mxCell>
+        <mxCell id="dni" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#005596;strokeWidth=2;fontColor=#333333;fontFamily=Arial;fontSize=14;" value="&lt;u&gt;DNI&lt;/u&gt;" vertex="1">
+          <mxGeometry height="55" width="160" x="750" y="210" as="geometry" />
+        </mxCell>
+        <mxCell id="nom" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#005596;strokeWidth=2;fontColor=#333333;fontFamily=Arial;fontSize=14;" value="NOMBRE" vertex="1">
+          <mxGeometry height="55" width="170" x="250" y="290" as="geometry" />
+        </mxCell>
+        <mxCell id="nom1" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#005596;strokeWidth=2;fontColor=#333333;fontFamily=Arial;fontSize=14;" value="nombres" vertex="1">
+          <mxGeometry height="45" width="140" x="60" y="220" as="geometry" />
+        </mxCell>
+        <mxCell id="nom2" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#005596;strokeWidth=2;fontColor=#333333;fontFamily=Arial;fontSize=14;" value="apellido_paterno" vertex="1">
+          <mxGeometry height="45" width="170" x="45" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="nom3" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#005596;strokeWidth=2;fontColor=#333333;fontFamily=Arial;fontSize=14;" value="apellido_materno" vertex="1">
+          <mxGeometry height="45" width="170" x="460" y="160" as="geometry" />
+        </mxCell>
+        <mxCell id="fec" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#005596;strokeWidth=2;fontColor=#333333;fontFamily=Arial;fontSize=14;" value="fecha_nacimiento" vertex="1">
+          <mxGeometry height="55" width="190" x="920" y="390" as="geometry" />
+        </mxCell>
+        <mxCell id="tel" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#005596;strokeWidth=2;fontColor=#333333;fontFamily=Arial;fontSize=14;double=1;" value="telefono" vertex="1">
+          <mxGeometry height="55" width="165" x="90" y="470" as="geometry" />
+        </mxCell>
+        <mxCell id="edad" parent="1" style="ellipse;whiteSpace=wrap;html=1;fillColor=#FFFFFF;strokeColor=#005596;strokeWidth=2;fontColor=#333333;fontFamily=Arial;fontSize=14;dashed=1;" value="edad" vertex="1">
+          <mxGeometry height="55" width="150" x="850" y="500" as="geometry" />
+        </mxCell>
+        <mxCell id="edni" edge="1" parent="1" source="dni" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;strokeWidth=2;endArrow=none;" target="p" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="enom" edge="1" parent="1" source="nom" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;strokeWidth=2;endArrow=none;" target="p" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="330" y="418" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="efec" edge="1" parent="1" source="fec" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;strokeWidth=2;endArrow=none;" target="p" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="etel" edge="1" parent="1" source="tel" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;strokeWidth=2;endArrow=none;" target="p" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="eedad" edge="1" parent="1" source="edad" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;strokeWidth=2;endArrow=none;" target="p" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="enom1" edge="1" parent="1" source="nom1" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;strokeWidth=2;endArrow=none;" target="nom" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="enom2" edge="1" parent="1" source="nom2" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;strokeWidth=2;endArrow=none;" target="nom" value="">
+          <mxGeometry relative="1" as="geometry">
+            <Array as="points">
+              <mxPoint x="335" y="183" />
+            </Array>
+          </mxGeometry>
+        </mxCell>
+        <mxCell id="enom3" edge="1" parent="1" source="nom3" style="edgeStyle=orthogonalEdgeStyle;rounded=0;orthogonalLoop=1;jettySize=auto;html=1;strokeColor=#333333;strokeWidth=2;endArrow=none;" target="nom" value="">
+          <mxGeometry relative="1" as="geometry" />
+        </mxCell>
+        <mxCell id="legend" parent="1" style="rounded=1;whiteSpace=wrap;html=1;align=center;verticalAlign=middle;spacing=10;fillColor=#FFFFFF;strokeColor=#D7DEE7;strokeWidth=1;fontColor=#333333;fontFamily=Arial;fontSize=13;" value="Clave: subrayado   |   Multivaluado: doble óvalo   |   Derivado: línea discontinua" vertex="1">
+          <mxGeometry height="55" width="640" x="280" y="620" as="geometry" />
+        </mxCell>
+      </root>
+    </mxGraphModel>
+  </diagram>
+</mxfile>

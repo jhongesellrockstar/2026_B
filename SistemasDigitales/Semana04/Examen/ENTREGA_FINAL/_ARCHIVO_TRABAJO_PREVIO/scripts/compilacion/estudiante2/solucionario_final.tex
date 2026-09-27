@@ -1,0 +1,144 @@
+\documentclass[10pt,a4paper]{article}
+\usepackage[margin=16mm,headheight=14pt,headsep=6mm,footskip=9mm]{geometry}
+\usepackage{fontspec}
+\setmainfont{TeX Gyre Pagella}
+\setsansfont{TeX Gyre Heros}
+\setmonofont{Latin Modern Mono}
+\usepackage{amsmath,amssymb,graphicx,booktabs,array,fancyhdr}
+\pagestyle{fancy}\fancyhf{}
+\fancyhead[L]{\small Sistemas Digitales / Práctica 01}
+\fancyhead[R]{\small Estudiante 2}
+\fancyfoot[L]{\small Universidad Nacional del Callao}
+\fancyfoot[R]{\small \thepage\ / 4}
+\setlength{\parindent}{0pt}\setlength{\parskip}{5pt}
+\renewcommand{\arraystretch}{1.22}
+\newcommand{\titulo}[1]{\par\vspace{3pt}{\Large\sffamily\bfseries #1}\par\vspace{4pt}}
+\newcommand{\subtitulo}[1]{\par\vspace{5pt}{\bfseries\sffamily #1}\par}
+\newcommand{\respuesta}[1]{\par\vspace{4pt}\noindent\fbox{\parbox{\dimexpr\linewidth-2\fboxsep-2\fboxrule\relax}{#1}}\par}
+\begin{document}
+{\sffamily\bfseries UNIVERSIDAD NACIONAL DEL CALLAO}\par
+Ingeniería de Sistemas\hfill Curso: Sistemas Digitales\par
+\textbf{Práctica 01}\hfill \textbf{Estudiante 2}
+\titulo{Pregunta 1 / Reducción booleana}
+\textbf{Enunciado.} Simplificar la función y realizarla únicamente con las puertas NOR de dos entradas de un integrado 7402:
+\[
+F(X,Y,Z,W)=\operatorname{NOR}(\overline X YZ,\overline X Y\overline Z)
+=\overline{(\overline X YZ)+(\overline X Y\overline Z)}.
+\]
+\textbf{Enfoque por De Morgan.} Primero interpreto el NOR como negación de una suma y aplico De Morgan para reducir la función.
+\subtitulo{Procedimiento}
+Se factoriza el término común y se aplica la complementariedad de $Z$:
+\begin{align*}
+P&=\overline X YZ+\overline X Y\overline Z\\
+ &=\overline X Y(Z+\overline Z) &&\text{factor común}\\
+ &=\overline X Y(1)=\overline X Y &&\text{complementariedad}.
+\end{align*}
+La salida NOR niega $P$. Por De Morgan y doble negación:
+\[
+F=\overline P=\overline{\overline X Y}
+=\overline{\overline X}+\overline Y
+=\boxed{X+\overline Y}.
+\]
+Las variables $Z$ y $W$ no intervienen en la función reducida.
+\subtitulo{Realización con tres NOR del 7402}
+\begin{center}
+\begin{tabular}{lll}\toprule
+Puerta & Operación & Señal obtenida\\\midrule
+NOR1 & $\operatorname{NOR}(Y,Y)$ & $\overline Y=\overline{Y+Y}$\\
+NOR2 & $\operatorname{NOR}(X,\overline Y)$ & $T=\overline{X+\overline Y}$\\
+NOR3 & $\operatorname{NOR}(T,T)$ & $F=\overline{T+T}=X+\overline Y$\\\bottomrule
+\end{tabular}
+\end{center}
+\includegraphics[width=\linewidth,trim={36.8641bp 438.8409bp 42.6241bp 219.4204bp},clip]{C:/Users/ACER/Documents/GitHub/2026_B/SistemasDigitales/Semana04/Examen/estudiante2/problema01_7402_circuito.png}
+{\small Circuito original reutilizado. Los puntos negros indican uniones; cada burbuja de salida indica negación. La asignación ampliada de pines está en la página 2.}
+\respuesta{\textbf{Frase para transcribir.} La función se simplifica a $F=X+\overline Y$. Se implementa con tres de las cuatro puertas NOR del 7402: una invierte $Y$, otra obtiene $T$ y la tercera invierte $T$.}
+\newpage
+\titulo{Pregunta 1 / Pines y comprobación}
+\textbf{Montaje funcional.} El encapsulado DIP-14 se observa desde arriba. La muesca y el punto de referencia permiten localizar el pin 1.
+\begin{center}\includegraphics[width=110mm,trim={63.3601bp 89.4242bp 541.4411bp 463.6809bp},clip]{C:/Users/ACER/Documents/GitHub/2026_B/SistemasDigitales/Semana04/Examen/estudiante2/problema01_7402_circuito.png}\end{center}
+\subtitulo{Conexiones listas para cablear}
+\begin{center}
+\begin{tabular}{p{34mm}p{128mm}}\toprule
+Red o puerta & Pines y conexión\\\midrule
+NOR1 & $Y$ a 2 (1A) y 3 (1B); salida 1 (1Y): $\overline Y$.\\
+NOR2 & $X$ a 5 (2A); 1 a 6 (2B); salida 4 (2Y): $T$.\\
+NOR3 & 4 a 8 (3A) y 9 (3B); salida 10 (3Y): $F$.\\
+Alimentación & Pin 14 (VCC) a $+5\,\mathrm V$; pin 7 (GND) a tierra.\\
+NOR4 & 11 (4A), 12 (4B) y 13 (4Y): puerta no utilizada en esta función.\\\bottomrule
+\end{tabular}
+\end{center}
+\subtitulo{Comprobación de la red NOR}
+\begin{center}
+\begin{tabular}{cccccc}\toprule
+$X$ & $Y$ & $\overline Y$ & $T=\overline{X+\overline Y}$ & $F=\overline T$ & $X+\overline Y$\\\midrule
+0 & 0 & 1 & 0 & 1 & 1\\
+0 & 1 & 0 & 1 & 0 & 0\\
+1 & 0 & 1 & 0 & 1 & 1\\
+1 & 1 & 0 & 0 & 1 & 1\\\bottomrule
+\end{tabular}
+\end{center}
+Cada fila es válida para cualquier valor de $Z$ y $W$. La salida de las tres NOR coincide con la ecuación simplificada.
+\respuesta{\textbf{Resultado de la Pregunta 1:} $\boxed{F=X+\overline Y}$. Se utiliza un integrado 7402, con tres puertas activas y una disponible.}
+\newpage
+\titulo{Pregunta 2 / Suma con seis 7483}
+\textbf{Datos:} $N=7{,}968{,}574$ y $M=8{,}694{,}583$.
+\subtitulo{Conversión y organización de 24 bits}
+La conversión hexadecimal permite revisar grupos de cuatro bits:
+\[
+N=\texttt{79973E}_{16},\qquad M=\texttt{84AB37}_{16}.
+\]
+Cada dígito hexadecimal se sustituye por un nibble, conservando los ceros iniciales:
+\begin{center}\begin{tabular}{rl}
+$N=$ & \texttt{0111 1001 1001 0111 0011 1110}\\
+$M=$ & \texttt{1000 0100 1010 1011 0011 0111}
+\end{tabular}\end{center}
+Se requieren $24/4=\mathbf{6}$ sumadores 7483. Se comienza por los bits 3:0 con $C_{\mathrm{in}}=0$. Cada $C_{\mathrm{out}}$ alimenta el $C_{\mathrm{in}}$ de la siguiente etapa.
+\subtitulo{Tabla de etapas: desde LSB hacia MSB}
+\begin{center}
+\begin{tabular}{ccccccc}\toprule
+Bloque & Bits & Nibble $N$ & Nibble $M$ & $C_{\mathrm{in}}$ & $S[3:0]$ & $C_{\mathrm{out}}$\\\midrule
+7483-1 & 3:0 & \texttt{1110} & \texttt{0111} & 0 & \texttt{0101} & 1 \\
+7483-2 & 7:4 & \texttt{0011} & \texttt{0011} & 1 & \texttt{0111} & 0 \\
+7483-3 & 11:8 & \texttt{0111} & \texttt{1011} & 0 & \texttt{0010} & 1 \\
+7483-4 & 15:12 & \texttt{1001} & \texttt{1010} & 1 & \texttt{0100} & 1 \\
+7483-5 & 19:16 & \texttt{1001} & \texttt{0100} & 1 & \texttt{1110} & 0 \\
+7483-6 & 23:20 & \texttt{0111} & \texttt{1000} & 0 & \texttt{1111} & 0 \\
+\bottomrule\end{tabular}\end{center}
+En el primer bloque: $14+7+0=21=16+5$; se entrega $0101$ y acarreo 1.
+\subtitulo{Cascada ampliada: dos tramos del mismo circuito}
+{\small Tramo A: etapas 1--3. El bloque 1 procesa los bits menos significativos.}\par
+\centerline{\includegraphics[width=148mm,trim={25.9201bp 218.8804bp 648.0013bp 232.5605bp},clip]{C:/Users/ACER/Documents/GitHub/2026_B/SistemasDigitales/Semana04/Examen/estudiante2/problema02_7483_cascada.png}}
+\begin{center}\small\textbf{Tramo B: $C_{\mathrm{out},3}=1\ \longrightarrow\ C_{\mathrm{in},4}=1$. Final: $C_{\mathrm{out},6}=0$.}\end{center}
+\centerline{\includegraphics[width=145mm,trim={642.8173bp 218.8804bp 44.0641bp 232.5605bp},clip]{C:/Users/ACER/Documents/GitHub/2026_B/SistemasDigitales/Semana04/Examen/estudiante2/problema02_7483_cascada.png}}
+\newpage
+\titulo{Pregunta 2 / Suma y resultado final}
+\subtitulo{Suma binaria completa}
+En la fila $c_i$ se muestra el acarreo que entra a la columna $i$. El bit 0 está a la derecha. Se parte de $c_0=0$ y se obtiene $c_{24}=0$.
+\begin{center}\includegraphics[width=\linewidth,trim={144.0003bp 152.6403bp 74.8801bp 132.4803bp},clip]{C:/Users/ACER/Documents/GitHub/2026_B/SistemasDigitales/Semana04/Examen/estudiante2/problema02_suma_binaria.png}\end{center}
+\subtitulo{Reconstrucción en orden MSB a LSB}
+Las salidas se leen de la etapa 6 a la 1, en orden inverso al avance del acarreo:
+\begin{center}
+\begin{tabular}{cccccc}\toprule
+Etapa 6 & Etapa 5 & Etapa 4 & Etapa 3 & Etapa 2 & Etapa 1\\\midrule
+\texttt{1111} & \texttt{1110} & \texttt{0100} & \texttt{0010} & \texttt{0111} & \texttt{0101}\\\bottomrule
+\end{tabular}
+\end{center}
+\[
+S=\texttt{1111 1110 0100 0010 0111 0101}_{2}
+=16{,}663{,}157_{10}.
+\]
+\subtitulo{Comprobación decimal y hexadecimal}
+\[
+7{,}968{,}574+8{,}694{,}583=\boxed{16{,}663{,}157},
+\qquad S=\texttt{FE4275}_{16}.
+\]
+No se produce acarreo fuera de los 24 bits: el $C_{\mathrm{out}}$ del sexto bloque es 0.
+\respuesta{\textbf{Frase para transcribir.} Se utilizan seis sumadores 7483 en cascada, desde el nibble menos significativo. La suma es \texttt{1111 1110 0100 0010 0111 0101} en base 2, equivalente a \textbf{16,663,157} en decimal.}
+\subtitulo{Resumen final}
+\begin{center}\begin{tabular}{ll}\toprule
+Pregunta 1 & $F=X+\overline Y$; tres NOR del 7402.\\
+Pregunta 2 & $N+M=16{,}663{,}157$; seis 7483.\\
+Binario & \texttt{1111 1110 0100 0010 0111 0101}$_2$.\\\bottomrule
+\end{tabular}\end{center}
+{\small Fuente: solucionario individual del estudiante y diagramas originales de su carpeta. Se conservan los datos, los pines y los acarreos.}
+\end{document}

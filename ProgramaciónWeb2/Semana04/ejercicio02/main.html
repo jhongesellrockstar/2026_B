@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Simulador de Prestamos</title>
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            text-align: center;
+        }
+        .form-group {
+            margin-bottom: 20px;
+        }
+        label {
+            display: block;
+            margin-bottom: 5px;
+        }
+        input[type="number"] {
+            width: 100%;
+            padding: 10px;
+            margin-bottom: 10px;
+        }
+        button {
+            padding: 10px 20px;
+            background-color: #4CAF50;
+            color: white;
+            border: none;
+            cursor: pointer;
+        }
+        button:hover {
+            background-color: #45a049;
+        }
+        .result {
+            margin-top: 20px;
+        }
+    </style>
+</head>
+<body>
+    <h1>Simulador de Prestamos</h1>
+    <form id="loan-form">
+        <div class="form-group">
+            <label for="amount">Monto Solicitado:</label>
+            <input type="number" id="amount" required>
+        </div>
+        <div class="form-group">
+            <label for="term">Cantidad de Cuotas:</label>
+            <input type="number" id="term" required>
+        </div>
+        <button type="submit">Procesar</button>
+    </form>
+    <div class="result"></div>
+
+    <script>
+        $(document).ready(function() {
+            $('#loan-form').on('submit', function(event) {
+                event.preventDefault();
+
+                const amount = parseFloat($('#amount').val());
+                const term = parseInt($('#term').val());
+
+                if (isNaN(amount) || isNaN(term)) {
+                    alert('Por favor, ingrese valores numéricos válidos.');
+                    return;
+                }
+
+                const monthlyPayment = amount / term;
+                const totalPayment = monthlyPayment * term;
+
+                const result = `
+                    <corvus_file path="result.html">
+                        <div>
+                            <h2>Monto Solicitado:</h2>
+                            <p>${amount.toFixed(2)}</p>
+                        </div>
+                        <div>
+                            <h2>Cantidad de Cuotas:</h2>
+                            <p>${term}</p>
+                        </div>
+                        <div>
+                            <h2>Precio de Cuota:</h2>
+                            <p>${monthlyPayment.toFixed(2)}</p>
+                        </div>
+                        <div>
+                            <h2>Total de Pago:</h2>
+                            <p>${totalPayment.toFixed(2)}</p>
+                        </div>
+                    </corvus_file>
+                `;
+
+                $('.result').html(result);
+            });
+        });
+    </script>
+</body>
+</html>
