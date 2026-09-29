@@ -1,0 +1,8 @@
+1ER GRUPO:
+Villanueva Portella Jhon Gesell
+
+1. Hacer un formulario , pide el precio del artículo y el porcentaje de descuento, si el porcentaje es mayor dell 30% se aplica un descuento adicional del 5%, finalmente muestre el precio final. Usar JavaScript puro embebido en un archivo html, el contenido será invocado desde el archivo html.
+2. Una página web archivo html 2.html el cual a través de javascript puro se calcula ; la web tiene por titulo "Presupuesto económico mensual", las variables de ingreso son "ingresos mensuales", pide al usuario que inserte sus ingresos mensuales y luego pide ingreses sus gastos "alimentación , transporte y entretenimiento"; calcula el total de gastos; el ahorro = ingresos - gastos ; si el ahorro es negativo el mensaje es "gastas mas de lo que ganas". 
+
+
+

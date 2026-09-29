@@ -1,0 +1,45 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Presupuesto Económico Mensual</title>
+</head>
+<body>
+    <h1>Presupuesto Económico Mensual</h1>
+    <h2>Moneda: PEN ,(s/.) , Nuevo Sol Peruano</h2>
+    <p>Por favor, inserte sus ingresos mensuales:</p>
+    <input type="number" id="ingresos" required>
+    <p>Por favor, inserte sus gastos:</p>
+    <h2>Alimtención</h2>
+    <input type="number" id="alimentacion" required>
+    <h2>Transporte</h2>
+    <input type="number" id="transporte" required>
+    <h2>Entretenimiento</h2>
+    <input type="number" id="entretenimiento" required>
+    <button onclick="calcularPresupuesto()">Calcular Presupuesto</button>
+    <p id="resultado"></p>
+
+    <script>
+        function calcularPresupuesto() {
+            const ingresos = parseFloat(document.getElementById('ingresos').value);
+            const alimentacion = parseFloat(document.getElementById('alimentacion').value);
+            const transporte = parseFloat(document.getElementById('transporte').value);
+            const entretenimiento = parseFloat(document.getElementById('entretenimiento').value);
+
+            const gastos = alimentacion + transporte + entretenimiento;
+            const ahorro = ingresos - gastos;
+
+            const resultado = document.getElementById('resultado');
+            resultado.innerHTML = `<corvus_file path="presupuesto.html">Presupuesto Mensual</corvus_file>
+            <p>El total de gastos es: ${gastos.toFixed(2)}</p>
+            <p>El ahorro es: ${ahorro.toFixed(2)}</p>`;
+
+            if (ahorro < 0) {
+                resultado.innerHTML += `<p>Gastas más de lo que ganas.</p>`;
+            }
+        }
+    </script>
+</body>
+</html>
+
