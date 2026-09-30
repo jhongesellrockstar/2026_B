@@ -1,0 +1,418 @@
+CALLAO LIMPIO - TEMARIO DE EXPOSICIÓN REACT
+Curso: Programación Web 2
+Carrera: Ingeniería de Sistemas
+Universidad Nacional del Callao
+Duración total estimada: 40 minutos
+Integrantes: 5
+Tiempo sugerido por integrante: 8 minutos
+
+=====================================================================
+OBJETIVO DEL VIDEO / EXPOSICIÓN
+=====================================================================
+Presentar el proyecto Callao Limpio como una aplicación académica construida con React + Vite, orientada al registro ciudadano de puntos con acumulación de residuos en el Callao.
+
+La exposición debe explicar dos cosas al mismo tiempo:
+1. Qué problema intenta representar el prototipo.
+2. Cómo React permite construir la interfaz mediante componentes, estado, props, eventos, listas, persistencia local y estadísticas visuales.
+
+La aplicación NO debe presentarse como sistema oficial de la UNAC, municipalidad o gobierno regional. Es un prototipo académico para Programación Web 2.
+
+=====================================================================
+ORDEN SECUENCIAL DE EXPOSICIÓN
+=====================================================================
+
+1. Diego Enrique Cisneros Agurto
+   Tema: Problemática, React, Vite y arquitectura general.
+   Tiempo: 8 minutos.
+   Color sugerido en PPT: azul.
+
+2. Rodrigo Alonso Bringas Martinez
+   Tema: Formulario, useState, validación y registro de reportes.
+   Tiempo: 8 minutos.
+   Color sugerido en PPT: morado.
+
+3. José Alejandro Ancalla Alarcon
+   Tema: Props, listas, tarjetas de reporte y renderizado condicional.
+   Tiempo: 8 minutos.
+   Color sugerido en PPT: verde.
+
+4. Jesús Thenee Soto Saldarriaga
+   Tema: Eventos, filtros, cambio de estado, eliminación y localStorage.
+   Tiempo: 8 minutos.
+   Color sugerido en PPT: naranja.
+
+5. Jhon Gesell Villanueva Portella
+   Tema: Resumen estadístico, gráfico circular, barras por distrito, demostración final y cierre.
+   Tiempo: 8 minutos.
+   Color sugerido en PPT: verde petróleo.
+
+=====================================================================
+BLOQUE 1 - DIEGO ENRIQUE CISNEROS AGURTO
+Tema general: Problemática, React, Vite y arquitectura general
+Duración: 8 minutos
+Slides asignados: 3, 4, 5 y 6
+=====================================================================
+
+DIAPOSITIVA 3 - Problemática y propósito
+Qué debe explicar:
+- La aplicación se llama Callao Limpio.
+- Representa un prototipo académico para registrar puntos con acumulación de residuos.
+- El problema social de base es la presencia de residuos sólidos en espacios urbanos.
+- La aplicación permite organizar reportes ciudadanos de forma simple.
+- No es una aplicación oficial y no envía información a autoridades.
+
+Captura sugerida:
+- Cabecera principal de la aplicación.
+
+Frase sugerida:
+“Callao Limpio es un prototipo académico desarrollado para practicar React a partir de una problemática cercana: el registro de puntos con acumulación de residuos en el Callao”.
+
+DIAPOSITIVA 4 - ¿Por qué React?
+Qué debe explicar:
+- React permite construir interfaces con componentes.
+- En JavaScript básico se manipulaba el DOM directamente.
+- En React, cambiamos el estado y React actualiza la interfaz.
+- JSX permite escribir una estructura parecida a HTML dentro de JavaScript.
+- Vite facilita crear y ejecutar el proyecto.
+
+Captura sugerida:
+- Carpeta src abierta o archivo main.jsx.
+
+Frase sugerida:
+“Antes creábamos o modificábamos elementos con JavaScript directo; ahora trabajamos con componentes y estado”.
+
+DIAPOSITIVA 5 - Estructura general del proyecto
+Qué debe explicar:
+- src/main.jsx monta la aplicación.
+- src/App.jsx es el componente principal.
+- La carpeta components contiene partes separadas de la interfaz.
+- App.jsx coordina los reportes, filtros y funciones principales.
+- README.md permite ejecutar el proyecto en Windows 11.
+
+Archivos que debe abrir:
+- src/main.jsx
+- src/App.jsx
+- carpeta src/components
+
+DIAPOSITIVA 6 - Objetivo funcional
+Qué debe explicar:
+- Registrar reportes.
+- Visualizar reportes.
+- Filtrar por estado.
+- Cambiar un reporte de pendiente a atendido.
+- Eliminar reportes.
+- Guardar datos localmente.
+- Mostrar estadísticas.
+
+Captura sugerida:
+- Vista principal de la aplicación.
+
+Cierre de bloque:
+“Con esta estructura general, pasamos a revisar cómo se registra un reporte desde el formulario”.
+
+=====================================================================
+BLOQUE 2 - RODRIGO ALONSO BRINGAS MARTINEZ
+Tema general: Formulario, useState y registro de reportes
+Duración: 8 minutos
+Slides asignados: 7, 8, 9 y 10
+=====================================================================
+
+DIAPOSITIVA 7 - Formulario de registro
+Qué debe explicar:
+- El componente FormularioReporte.jsx contiene el formulario.
+- Los campos son distrito, ubicación, tipo de residuo y descripción.
+- Todos los campos son obligatorios.
+- Al registrar, el reporte inicia como pendiente.
+
+Captura sugerida:
+- Formulario vacío.
+
+Archivos que debe abrir:
+- src/components/FormularioReporte.jsx
+
+DIAPOSITIVA 8 - useState e inputs controlados
+Qué debe explicar:
+- useState permite guardar el valor actual de cada campo.
+- value muestra el valor actual del estado.
+- onChange actualiza el estado cuando el usuario escribe o selecciona.
+- El formulario queda sincronizado con el estado de React.
+
+Ejemplo que puede explicar:
+const [distrito, setDistrito] = useState("");
+
+Frase sugerida:
+“El usuario escribe en el formulario, onChange captura ese cambio y setDistrito actualiza el estado”.
+
+DIAPOSITIVA 9 - Envío y validación
+Qué debe explicar:
+- onSubmit ejecuta la función de envío.
+- preventDefault evita que la página se recargue.
+- trim se usa para validar que no haya campos vacíos o solo espacios.
+- Si los campos son correctos, se crea un objeto reporte.
+- El formulario no guarda toda la lista; envía el nuevo reporte hacia App mediante una prop.
+
+Captura sugerida:
+- Formulario lleno antes de pulsar Registrar reporte.
+
+DIAPOSITIVA 10 - Objeto reporte generado
+Qué debe explicar:
+- Cada reporte contiene id, distrito, ubicación, tipo, descripción y estado.
+- Date.now() se usa como identificador sencillo.
+- estado inicia con “Pendiente”.
+- Luego App.jsx agrega el nuevo objeto al arreglo de reportes.
+- Después el formulario se limpia.
+
+Cierre de bloque:
+“El formulario construye el objeto reporte; ahora veremos cómo React muestra esa lista en pantalla”.
+
+=====================================================================
+BLOQUE 3 - JOSÉ ALEJANDRO ANCALLA ALARCON
+Tema general: Props, listas, tarjetas y renderizado condicional
+Duración: 8 minutos
+Slides asignados: 11, 12, 13 y 14
+=====================================================================
+
+DIAPOSITIVA 11 - Props y comunicación
+Qué debe explicar:
+- Las props permiten pasar datos y funciones de un componente padre a un hijo.
+- App.jsx mantiene los datos principales.
+- ListaReportes recibe los reportes que debe mostrar.
+- Reporte.jsx recibe la información de un solo reporte.
+
+Frase sugerida:
+“App es el componente principal; desde App viajan los datos y funciones hacia los componentes hijos”.
+
+DIAPOSITIVA 12 - Listas con map()
+Qué debe explicar:
+- map recorre el arreglo de reportes.
+- Por cada reporte genera un componente Reporte.
+- key={reporte.id} ayuda a React a identificar cada elemento.
+- Si el arreglo cambia, la interfaz también cambia.
+
+Ejemplo conceptual:
+reportes.map((reporte) => (
+  <Reporte key={reporte.id} reporte={reporte} />
+))
+
+DIAPOSITIVA 13 - Tarjeta Reporte.jsx
+Qué debe explicar:
+- Cada reporte se muestra como una tarjeta.
+- La tarjeta muestra distrito, ubicación, tipo, descripción y estado.
+- También incluye botones para cambiar estado y eliminar.
+- La información llega desde la prop reporte.
+
+Captura sugerida:
+- Una tarjeta de reporte visible.
+
+DIAPOSITIVA 14 - Renderizado condicional
+Qué debe explicar:
+- Si no hay reportes, se muestra un mensaje vacío.
+- Si el filtro no devuelve resultados, se muestra otro mensaje.
+- El botón cambia de texto según el estado del reporte.
+- React permite mostrar diferentes contenidos según los datos.
+
+Captura sugerida:
+- Lista vacía o filtro sin resultados.
+
+Cierre de bloque:
+“Ya sabemos cómo se crean y se muestran los reportes; ahora veremos cómo el usuario interactúa con ellos”.
+
+=====================================================================
+BLOQUE 4 - JESÚS THENEE SOTO SALDARRIAGA
+Tema general: Eventos, filtros, cambio de estado, eliminación y localStorage
+Duración: 8 minutos
+Slides asignados: 15, 16, 17 y 18
+=====================================================================
+
+DIAPOSITIVA 15 - Eventos principales
+Qué debe explicar:
+- onClick se usa para ejecutar acciones cuando el usuario pulsa un botón.
+- Marcar atendido cambia el estado del reporte.
+- Volver a pendiente permite retornar al estado anterior.
+- Eliminar quita un reporte del arreglo.
+- Filtrar cambia lo que se visualiza sin borrar datos.
+
+Captura sugerida:
+- Botones Marcar atendido y Eliminar.
+
+DIAPOSITIVA 16 - map() y filter() en App.jsx
+Qué debe explicar:
+- map permite generar un nuevo arreglo cambiando solo el reporte correspondiente.
+- filter permite quitar un reporte o seleccionar reportes por estado.
+- En React no se debe modificar el estado directamente.
+- Se crean nuevos arreglos para que React detecte el cambio.
+
+Capturas sugeridas:
+- Filtro Pendientes aplicado.
+- Filtro Atendidos aplicado.
+
+DIAPOSITIVA 17 - Persistencia con localStorage
+Qué debe explicar:
+- localStorage pertenece al navegador, no a React.
+- Sirve para conservar datos aunque se recargue la página.
+- JSON.stringify convierte el arreglo en texto.
+- JSON.parse recupera el texto y lo convierte nuevamente en arreglo.
+- useEffect guarda los reportes cuando cambia el estado.
+
+Frase sugerida:
+“No usamos backend. Los reportes se guardan únicamente en este navegador”.
+
+DIAPOSITIVA 18 - Pruebas de funcionamiento
+Qué debe explicar:
+- Registrar reportes.
+- Cambiar uno a atendido.
+- Eliminar uno.
+- Probar filtros.
+- Recargar la página y comprobar que los datos permanecen.
+- Revisar consola sin errores.
+
+Captura sugerida:
+- Pantalla después de recargar con datos conservados.
+
+Cierre de bloque:
+“Como los reportes ya se mantienen en el estado y en localStorage, podemos calcular estadísticas a partir de esos datos”.
+
+=====================================================================
+BLOQUE 5 - JHON GESELL VILLANUEVA PORTELLA
+Tema general: Resumen estadístico, gráficos, demostración final y cierre
+Duración: 8 minutos
+Slides asignados: 19, 20, 21, 22 y 23
+=====================================================================
+
+DIAPOSITIVA 19 - Resumen estadístico
+Qué debe explicar:
+- ResumenEstadistico.jsx es el componente nuevo de la segunda iteración.
+- Recibe reportes mediante props.
+- Calcula pendientes, atendidos y reportes por distrito.
+- Las estadísticas no se guardan por separado.
+- No se usaron librerías externas de gráficos.
+
+Captura sugerida:
+- Sección Resumen estadístico completa.
+
+Frase sugerida:
+“Este componente no crea nuevos datos; toma el arreglo reportes y calcula valores derivados”.
+
+DIAPOSITIVA 20 - Gráfico circular con CSS
+Qué debe explicar:
+- Se calcula el total de reportes.
+- Se cuenta cuántos están pendientes y cuántos atendidos.
+- Se calcula el porcentaje de cada estado.
+- CSS usa conic-gradient para representar visualmente el porcentaje.
+- Si no hay datos, se muestra un estado neutro.
+
+Fórmula simple:
+porcentajePendientes = (pendientes / total) * 100
+
+Frase sugerida:
+“No usamos Chart.js; JavaScript calcula y CSS dibuja el círculo”.
+
+DIAPOSITIVA 21 - Barras por distrito
+Qué debe explicar:
+- Se agrupan los reportes por distrito.
+- Solo aparecen distritos que tienen reportes.
+- El distrito con mayor cantidad se toma como referencia.
+- Cada barra calcula su ancho proporcional.
+- Al registrar o eliminar reportes, React actualiza las barras.
+
+Fórmula simple:
+ancho = (cantidadDistrito / maximo) * 100
+
+Captura sugerida:
+- Barras por Callao, Bellavista, Ventanilla y La Perla.
+
+DIAPOSITIVA 22 - Demostración final de la aplicación
+Qué debe hacer en vivo o mostrar con captura:
+- Registrar un nuevo reporte.
+- Ver cómo cambia el total.
+- Cambiar un reporte a atendido.
+- Observar el cambio del gráfico circular.
+- Filtrar pendientes y atendidos.
+- Mostrar barras por distrito.
+- Explicar que los datos quedan en localStorage.
+
+Captura sugerida:
+- Vista general con reportes y gráficos.
+
+DIAPOSITIVA 23 - Cierre: aprendizaje y límites del prototipo
+Qué debe explicar:
+- Se aplicaron componentes, estado, props, eventos y listas.
+- Se usó localStorage para persistencia local.
+- Se añadieron estadísticas y gráficos sin librerías externas.
+- La aplicación es académica.
+- Una solución real requeriría backend, autenticación, base de datos, validación institucional y despliegue.
+
+Cierre sugerido:
+“Callao Limpio nos permitió pasar de JavaScript básico a una aplicación React organizada por componentes, con datos dinámicos y una interfaz que se actualiza automáticamente”.
+
+=====================================================================
+SLIDE FINAL DE RESPALDO - PREGUNTAS PROBABLES DEL DOCENTE
+Slide asignado: 24
+Puede responder cualquiera, pero se recomienda que lo maneje Jhon como cierre.
+=====================================================================
+
+Preguntas posibles:
+1. ¿Qué diferencia hay entre estado y props?
+2. ¿Por qué usamos componentes?
+3. ¿Qué hace useEffect?
+4. ¿Por qué no manipulamos el DOM directamente?
+5. ¿Dónde se guardan los reportes?
+6. ¿Qué pasa si se borra localStorage?
+7. ¿Por qué no usamos backend?
+8. ¿Por qué no usamos librerías de gráficos?
+
+Respuestas breves:
+- Estado: dato interno que cambia dentro de un componente.
+- Props: datos o funciones que llegan desde un componente padre.
+- useEffect: ejecuta una acción secundaria cuando cambia un dato, en este caso guardar en localStorage.
+- No manipulamos DOM directamente porque React actualiza la interfaz a partir del estado.
+- Los reportes se guardan en localStorage del navegador.
+- Si se borra localStorage, se pierden los reportes.
+- No usamos backend porque el alcance del curso es React básico.
+- No usamos librerías de gráficos porque queríamos mantener la solución explicable con React, JavaScript y CSS.
+
+=====================================================================
+RECOMENDACIONES PARA GRABAR EL VIDEO
+=====================================================================
+
+1. Cada expositor debe tener abiertos sus archivos asignados antes de grabar.
+2. Evitar leer todo el slide; usarlo como guía.
+3. Mostrar código solo cuando se vaya a explicar una idea concreta.
+4. Usar capturas para no perder tiempo navegando demasiado.
+5. Ensayar transiciones entre integrantes.
+6. No presentar el sistema como solución oficial.
+7. Recalcar que es un prototipo académico.
+8. Evitar mencionar herramientas de IA.
+9. Usar palabras simples: componente, estado, props, evento, arreglo, filtro, persistencia.
+10. Cerrar mostrando la aplicación funcionando.
+
+=====================================================================
+DISTRIBUCIÓN FINAL DE ARCHIVOS PARA ESTUDIO
+=====================================================================
+
+Diego Enrique Cisneros Agurto:
+- README.md
+- src/main.jsx
+- src/App.jsx
+- src/components/Header.jsx
+
+Rodrigo Alonso Bringas Martinez:
+- src/components/FormularioReporte.jsx
+
+José Alejandro Ancalla Alarcon:
+- src/components/ListaReportes.jsx
+- src/components/Reporte.jsx
+
+Jesús Thenee Soto Saldarriaga:
+- src/App.jsx
+- src/components/FiltroReportes.jsx
+
+Jhon Gesell Villanueva Portella:
+- src/components/Estadisticas.jsx
+- src/components/ResumenEstadistico.jsx
+- src/App.css
+- GUIA_VIDEO.md
+
+=====================================================================
+FIN DEL TEMARIO
+=====================================================================
