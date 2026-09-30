@@ -27,7 +27,7 @@ Duración sugerida: 8 a 10 minutos. Cada integrante puede presentar varias parte
 
 1. Ejecutar npm install si es otro equipo y luego npm run dev.
 2. Usar siempre la misma dirección y puerto para conservar los datos.
-3. Tener abiertos App.jsx y los seis componentes.
+3. Tener abiertos App.jsx y los siete componentes.
 4. Usar únicamente reportes de ejemplo. Eliminarlos al terminar si se desea empezar vacío.
 5. No atribuir el sistema a la UNAC, municipalidad ni gobierno regional.
 6. Explicar el código con palabras propias, sin leer cada línea.
@@ -45,3 +45,18 @@ Duración sugerida: 8 a 10 minutos. Cada integrante puede presentar varias parte
 **¿Por qué Date.now()?** Da un identificador numérico sencillo para este formulario manual; no pretende resolver identificadores de un sistema distribuido.
 
 **¿Atendido significa que una autoridad intervino?** No: es un estado que el usuario del prototipo marca manualmente.
+
+## Explicar los gráficos (45 segundos)
+
+Mostrar src/components/ResumenEstadistico.jsx y la sección Resumen estadístico:
+
+“Las estadísticas se calculan directamente desde el array de reportes. No utilizamos una librería de gráficos. React calcula los valores y CSS los representa visualmente”.
+
+- filter cuenta pendientes y atendidos; cantidad / total * 100 calcula porcentajes, evitando dividir entre cero.
+- conic-gradient pinta las dos partes del círculo. Si no hay reportes, se usa un color neutro.
+- Un for acumula cantidades en un objeto por distrito. Object.keys obtiene sus nombres y map genera las barras.
+- Cada ancho compara la cantidad del distrito con la mayor cantidad. No es un porcentaje del total.
+- No hay useState adicional: al cambiar reportes en App, React vuelve a ejecutar el componente.
+
+Durante la demostración, cambiar un estado y observar el círculo; agregar o eliminar un reporte y observar las barras. El filtro de la lista no modifica el resumen general. Reservar aproximadamente un minuto adicional en el video.
+

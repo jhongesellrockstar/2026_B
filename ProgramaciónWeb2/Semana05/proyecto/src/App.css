@@ -1,4 +1,22 @@
 .contenedor { max-width: 1160px; margin: 0 auto; padding: 0 28px; }
+.resumen-estadistico { margin-bottom: 24px; }
+.graficos-resumen { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+.graficos-resumen > div { min-width: 0; }
+.graficos-resumen h3 { font-size: 15px; margin-bottom: 18px; }
+.resumen-estados { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+.grafico-circular { width: 132px; height: 132px; border-radius: 50%; flex-shrink: 0; }
+.leyenda-estados { font-size: 13px; }
+.leyenda-estados p { margin-bottom: 10px; }
+.muestra-color { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 8px; }
+.color-pendiente { background: #c0923d; }
+.color-atendido { background: #6c9b67; }
+.barras-distritos { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+.etiqueta-barra { display: flex; justify-content: space-between; gap: 12px; font-size: 13px; margin-bottom: 5px; overflow-wrap: anywhere; }
+.fondo-barra { background: #eef2eb; height: 10px; border-radius: 5px; overflow: hidden; }
+.barra-distrito { background: #517365; height: 100%; border-radius: 5px; }
+@media (max-width: 800px) {
+  .graficos-resumen { grid-template-columns: 1fr; gap: 24px; }
+}
 .cabecera { background: #173e35; color: white; padding: 38px 0 36px; border-bottom: 5px solid #a9c69b; }
 .etiqueta { font-size: 11px; font-weight: 700; letter-spacing: 1.6px; margin-bottom: 12px; }
 .cabecera .etiqueta { color: #c2d6c5; }

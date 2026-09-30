@@ -93,12 +93,14 @@ Los siete distritos y seis tipos de residuo están definidos directamente en el 
 
 ## Estructura del proyecto
 
+
 | Archivo | Responsabilidad |
 | --- | --- |
 | src/main.jsx | Monta App dentro de root y carga los estilos generales. |
 | src/App.jsx | Mantiene reportes y filtro; agrega, elimina, cambia estado y guarda. |
 | src/components/Header.jsx | Nombre, subtítulo y contexto académico. |
 | src/components/Estadisticas.jsx | Calcula total, pendientes y atendidos. |
+| src/components/ResumenEstadistico.jsx | Representa estados y cantidades por distrito con CSS. |
 | src/components/FormularioReporte.jsx | Controla campos, valida y entrega el reporte a App. |
 | src/components/FiltroReportes.jsx | Cambia el filtro mediante botones. |
 | src/components/ListaReportes.jsx | Muestra mensajes vacíos o recorre reportes con map. |
@@ -109,6 +111,7 @@ Los siete distritos y seis tipos de residuo están definidos directamente en el 
 | GUIA_VIDEO.md | Orden sugerido para la exposición. |
 
 ## Conceptos de React utilizados
+
 
 - **Componentes:** funciones que devuelven una parte de la interfaz, como Header o Reporte.
 - **JSX:** HTML escrito dentro de JavaScript. Las llaves insertan expresiones, por ejemplo reportes.length.
@@ -158,3 +161,11 @@ Comprueba además campos vacíos, espacios en blanco, retorno a pendiente y mens
 ## Guía de exposición
 
 Consulta GUIA_VIDEO.md. Explica especialmente cómo viajan los datos y por qué las estadísticas se calculan desde el array.
+
+## Resumen estadístico
+
+Las visualizaciones se generan con React y CSS, sin bibliotecas de gráficos ni estados adicionales. ResumenEstadistico.jsx recibe todos los reportes por props y calcula los valores en cada renderizado.
+
+El círculo usa conic-gradient: divide pendientes y atendidos entre el total y multiplica por 100. Sin reportes, muestra un círculo neutro. Las barras cuentan reportes por distrito mediante un for; su ancho es cantidad / mayorCantidad * 100. Solo aparecen distritos con reportes. Los porcentajes de la leyenda se redondean a un decimal.
+
+Al registrar, eliminar o cambiar un estado, ambos gráficos se actualizan. Los filtros solo afectan la lista, no el resumen. Object.keys convierte las claves del objeto de cantidades en un array para recorrerlo con map.

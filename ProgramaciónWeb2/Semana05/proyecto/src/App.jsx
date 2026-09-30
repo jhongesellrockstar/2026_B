@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react';
 import Header from './components/Header';
 import Estadisticas from './components/Estadisticas';
+import ResumenEstadistico from './components/ResumenEstadistico';
 import FormularioReporte from './components/FormularioReporte';
 import FiltroReportes from './components/FiltroReportes';
 import ListaReportes from './components/ListaReportes';
@@ -68,6 +69,7 @@ function App() {
       <Header />
       <main className="contenedor">
         <Estadisticas reportes={reportes} />
+        <ResumenEstadistico reportes={reportes} />
         {errorGuardado && <p className="error" role="alert">{errorGuardado}</p>}
         <div className="contenido">
           <FormularioReporte agregarReporte={agregarReporte} />
