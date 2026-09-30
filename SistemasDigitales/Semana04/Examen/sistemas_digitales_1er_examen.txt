@@ -1,0 +1,96 @@
+Estructura de: C:/Users/ACER/Documents/GitHub/2026_B/SistemasDigitales/Semana04/Examen
+==================================================
+
+Examen/
+│   ├── Captura de pantalla 2026-09-22 155914.png
+│   ├── control_calidad_visual.txt
+│   ├── generar_diagramas.py
+│   ├── LEEME_diagramas.txt
+│   ├── problema01_7402_circuito.png
+│   ├── problema01_7402_circuito.svg
+│   ├── problema02_7483_cascada.png
+│   ├── problema02_7483_cascada.svg
+│   ├── problema02_suma_binaria.png
+│   ├── problema02_suma_binaria.svg
+│   ├── requirements.txt
+│   ├── revision_calculos.txt
+│   ├── verificacion_diagramas.txt
+│   ├── verificar_operaciones.py
+│   ├── WhatsApp Image 2026-09-22 at 3.36.11 PM.jpeg
+├── backup_txt_originales/
+│   │   ├── estudiante1_solucionario.txt
+│   │   ├── estudiante2_solucionario.txt
+│   │   ├── estudiante3_solucionario.txt
+│   │   ├── estudiante4_solucionario.txt
+│   │   ├── estudiante5_solucionario.txt
+│   │   ├── estudiante6_solucionario.txt
+│   │   ├── estudiante7_solucionario.txt
+│   │   └── estudiante8_solucionario.txt
+├── estudiante1/
+│   │   ├── problema01_7402_circuito.png
+│   │   ├── problema01_7402_circuito.svg
+│   │   ├── problema02_7483_cascada.png
+│   │   ├── problema02_7483_cascada.svg
+│   │   ├── problema02_suma_binaria.png
+│   │   └── problema02_suma_binaria.svg
+├── estudiante2/
+│   │   ├── problema01_7402_circuito.png
+│   │   ├── problema01_7402_circuito.svg
+│   │   ├── problema02_7483_cascada.png
+│   │   ├── problema02_7483_cascada.svg
+│   │   ├── problema02_suma_binaria.png
+│   │   └── problema02_suma_binaria.svg
+├── estudiante3/
+│   │   ├── problema01_7402_circuito.png
+│   │   ├── problema01_7402_circuito.svg
+│   │   ├── problema02_7483_cascada.png
+│   │   ├── problema02_7483_cascada.svg
+│   │   ├── problema02_suma_binaria.png
+│   │   └── problema02_suma_binaria.svg
+├── estudiante4/
+│   │   ├── problema01_7402_circuito.png
+│   │   ├── problema01_7402_circuito.svg
+│   │   ├── problema02_7483_cascada.png
+│   │   ├── problema02_7483_cascada.svg
+│   │   ├── problema02_suma_binaria.png
+│   │   └── problema02_suma_binaria.svg
+├── estudiante5/
+│   │   ├── problema01_7402_circuito.png
+│   │   ├── problema01_7402_circuito.svg
+│   │   ├── problema02_7483_cascada.png
+│   │   ├── problema02_7483_cascada.svg
+│   │   ├── problema02_suma_binaria.png
+│   │   └── problema02_suma_binaria.svg
+├── estudiante6/
+│   │   ├── problema01_7402_circuito.png
+│   │   ├── problema01_7402_circuito.svg
+│   │   ├── problema02_7483_cascada.png
+│   │   ├── problema02_7483_cascada.svg
+│   │   ├── problema02_suma_binaria.png
+│   │   └── problema02_suma_binaria.svg
+├── estudiante7/
+│   │   ├── problema01_7402_circuito.png
+│   │   ├── problema01_7402_circuito.svg
+│   │   ├── problema02_7483_cascada.png
+│   │   ├── problema02_7483_cascada.svg
+│   │   ├── problema02_suma_binaria.png
+│   │   └── problema02_suma_binaria.svg
+├── estudiante8/
+│   │   ├── problema01_7402_circuito.png
+│   │   ├── problema01_7402_circuito.svg
+│   │   ├── problema02_7483_cascada.png
+│   │   ├── problema02_7483_cascada.svg
+│   │   ├── problema02_suma_binaria.png
+│   │   └── problema02_suma_binaria.svg
+├── solucionarios_8_estudiantes_sistemas_digitales/
+│   │   ├── estudiante1_solucionario.txt
+│   │   ├── estudiante2_solucionario.txt
+│   │   ├── estudiante3_solucionario.txt
+│   │   ├── estudiante4_solucionario.txt
+│   │   ├── estudiante5_solucionario.txt
+│   │   ├── estudiante6_solucionario.txt
+│   │   ├── estudiante7_solucionario.txt
+│   │   └── estudiante8_solucionario.txt
+├── __pycache__/
+│   │   ├── generar_diagramas.cpython-314.pyc
+│   │   └── verificar_operaciones.cpython-314.pyc

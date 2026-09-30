@@ -1,0 +1,631 @@
+Estructura de: C:/Users/ACER/Downloads
+==================================================
+
+Downloads/
+│   ├── 20260808_122029.mp4
+│   ├── Building Microservices - Sam Newman.pdf
+│   ├── Claude Setup.exe
+│   ├── Community_Kit_Computex_2021.zip
+│   ├── Computational Fluid Dynamics by John D. Anderson.pdf
+│   ├── desktop.ini
+│   ├── ECUACIONES_IMPLEMENTADAS_SWATPLUS_IGP_V01.txt
+│   ├── FIIS-CONST-MAEST_ADM-2025-2-177 - JHON GESELL VILLANUEVA PORTELLA - MIA.pdf
+│   ├── grabacion_184658.mp4
+│   ├── Informe de entregable_OS562_N04_2026_V08.docx
+│   ├── Informe de entregable_OS562_N04_2026_vKE.docx
+│   ├── INVENTARIO_ANEXOS_INFORME04_V01.csv
+│   ├── mapa_scripts_swatplus_igp_v02.csv
+│   ├── MAPEO_CODIGO_SWATPLUS_IGP_V01.txt
+│   ├── Natural_Computing_Series_Introduction_to.pdf
+│   ├── Observaciones_Informe_SWATIGP_Entregable04_rKE.docx
+│   ├── ORDEN-DE-SERVICIO-00562-2026-IGP-GG-OA-UFLO-RCAG_1776707781.pdf
+│   ├── ORDEN-DE-SERVICIO-00710-2026-IGP-GG-OA-UFLO-RCAG_1780512394_R (1).pdf
+│   ├── ORDEN-DE-SERVICIO-00710-2026-IGP-GG-OA-UFLO-RCAG_1780512394_R.pdf
+│   ├── Plan_Proyecto_Tesis_MCT_SWATplus_JGVP_V09.docx
+│   ├── PresentacionVPJG_SWATPlus_WenHai_Logros_Mensuales_v01.pptx
+│   ├── PresentacionVPJG_SWATPlus_WenHai_Logros_Mensuales_v02.pptx
+│   ├── PresentacionVPJG_v03.pptx
+│   ├── PROMPT_CODEX_VERIFICACION_AMES_SUB1_V01.txt
+│   ├── resumen_cambios_presentacion_v02.md
+│   ├── solucionarios_8_estudiantes_sistemas_digitales.zip
+│   ├── still-frame-desktop-2560x1440.jpg
+│   ├── TESIS - CUYUBAMBA-GONZALES-OBREGON.pdf
+│   ├── TRAZABILIDAD_ECUACION_CODIGO_V01.csv
+│   ├── wordpress-7.1.zip
+├── MetaQuest3_FIX/
+│   │   ├── Fix.bat
+│   ├── Intel2115/
+│   │   │   ├── clangFEWrapper.dll
+│   │   │   ├── clangFEWrapper32.dll
+│   │   │   ├── ControlLib.dll
+│   │   │   ├── ControlLib32.dll
+│   │   │   ├── cpa_32.vp
+│   │   │   ├── cpa_64.vp
+│   │   │   ├── cp_resources.bin
+│   │   │   ├── c_32.cpa
+│   │   │   ├── c_64.cpa
+│   │   │   ├── dev_32.vp
+│   │   │   ├── dev_64.vp
+│   │   │   ├── DnnlPlugin.dll
+│   │   │   ├── h265e_32.vp
+│   │   │   ├── h265e_64.vp
+│   │   │   ├── he_32.vp
+│   │   │   ├── he_64.vp
+│   │   │   ├── ig11icd32.dll
+│   │   │   ├── ig11icd64.dll
+│   │   │   ├── ig9icd32.dll
+│   │   │   ├── ig9icd64.dll
+│   │   │   ├── iga32.dll
+│   │   │   ├── iga64.dll
+│   │   │   ├── igc32.dll
+│   │   │   ├── igc64.dll
+│   │   │   ├── igd10iumd32.dll
+│   │   │   ├── igd10iumd64.dll
+│   │   │   ├── igd10um32gen11.dll
+│   │   │   ├── igd10um64gen11.dll
+│   │   │   ├── igd11dxva32.dll
+│   │   │   ├── igd11dxva64.dll
+│   │   │   ├── igd12dxva32.dll
+│   │   │   ├── igd12dxva64.dll
+│   │   │   ├── igd12um32icl.dll
+│   │   │   ├── igd12um32kbl.dll
+│   │   │   ├── igd12um64icl.dll
+│   │   │   ├── igd12um64kbl.dll
+│   │   │   ├── igd12umd32.dll
+│   │   │   ├── igd12umd64.dll
+│   │   │   ├── igd9dxva32.dll
+│   │   │   ├── igd9dxva64.dll
+│   │   │   ├── igdail32.dll
+│   │   │   ├── igdail64.dll
+│   │   │   ├── igdde32.dll
+│   │   │   ├── igdde64.dll
+│   │   │   ├── igdext32.dll
+│   │   │   ├── igdext64.dll
+│   │   │   ├── igdfcl32.dll
+│   │   │   ├── igdfcl64.dll
+│   │   │   ├── igdgmm32.dll
+│   │   │   ├── igdgmm64.dll
+│   │   │   ├── igdinfo32.dll
+│   │   │   ├── igdinfo64.dll
+│   │   │   ├── igdkmd64.sys
+│   │   │   ├── igdkmdn64.sys
+│   │   │   ├── igdlh.cat
+│   │   │   ├── igdmd32.dll
+│   │   │   ├── igdmd64.dll
+│   │   │   ├── igdml32.dll
+│   │   │   ├── igdml64.dll
+│   │   │   ├── igdrcl32.dll
+│   │   │   ├── igdrcl64.dll
+│   │   │   ├── igdumdim32.dll
+│   │   │   ├── igdumdim64.dll
+│   │   │   ├── igfx11cmrt32.dll
+│   │   │   ├── igfx11cmrt64.dll
+│   │   │   ├── igfxcmrt32.dll
+│   │   │   ├── igfxcmrt64.dll
+│   │   │   ├── iglhxa64.cpa
+│   │   │   ├── iglhxa64.vp
+│   │   │   ├── iglhxc64.vp
+│   │   │   ├── iglhxc64_dev.vp
+│   │   │   ├── iglhxg64.vp
+│   │   │   ├── iglhxg64_dev.vp
+│   │   │   ├── iglhxo64.vp
+│   │   │   ├── iglhxo64_dev.vp
+│   │   │   ├── iglhxs64.vp
+│   │   │   ├── iglhxsn64.vp
+│   │   │   ├── igvk32.dll
+│   │   │   ├── igvk32.json
+│   │   │   ├── igvk64.dll
+│   │   │   ├── igvk64.json
+│   │   │   ├── iigd_dch.inf
+│   │   │   ├── IntelControlLib.dll
+│   │   │   ├── IntelControlLib32.dll
+│   │   │   ├── IntelCpHDCPSvc.exe
+│   │   │   ├── IntelCpHeciSvc.exe
+│   │   │   ├── intel_gfx_api-x64.dll
+│   │   │   ├── intel_gfx_api-x86.dll
+│   │   │   ├── Intel_OpenCL_ICD32.dll
+│   │   │   ├── Intel_OpenCL_ICD64.dll
+│   │   │   ├── libigc.so
+│   │   │   ├── libigd12dxva64.so
+│   │   │   ├── libigd12um64icl.so
+│   │   │   ├── libigd12um64kbl.so
+│   │   │   ├── libigd12umd64.so
+│   │   │   ├── libigdfcl.so
+│   │   │   ├── libigdgmm.so.12
+│   │   │   ├── libLLVM-9.so
+│   │   │   ├── libmfxhw32.dll
+│   │   │   ├── libmfxhw64.dll
+│   │   │   ├── libopencl-clang.so.9
+│   │   │   ├── libUniversalAdapter64.so
+│   │   │   ├── libwsl_compute_helper.so
+│   │   │   ├── mfxplugin32_av1e_gacc.dll
+│   │   │   ├── mfxplugin32_hw.dll
+│   │   │   ├── mfxplugin64_av1e_gacc.dll
+│   │   │   ├── mfxplugin64_hw.dll
+│   │   │   ├── mfx_loader_dll_hw32.dll
+│   │   │   ├── mfx_loader_dll_hw64.dll
+│   │   │   ├── mfx_mft_av1hve_32.dll
+│   │   │   ├── mfx_mft_av1hve_32.vp
+│   │   │   ├── mfx_mft_av1hve_64.dll
+│   │   │   ├── mfx_mft_av1hve_64.vp
+│   │   │   ├── mfx_mft_encrypt_32.dll
+│   │   │   ├── mfx_mft_encrypt_64.dll
+│   │   │   ├── mfx_mft_h264ve_32.dll
+│   │   │   ├── mfx_mft_h264ve_64.dll
+│   │   │   ├── mfx_mft_h265ve_32.dll
+│   │   │   ├── mfx_mft_h265ve_64.dll
+│   │   │   ├── mfx_mft_mjpgvd_32.dll
+│   │   │   ├── mfx_mft_mjpgvd_64.dll
+│   │   │   ├── mfx_mft_vp9ve_32.dll
+│   │   │   ├── mfx_mft_vp9ve_64.dll
+│   │   │   ├── mj_32.vp
+│   │   │   ├── mj_64.vp
+│   │   │   ├── opencl-clang32.dll
+│   │   │   ├── opencl-clang64.dll
+│   │   │   ├── OSSCOPYRIGHT.txt
+│   │   │   ├── UniversalAdapter32.dll
+│   │   │   ├── UniversalAdapter64.dll
+│   │   │   ├── vp9e_32.vp
+│   │   │   ├── vp9e_64.vp
+│   │   │   ├── vpl_dispatcher_32.dll
+│   │   │   ├── vpl_dispatcher_64.dll
+│   │   │   ├── vulkan-1-32.dll
+│   │   │   ├── vulkan-1-64.dll
+│   │   │   ├── vulkaninfo-32.exe
+│   │   │   ├── vulkaninfo-64.exe
+│   │   │   ├── VulkanRT-EULA.txt
+│   │   │   ├── ze_intel_gpu64.dll
+│   │   │   ├── ze_loader.dll
+│   │   │   ├── ze_tracing_layer.dll
+│   │   │   └── ze_validation_layer.dll
+├── win-g4010-1_4-n_mcd/
+│   │   ├── AUTORUN.INF
+│   │   ├── CHECKSUM
+│   │   ├── MSETUP.checksum
+│   │   ├── Msetup4.exe
+│   ├── win/
+│   │   │   ├── Application.ini
+│   │   │   ├── AppSettingData.ini
+│   │   │   ├── InstallParameter.ini
+│   │   │   ├── Language.ini
+│   │   │   ├── MSetup.exe
+│   │   │   ├── msetup4.ini
+│   │   │   ├── MSetup64.exe
+│   │   ├── CDC/
+│   │   │   │   ├── CD-1801-000138_win_cd.xml
+│   │   │   │   └── CHECKSUM
+│   │   ├── CDM/
+│   │   ├── DIALUTIL/
+│   │   ├── Driver/
+│   │   ├── EGV/
+│   │   ├── EISREG/
+│   │   ├── EPPED/
+│   │   ├── EWPEX/
+│   │   ├── FLP/
+│   │   ├── HAE_/
+│   │   ├── IJPLM/
+│   │   ├── LIB/
+│   │   │   │   ├── cnclxml.dll
+│   │   │   │   ├── cnclxml6.dll
+│   │   │   │   ├── cnwidcn.exe
+│   │   │   │   ├── cnwidcn.ini
+│   │   │   │   ├── cnwidif.dll
+│   │   │   │   ├── cnwidif6.dll
+│   │   │   │   ├── cnwidsd.dll
+│   │   │   │   ├── cnwidsd6.dll
+│   │   │   │   ├── cnwidss.dll
+│   │   │   │   ├── cnwidss6.dll
+│   │   │   │   ├── cnwiduns.dll
+│   │   │   │   ├── cnwiduns6.dll
+│   │   │   │   ├── FirewallSetting.dll
+│   │   │   │   ├── FirewallSetting64.dll
+│   │   │   │   ├── TestPrint.dll
+│   │   │   │   ├── TestPrint64.dll
+│   │   │   │   ├── UnZip.dll
+│   │   │   │   ├── UnZip64.dll
+│   │   │   │   ├── UnZipCs.exe
+│   │   │   ├── PrinterHeadAlignment/
+│   │   │   │   │   ├── PHA32.exe
+│   │   │   │   │   └── PHA64.exe
+│   │   │   ├── WEBREG/
+│   │   │   │   │   ├── CCL.dll
+│   │   │   │   │   ├── CN1MPU.dll
+│   │   │   │   │   ├── CN1MPU6.dll
+│   │   │   │   │   ├── CN2MPU.dll
+│   │   │   │   │   ├── CN2MPU6.dll
+│   │   │   │   │   ├── IJEREG.exe
+│   │   │   │   │   ├── IJRMF.exe
+│   │   │   │   │   ├── RES0001.dll
+│   │   │   │   │   ├── RES0002.dll
+│   │   │   │   │   ├── RES0005.dll
+│   │   │   │   │   ├── RES0006.dll
+│   │   │   │   │   ├── RES0007.dll
+│   │   │   │   │   ├── RES0008.dll
+│   │   │   │   │   ├── RES0009.dll
+│   │   │   │   │   ├── RES000a.dll
+│   │   │   │   │   ├── RES000b.dll
+│   │   │   │   │   ├── RES000c.dll
+│   │   │   │   │   ├── RES000e.dll
+│   │   │   │   │   ├── RES0010.dll
+│   │   │   │   │   ├── RES0011.dll
+│   │   │   │   │   ├── RES0012.dll
+│   │   │   │   │   ├── RES0013.dll
+│   │   │   │   │   ├── RES0014.dll
+│   │   │   │   │   ├── RES0015.dll
+│   │   │   │   │   ├── RES0016.dll
+│   │   │   │   │   ├── RES0018.dll
+│   │   │   │   │   ├── RES0019.dll
+│   │   │   │   │   ├── RES001a.dll
+│   │   │   │   │   ├── RES001b.dll
+│   │   │   │   │   ├── RES001d.dll
+│   │   │   │   │   ├── RES001e.dll
+│   │   │   │   │   ├── RES001f.dll
+│   │   │   │   │   ├── RES0021.dll
+│   │   │   │   │   ├── RES0022.dll
+│   │   │   │   │   ├── RES0024.dll
+│   │   │   │   │   ├── RES0025.dll
+│   │   │   │   │   ├── RES0026.dll
+│   │   │   │   │   ├── RES0027.dll
+│   │   │   │   │   ├── RES002a.dll
+│   │   │   │   │   ├── RES0104.dll
+│   │   │   │   │   ├── RES0204.dll
+│   │   │   │   │   ├── SETUP.exe
+│   │   │   │   │   ├── smenu.ini
+│   │   │   │   │   └── UNINST.exe
+│   │   │   ├── x64/
+│   │   │   │   │   ├── cnmpu.dll
+│   │   │   │   │   ├── cnmpu2.dll
+│   │   │   │   │   ├── cnmpu3.dll
+│   │   │   │   │   ├── cnwhdl6.dll
+│   │   │   │   │   ├── cnwidus6.dll
+│   │   │   │   │   ├── cnwidwus6.dll
+│   │   │   │   │   └── cnwiius6.dll
+│   │   │   ├── x86/
+│   │   │   │   │   ├── cnmpu.dll
+│   │   │   │   │   ├── cnmpu2.dll
+│   │   │   │   │   ├── cnmpu3.dll
+│   │   │   │   │   ├── cnwhdl.dll
+│   │   │   │   │   ├── cnwidus.dll
+│   │   │   │   │   ├── cnwidwus.dll
+│   │   │   │   │   └── cnwiius.dll
+│   │   ├── MIG/
+│   │   ├── MOPlugIn/
+│   │   ├── MYPRINT/
+│   │   ├── NDSU/
+│   │   ├── NWHELP/
+│   │   ├── OCRD/
+│   │   ├── PJS_/
+│   │   ├── PSP/
+│   │   ├── QTBOX/
+│   │   ├── QUICK/
+│   │   ├── RES/
+│   │   │   ├── ANIME/
+│   │   │   │   │   ├── ProgressAnime.xml
+│   │   │   │   │   ├── progress_1.bmp
+│   │   │   │   │   ├── progress_2.bmp
+│   │   │   │   │   ├── progress_3.bmp
+│   │   │   │   │   ├── progress_4.bmp
+│   │   │   │   │   ├── progress_5.bmp
+│   │   │   │   │   ├── progress_6.bmp
+│   │   │   │   │   ├── progress_7.bmp
+│   │   │   │   │   ├── progress_8.bmp
+│   │   │   │   │   ├── SearchAnime.xml
+│   │   │   │   │   ├── search_1.bmp
+│   │   │   │   │   ├── search_2.bmp
+│   │   │   │   │   ├── search_3.bmp
+│   │   │   │   │   ├── search_4.bmp
+│   │   │   │   │   └── search_5.bmp
+│   │   │   ├── Bitmap/
+│   │   │   │   │   ├── 01.bmp
+│   │   │   │   │   ├── 01_x200.bmp
+│   │   │   │   │   ├── canon_cd.ico
+│   │   │   │   │   ├── ChangePCConnection.bmp
+│   │   │   │   │   ├── FOOTER.bmp
+│   │   │   │   │   ├── HEADER1.bmp
+│   │   │   │   │   ├── HEADER1_RTL.bmp
+│   │   │   │   │   ├── HEADER2.bmp
+│   │   │   │   │   ├── HEADER2_RTL.bmp
+│   │   │   │   │   ├── HEADER3.bmp
+│   │   │   │   │   ├── HEADER3_RTL.bmp
+│   │   │   │   │   ├── HEADER4.bmp
+│   │   │   │   │   ├── HEADER4_RTL.bmp
+│   │   │   │   │   ├── iftype_usb.bmp
+│   │   │   │   │   ├── iftype_wired.bmp
+│   │   │   │   │   ├── iftype_wireless.bmp
+│   │   │   │   │   ├── IF_Direct.bmp
+│   │   │   │   │   ├── IF_Direct_Fail.bmp
+│   │   │   │   │   ├── IF_Direct_Success.bmp
+│   │   │   │   │   ├── IF_LAN_Fail.bmp
+│   │   │   │   │   ├── IF_LAN_Success.bmp
+│   │   │   │   │   ├── IF_USB.bmp
+│   │   │   │   │   ├── IF_Wired.bmp
+│   │   │   │   │   ├── IF_Wireless.bmp
+│   │   │   │   │   ├── NIC_Fail.bmp
+│   │   │   │   │   ├── PowerOn.bmp
+│   │   │   │   │   ├── Pull.bmp
+│   │   │   │   │   ├── Pull_SFS.bmp
+│   │   │   │   │   ├── SelectWireless_Direct.bmp
+│   │   │   │   │   ├── SetupComplete.bmp
+│   │   │   │   │   ├── SetupComplete_SFS.bmp
+│   │   │   │   │   ├── SmartPhoneGuidance.bmp
+│   │   │   │   │   ├── WCbtn.bmp
+│   │   │   │   ├── Button/
+│   │   │   │   │   │   ├── BLUE_LARGE_DISABLE_L.bmp
+│   │   │   │   │   │   ├── BLUE_LARGE_DISABLE_M.bmp
+│   │   │   │   │   │   ├── BLUE_LARGE_DISABLE_R.bmp
+│   │   │   │   │   │   ├── BLUE_LARGE_OFF_L.bmp
+│   │   │   │   │   │   ├── BLUE_LARGE_OFF_M.bmp
+│   │   │   │   │   │   ├── BLUE_LARGE_OFF_R.bmp
+│   │   │   │   │   │   ├── BLUE_LARGE_ONMOUSE_L.bmp
+│   │   │   │   │   │   ├── BLUE_LARGE_ONMOUSE_M.bmp
+│   │   │   │   │   │   ├── BLUE_LARGE_ONMOUSE_R.bmp
+│   │   │   │   │   │   ├── BLUE_LARGE_ON_L.bmp
+│   │   │   │   │   │   ├── BLUE_LARGE_ON_M.bmp
+│   │   │   │   │   │   ├── BLUE_LARGE_ON_R.bmp
+│   │   │   │   │   │   ├── BLUE_MIDDLE_DISABLE_L.bmp
+│   │   │   │   │   │   ├── BLUE_MIDDLE_DISABLE_M.bmp
+│   │   │   │   │   │   ├── BLUE_MIDDLE_DISABLE_R.bmp
+│   │   │   │   │   │   ├── BLUE_MIDDLE_OFF_L.bmp
+│   │   │   │   │   │   ├── BLUE_MIDDLE_OFF_M.bmp
+│   │   │   │   │   │   ├── BLUE_MIDDLE_OFF_R.bmp
+│   │   │   │   │   │   ├── BLUE_MIDDLE_ONMOUSE_L.bmp
+│   │   │   │   │   │   ├── BLUE_MIDDLE_ONMOUSE_M.bmp
+│   │   │   │   │   │   ├── BLUE_MIDDLE_ONMOUSE_R.bmp
+│   │   │   │   │   │   ├── BLUE_MIDDLE_ON_L.bmp
+│   │   │   │   │   │   ├── BLUE_MIDDLE_ON_M.bmp
+│   │   │   │   │   │   ├── BLUE_MIDDLE_ON_R.bmp
+│   │   │   │   │   │   ├── GRAY_LARGE_DISABLE_L.bmp
+│   │   │   │   │   │   ├── GRAY_LARGE_DISABLE_M.bmp
+│   │   │   │   │   │   ├── GRAY_LARGE_DISABLE_R.bmp
+│   │   │   │   │   │   ├── GRAY_LARGE_OFF_L.bmp
+│   │   │   │   │   │   ├── GRAY_LARGE_OFF_M.bmp
+│   │   │   │   │   │   ├── GRAY_LARGE_OFF_R.bmp
+│   │   │   │   │   │   ├── GRAY_LARGE_ONMOUSE_L.bmp
+│   │   │   │   │   │   ├── GRAY_LARGE_ONMOUSE_M.bmp
+│   │   │   │   │   │   ├── GRAY_LARGE_ONMOUSE_R.bmp
+│   │   │   │   │   │   ├── GRAY_LARGE_ON_L.bmp
+│   │   │   │   │   │   ├── GRAY_LARGE_ON_M.bmp
+│   │   │   │   │   │   ├── GRAY_LARGE_ON_R.bmp
+│   │   │   │   │   │   ├── GRAY_MIDDLE_DISABLE_L.bmp
+│   │   │   │   │   │   ├── GRAY_MIDDLE_DISABLE_M.bmp
+│   │   │   │   │   │   ├── GRAY_MIDDLE_DISABLE_R.bmp
+│   │   │   │   │   │   ├── GRAY_MIDDLE_OFF_L.bmp
+│   │   │   │   │   │   ├── GRAY_MIDDLE_OFF_M.bmp
+│   │   │   │   │   │   ├── GRAY_MIDDLE_OFF_R.bmp
+│   │   │   │   │   │   ├── GRAY_MIDDLE_ONMOUSE_L.bmp
+│   │   │   │   │   │   ├── GRAY_MIDDLE_ONMOUSE_M.bmp
+│   │   │   │   │   │   ├── GRAY_MIDDLE_ONMOUSE_R.bmp
+│   │   │   │   │   │   ├── GRAY_MIDDLE_ON_L.bmp
+│   │   │   │   │   │   ├── GRAY_MIDDLE_ON_M.bmp
+│   │   │   │   │   │   ├── GRAY_MIDDLE_ON_R.bmp
+│   │   │   │   │   │   ├── GRAY_SMALL_DISABLE_L.bmp
+│   │   │   │   │   │   ├── GRAY_SMALL_DISABLE_M.bmp
+│   │   │   │   │   │   ├── GRAY_SMALL_DISABLE_R.bmp
+│   │   │   │   │   │   ├── GRAY_SMALL_OFF_L.bmp
+│   │   │   │   │   │   ├── GRAY_SMALL_OFF_M.bmp
+│   │   │   │   │   │   ├── GRAY_SMALL_OFF_R.bmp
+│   │   │   │   │   │   ├── GRAY_SMALL_ONMOUSE_L.bmp
+│   │   │   │   │   │   ├── GRAY_SMALL_ONMOUSE_M.bmp
+│   │   │   │   │   │   ├── GRAY_SMALL_ONMOUSE_R.bmp
+│   │   │   │   │   │   ├── GRAY_SMALL_ON_L.bmp
+│   │   │   │   │   │   ├── GRAY_SMALL_ON_M.bmp
+│   │   │   │   │   │   ├── GRAY_SMALL_ON_R.bmp
+│   │   │   │   │   │   ├── GREEN_LARGE_DISABLE_L.bmp
+│   │   │   │   │   │   ├── GREEN_LARGE_DISABLE_M.bmp
+│   │   │   │   │   │   ├── GREEN_LARGE_DISABLE_R.bmp
+│   │   │   │   │   │   ├── GREEN_LARGE_OFF_L.bmp
+│   │   │   │   │   │   ├── GREEN_LARGE_OFF_M.bmp
+│   │   │   │   │   │   ├── GREEN_LARGE_OFF_R.bmp
+│   │   │   │   │   │   ├── GREEN_LARGE_ONMOUSE_L.bmp
+│   │   │   │   │   │   ├── GREEN_LARGE_ONMOUSE_M.bmp
+│   │   │   │   │   │   ├── GREEN_LARGE_ONMOUSE_R.bmp
+│   │   │   │   │   │   ├── GREEN_LARGE_ON_L.bmp
+│   │   │   │   │   │   ├── GREEN_LARGE_ON_M.bmp
+│   │   │   │   │   │   ├── GREEN_LARGE_ON_R.bmp
+│   │   │   │   │   │   ├── GREEN_MIDDLE_DISABLE_L.bmp
+│   │   │   │   │   │   ├── GREEN_MIDDLE_DISABLE_M.bmp
+│   │   │   │   │   │   ├── GREEN_MIDDLE_DISABLE_R.bmp
+│   │   │   │   │   │   ├── GREEN_MIDDLE_OFF_L.bmp
+│   │   │   │   │   │   ├── GREEN_MIDDLE_OFF_M.bmp
+│   │   │   │   │   │   ├── GREEN_MIDDLE_OFF_R.bmp
+│   │   │   │   │   │   ├── GREEN_MIDDLE_ONMOUSE_L.bmp
+│   │   │   │   │   │   ├── GREEN_MIDDLE_ONMOUSE_M.bmp
+│   │   │   │   │   │   ├── GREEN_MIDDLE_ONMOUSE_R.bmp
+│   │   │   │   │   │   ├── GREEN_MIDDLE_ON_L.bmp
+│   │   │   │   │   │   ├── GREEN_MIDDLE_ON_M.bmp
+│   │   │   │   │   │   └── GREEN_MIDDLE_ON_R.bmp
+│   │   │   ├── EULA/
+│   │   │   │   │   ├── Arabic.txt
+│   │   │   │   │   ├── AS_English.txt
+│   │   │   │   │   ├── AS_SimplifiedChinese.txt
+│   │   │   │   │   ├── AS_TraditionalChinese.txt
+│   │   │   │   │   ├── Bulgarian.txt
+│   │   │   │   │   ├── Croatian.txt
+│   │   │   │   │   ├── Czech.txt
+│   │   │   │   │   ├── Danish.txt
+│   │   │   │   │   ├── Dutch.txt
+│   │   │   │   │   ├── English.txt
+│   │   │   │   │   ├── Estonian.txt
+│   │   │   │   │   ├── EULAInfo.xml
+│   │   │   │   │   ├── Finnish.txt
+│   │   │   │   │   ├── French.txt
+│   │   │   │   │   ├── German.txt
+│   │   │   │   │   ├── Greek.txt
+│   │   │   │   │   ├── Hungarian.txt
+│   │   │   │   │   ├── Indonesian.txt
+│   │   │   │   │   ├── Italian.txt
+│   │   │   │   │   ├── Japanese.txt
+│   │   │   │   │   ├── Korean.txt
+│   │   │   │   │   ├── Latvian.txt
+│   │   │   │   │   ├── Lithuanian.txt
+│   │   │   │   │   ├── Norwegian.txt
+│   │   │   │   │   ├── Polish.txt
+│   │   │   │   │   ├── Portuguese.txt
+│   │   │   │   │   ├── Rumanian.txt
+│   │   │   │   │   ├── Russian.txt
+│   │   │   │   │   ├── SimplifiedChinese.txt
+│   │   │   │   │   ├── Slovak.txt
+│   │   │   │   │   ├── Slovenian.txt
+│   │   │   │   │   ├── Spanish.txt
+│   │   │   │   │   ├── Swedish.txt
+│   │   │   │   │   ├── Thai.txt
+│   │   │   │   │   ├── TraditionalChinese.txt
+│   │   │   │   │   ├── Turkish.txt
+│   │   │   │   │   ├── Ukrainian.txt
+│   │   │   │   │   └── Vietnamese.txt
+│   │   │   ├── MESSAGE/
+│   │   │   │   ├── Arabic/
+│   │   │   │   │   │   ├── Message.ini
+│   │   │   │   │   ├── AdobeICC/
+│   │   │   │   │   │   │   └── license.txt
+│   │   │   │   ├── Bulgarian/
+│   │   │   │   │   │   ├── Message.ini
+│   │   │   │   │   ├── AdobeICC/
+│   │   │   │   │   │   │   └── license.txt
+│   │   │   │   ├── Croatian/
+│   │   │   │   │   │   ├── Message.ini
+│   │   │   │   │   ├── AdobeICC/
+│   │   │   │   │   │   │   └── license.txt
+│   │   │   │   ├── Czech/
+│   │   │   │   │   │   ├── Message.ini
+│   │   │   │   │   ├── AdobeICC/
+│   │   │   │   │   │   │   └── license.txt
+│   │   │   │   ├── Danish/
+│   │   │   │   │   │   ├── Message.ini
+│   │   │   │   │   ├── AdobeICC/
+│   │   │   │   │   │   │   └── license.txt
+│   │   │   │   ├── Dutch/
+│   │   │   │   │   │   ├── Message.ini
+│   │   │   │   │   ├── AdobeICC/
+│   │   │   │   │   │   │   └── license.txt
+│   │   │   │   ├── English/
+│   │   │   │   │   │   ├── Message.ini
+│   │   │   │   │   ├── AdobeICC/
+│   │   │   │   │   │   │   └── license.txt
+│   │   │   │   ├── Estonian/
+│   │   │   │   │   │   ├── Message.ini
+│   │   │   │   │   ├── AdobeICC/
+│   │   │   │   │   │   │   └── license.txt
+│   │   │   │   ├── Finnish/
+│   │   │   │   │   │   ├── Message.ini
+│   │   │   │   │   ├── AdobeICC/
+│   │   │   │   │   │   │   └── license.txt
+│   │   │   │   ├── French/
+│   │   │   │   │   │   ├── Message.ini
+│   │   │   │   │   ├── AdobeICC/
+│   │   │   │   │   │   │   └── license.txt
+│   │   │   │   ├── German/
+│   │   │   │   │   │   ├── Message.ini
+│   │   │   │   │   ├── AdobeICC/
+│   │   │   │   │   │   │   └── license.txt
+│   │   │   │   ├── Greek/
+│   │   │   │   │   │   ├── Message.ini
+│   │   │   │   │   ├── AdobeICC/
+│   │   │   │   │   │   │   └── license.txt
+│   │   │   │   ├── Hungarian/
+│   │   │   │   │   │   ├── Message.ini
+│   │   │   │   │   ├── AdobeICC/
+│   │   │   │   │   │   │   └── license.txt
+│   │   │   │   ├── Indonesian/
+│   │   │   │   │   │   ├── Message.ini
+│   │   │   │   │   ├── AdobeICC/
+│   │   │   │   │   │   │   └── license.txt
+│   │   │   │   ├── Italian/
+│   │   │   │   │   │   ├── Message.ini
+│   │   │   │   │   ├── AdobeICC/
+│   │   │   │   │   │   │   └── license.txt
+│   │   │   │   ├── Japanese/
+│   │   │   │   │   │   ├── Message.ini
+│   │   │   │   │   ├── AdobeICC/
+│   │   │   │   │   │   │   └── license.txt
+│   │   │   │   ├── Korean/
+│   │   │   │   │   │   ├── Message.ini
+│   │   │   │   │   ├── AdobeICC/
+│   │   │   │   │   │   │   └── license.txt
+│   │   │   │   ├── Latvian/
+│   │   │   │   │   │   ├── Message.ini
+│   │   │   │   │   ├── AdobeICC/
+│   │   │   │   │   │   │   └── license.txt
+│   │   │   │   ├── Lithuanian/
+│   │   │   │   │   │   ├── Message.ini
+│   │   │   │   │   ├── AdobeICC/
+│   │   │   │   │   │   │   └── license.txt
+│   │   │   │   ├── Norwegian/
+│   │   │   │   │   │   ├── Message.ini
+│   │   │   │   │   ├── AdobeICC/
+│   │   │   │   │   │   │   └── license.txt
+│   │   │   │   ├── Polish/
+│   │   │   │   │   │   ├── Message.ini
+│   │   │   │   │   ├── AdobeICC/
+│   │   │   │   │   │   │   └── license.txt
+│   │   │   │   ├── Portuguese/
+│   │   │   │   │   │   ├── Message.ini
+│   │   │   │   │   ├── AdobeICC/
+│   │   │   │   │   │   │   └── license.txt
+│   │   │   │   ├── Rumanian/
+│   │   │   │   │   │   ├── Message.ini
+│   │   │   │   │   ├── AdobeICC/
+│   │   │   │   │   │   │   └── license.txt
+│   │   │   │   ├── Russian/
+│   │   │   │   │   │   ├── Message.ini
+│   │   │   │   │   ├── AdobeICC/
+│   │   │   │   │   │   │   └── license.txt
+│   │   │   │   ├── Simplified_Chinese/
+│   │   │   │   │   │   ├── Message.ini
+│   │   │   │   │   ├── AdobeICC/
+│   │   │   │   │   │   │   └── license.txt
+│   │   │   │   ├── Slovak/
+│   │   │   │   │   │   ├── Message.ini
+│   │   │   │   │   ├── AdobeICC/
+│   │   │   │   │   │   │   └── license.txt
+│   │   │   │   ├── Slovenian/
+│   │   │   │   │   │   ├── Message.ini
+│   │   │   │   │   ├── AdobeICC/
+│   │   │   │   │   │   │   └── license.txt
+│   │   │   │   ├── Spanish/
+│   │   │   │   │   │   ├── Message.ini
+│   │   │   │   │   ├── AdobeICC/
+│   │   │   │   │   │   │   └── license.txt
+│   │   │   │   ├── Swedish/
+│   │   │   │   │   │   ├── Message.ini
+│   │   │   │   │   ├── AdobeICC/
+│   │   │   │   │   │   │   └── license.txt
+│   │   │   │   ├── Thai/
+│   │   │   │   │   │   ├── Message.ini
+│   │   │   │   │   ├── AdobeICC/
+│   │   │   │   │   │   │   └── license.txt
+│   │   │   │   ├── Traditional_Chinese/
+│   │   │   │   │   │   ├── Message.ini
+│   │   │   │   │   ├── AdobeICC/
+│   │   │   │   │   │   │   └── license.txt
+│   │   │   │   ├── Turkish/
+│   │   │   │   │   │   ├── Message.ini
+│   │   │   │   │   ├── AdobeICC/
+│   │   │   │   │   │   │   └── license.txt
+│   │   │   │   ├── Ukrainian/
+│   │   │   │   │   │   ├── Message.ini
+│   │   │   │   │   ├── AdobeICC/
+│   │   │   │   │   │   │   └── license.txt
+│   │   │   │   ├── Vietnamese/
+│   │   │   │   │   │   ├── Message.ini
+│   │   │   │   │   ├── AdobeICC/
+│   │   │   │   │   │   │   └── license.txt
+│   │   ├── RESM/
+│   │   │   │   ├── CHECKSUM
+│   │   │   ├── ANIME/
+│   │   │   │   │   ├── USB01.bmp
+│   │   │   │   │   ├── USB02.bmp
+│   │   │   │   │   ├── USB03.bmp
+│   │   │   │   │   ├── USB04.bmp
+│   │   │   │   │   ├── USB05.bmp
+│   │   │   │   │   └── USB_Anime.xml
+│   │   │   ├── Bitmap/
+│   │   │   │   │   └── Head.bmp
+│   │   │   ├── PROGRESS_ANIME/
+│   │   │   │   │   ├── Install01.bmp
+│   │   │   │   │   ├── Install03.bmp
+│   │   │   │   │   ├── Install06.bmp
+│   │   │   │   │   └── InstallAnime.xml
+│   │   ├── TESTPRN/
+│   │   ├── TUTO/
+│   │   ├── XPS/

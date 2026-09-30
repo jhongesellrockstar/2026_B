@@ -1,0 +1,10 @@
+* { box-sizing: border-box; }
+:root { font-family: "Segoe UI", Arial, sans-serif; color: #203b35; background: #f4f6f3; font-synthesis: none; text-rendering: optimizeLegibility; }
+body { margin: 0; min-width: 320px; }
+button, input, select, textarea { font: inherit; border-radius: 7px; }
+button { cursor: pointer; }
+button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 3px solid #b27a20; outline-offset: 3px; }
+h1, h2, h3, p { margin-top: 0; }
+h2 { font-size: 21px; letter-spacing: -.4px; margin-bottom: 10px; }
+h3 { font-size: 17px; }
+p { line-height: 1.6; }
