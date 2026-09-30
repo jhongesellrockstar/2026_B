@@ -162,6 +162,8 @@ Comprueba además campos vacíos, espacios en blanco, retorno a pendiente y mens
 
 Consulta GUIA_VIDEO.md. Explica especialmente cómo viajan los datos y por qué las estadísticas se calculan desde el array.
 
+La exposición se organiza en cinco módulos del mismo proyecto: ocho minutos por integrante, aproximadamente 40 minutos en total. Consulta [TUTORIAL_GRUPAL.md](TUTORIAL_GRUPAL.md) para la distribución definitiva, el flujo y las preguntas; usa [PRACTICA_TUTORIAL.md](PRACTICA_TUTORIAL.md) para ensayar la reconstrucción de fragmentos sin modificar la versión funcional final.
+
 ## Resumen estadístico
 
 Las visualizaciones se generan con React y CSS, sin bibliotecas de gráficos ni estados adicionales. ResumenEstadistico.jsx recibe todos los reportes por props y calcula los valores en cada renderizado.
