@@ -3,126 +3,320 @@ Este documento es una guía para leer y apoyar la exposición.
 No es necesario memorizarlo palabra por palabra.
 Comprende primero el código que vas a escribir.
 
-============================================================
-INTEGRANTE
-============================================================
+INTEGRANTE: JOSÉ ALEJANDRO ANCALLA ALARCON
+TIEMPO GLOBAL: 00:00–06:00; una única intervención de aproximadamente seis minutos.
 
-Nombre completo: JOSÉ ALEJANDRO ANCALLA ALARCON
-Tiempo: 00:00–06:00 del video; 6 minutos.
-Módulo: React, Vite y estructura.
-Archivos: index.html, src/main.jsx, src/components/Header.jsx.
-Consulta breve: src/App.jsx y package.json.
-
-============================================================
 ANTES DE GRABAR
-============================================================
+Esta guía sustituye los guiones anteriores. Construimos directamente en proyecto_tutorial, creado por José durante el video. Nunca editamos proyecto/src. Un solo equipo y una sola carpeta continúan entre integrantes. Los tiempos siguientes son locales a mi bloque; escritura y explicación ocurren a la vez. Tener este TXT en la segunda pantalla y el editor en la primera.
+Los marcadores INICIO CÓDIGO y FIN CÓDIGO delimitan lo que se transcribe: no se copian. El código completo también sirve de reserva si hay retraso: insertar el tramo pendiente y explicar inmediatamente su propósito. No leer cada signo ni todos los atributos en voz alta. Guardar cada archivo completo antes de comprobarlo; durante la escritura puede aparecer un error transitorio de sintaxis.
 
-Tener esos archivos abiertos, PowerShell en el proyecto y Microsoft Edge disponible. Practicar el montaje y las etiquetas interiores de Header. Escribir solo en una pestaña nueva del editor SIN GUARDAR; los fragmentos no se ejecutan allí. Compararlos luego con los archivos reales.
+CRONOGRAMA
+00:00–00:25 Presentación y carpeta.
+00:25–02:00 Vite, auxiliares e instalación (tiempo variable).
+02:00–02:25 Limpieza de ejemplos.
+02:25–03:00 main.jsx completo.
+03:00–04:00 Header.jsx completo.
+04:00–04:35 index.css.
+04:35–05:00 App mínima y guardado.
+05:00–05:45 Arranque CU00 en Edge.
+05:45–06:00 Transición definitiva.
 
-No borrar componentes ni modificar src. Las guías Markdown anteriores corresponden al plan de 40 minutos; esta grabación sigue exclusivamente los seis TXT de 30 minutos. Cada persona interviene una sola vez. Las preguntas finales son para estudiar, no otro bloque del video.
+>>> 00:00 — CREAR PROYECTO
+PANTALLA: PowerShell en Semana05; proyecto_tutorial todavía no existe.
+DIGO:
+“Construiremos Callao Limpio entre cinco compañeros. Es un prototipo académico para registrar puntos con residuos y seguir su atención. Partimos de una carpeta nueva y conservaremos intacta nuestra referencia.”
 
-Ensayar el arranque antes de grabar y detener ese servidor de ensayo para ejecutar npm run dev al final de esta intervención. No instalar dependencias durante la grabación. Si ya hay datos guardados, dejarlos: visualizar la pantalla no exige vaciarla.
+>>> ESCRIBIR
+cd "C:\Users\ACER\Documents\GitHub\2026_B\ProgramaciónWeb2\Semana05"
+mkdir proyecto_tutorial
+cd proyecto_tutorial
+npm create vite@latest . -- --template react
 
-============================================================
-CRONOGRAMA DE 6 MINUTOS
-============================================================
+MIENTRAS SE EJECUTA DIGO:
+“npm administra paquetes y ejecuta herramientas. Vite prepara la base y el servidor; elegimos React con JavaScript. Si pregunta si instalamos create-vite, aceptamos. Si ofrece instalar y arrancar automáticamente, elegimos no para seguir estos pasos explícitos.”
 
-Tiempo local del bloque:
-00:00–01:00 Problema y alcance.
-01:00–02:00 React y Vite.
-02:00–03:00 index.html, root y main.jsx.
-03:00–04:00 Escribir montaje y explicar imports.
-04:00–05:00 Escribir fragmento de Header y ubicarlo en App.
-05:00–06:00 CU00 y transición definitiva.
-Hablar mientras se escribe; los silencios de escritura y navegación están incluidos.
+>>> 00:55 — NORMALIZAR AUXILIARES ANTES DE npm install
+PANTALLA: archivos generados. latest puede cambiar: no prometemos que su plantilla o linter sea idéntico al de la referencia.
+>>> PEGAR BLOQUE DE COMANDOS (solo se ejecutará durante la grabación):
+Copy-Item -LiteralPath '..\proyecto\package.json','..\proyecto\package-lock.json','..\proyecto\vite.config.js','..\proyecto\index.html','..\proyecto\.gitignore','..\proyecto\.oxlintrc.json' -Destination '.'
+npm install
 
-============================================================
-GUION HABLADO + ACCIÓN EN PANTALLA
-============================================================
+MIENTRAS/AL TERMINAR DE PEGAR DIGO:
+“Vite generó los auxiliares. Adoptamos los de nuestra referencia para reproducir sus dependencias, configuración y título, sin copiar componentes. El lock conserva las versiones resueltas; npm install lo utiliza y prepara node_modules. No escribimos ni copiamos node_modules, y Git normalmente lo ignora.”
 
-1. HABLAR:
-“Somos estudiantes de Ingeniería de Sistemas de la Universidad Nacional del Callao. Para Programación Web 2 presentamos Callao Limpio. Partimos de la acumulación de residuos en Lima y Callao. Es un prototipo académico: permite organizar reportes, pero no los envía a una municipalidad”.
+PANTALLA: mostrar package.json, lock, vite.config.js, index.html, .gitignore y .oxlintrc.json brevemente.
+DIGO:
+“package.json define dependencias y scripts; el lock registra versiones. Vite activa React mediante su plugin. index.html contiene root y carga main.jsx. src contiene código; public sirve archivos públicos. La referencia usa oxlint para revisión: no necesitamos escribir eslint.config.”
+Si Vite generó eslint.config.js, retirarlo desde el explorador DEL DESTINO después de normalizar package.json; también retirar variantes redundantes de vite.config, conservando vite.config.js. No modificar nada dentro de proyecto.
 
-PANTALLA:
-Mostrar la carpeta del proyecto. Señalar src y components.
+>>> 02:00 — LIMPIAR Y CREAR CARPETAS
+PANTALLA: editor abierto SOLO en proyecto_tutorial.
+Retirar logos/recursos de ejemplo no utilizados desde src/assets y public, conservando public. Retirar contenido de ejemplo de App.jsx y App.css; App.css lo escribirá Rodrigo. Conservar .gitignore y auxiliares. Crear src/components si falta. No borrar src/main.jsx ni index.html.
+DIGO:
+“Quitamos la demostración de Vite; nuestro código no utiliza sus logos. La carpeta public puede quedar vacía.”
 
-2. HABLAR:
-“React es una biblioteca de JavaScript para construir interfaces con componentes. Antes modificábamos elementos con getElementById; aquí describimos la pantalla y React la actualiza. Vite nos ayuda a ejecutar el proyecto y compilarlo”.
+>>> 02:25 — CREAR O REEMPLAZAR src/main.jsx
+>>> ESCRIBIR: todo el siguiente archivo.
+>>> EXPLICAR MIENTRAS ESCRIBO:
+“createRoot localiza root y monta App. StrictMode activa comprobaciones de desarrollo. Importamos los estilos globales.”
 
-PANTALLA:
-Mostrar package.json: dev ejecuta vite. En index.html, señalar el div con id root y el script que carga main.jsx.
-
-3. PANTALLA:
-Abrir main.jsx. CÓDIGO QUE SOLO DEBE MOSTRAR: imports de StrictMode, createRoot, index.css y App.
-
-CÓDIGO QUE DEBE ESCRIBIR — ESCRIBIR:
-En el borrador, copiar de memoria este bloque real de main.jsx:
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ARCHIVO COMPLETO
+src/main.jsx
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+INICIO CÓDIGO
+import { StrictMode } from 'react'
+import { createRoot } from 'react-dom/client'
+import './index.css'
+import App from './App.jsx'
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
     <App />
   </StrictMode>,
 )
+FIN CÓDIGO
 
-HABLAR MIENTRAS ESCRIBE:
-“Buscamos root y montamos App dentro. StrictMode activa comprobaciones de desarrollo. App es el componente que reúne las partes de nuestra pantalla”.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ESTE BLOQUE LO TIPEO
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Todo main.jsx, incluidos imports y montaje.
 
-4. PANTALLA:
-Abrir Header.jsx; señalar function Header, return y export default. Escribir únicamente este fragmento interior real, no el archivo completo.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ESTE BLOQUE LO PUEDO PEGAR
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Solo como recuperación de tiempo: main.jsx completo.
+MIENTRAS/AL TERMINAR DE PEGAR DIGO: “Estos imports y createRoot conectan la página HTML con App; StrictMode comprueba el desarrollo.”
+>>> GUARDAR: Ctrl + S. Todavía falta terminar App y Header antes de comprobar.
 
-ESCRIBIR:
-<header className="cabecera">
-  <div className="contenedor">
-    <p className="etiqueta">PROYECTO ACADÉMICO · PROGRAMACIÓN WEB 2</p>
-    <h1>CALLAO <span>LIMPIO</span></h1>
-    <p className="subtitulo">Registro ciudadano de puntos con acumulación de residuos</p>
-    <p className="introduccion">Observar es el primer paso. Registra un punto y lleva el seguimiento de su atención.</p>
-  </div>
-</header>
+>>> 03:00 — CREAR ARCHIVO src/components/Header.jsx
+>>> ESCRIBIR: archivo completo.
+>>> EXPLICAR MIENTRAS ESCRIBO:
+“Un componente es una función que devuelve JSX. Header presenta título y propósito; className enlazará las clases CSS que añadiremos. export default permite importarlo en App.”
 
-HABLAR MIENTRAS ESCRIBE:
-“Esto es JSX. Se parece a HTML; className conecta con nuestras clases CSS. Header devuelve estas etiquetas. No estamos escribiendo otro sistema: es un fragmento del componente final”.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ARCHIVO COMPLETO
+src/components/Header.jsx
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+INICIO CÓDIGO
+function Header() {
+  return (
+    <header className="cabecera">
+      <div className="contenedor">
+        <p className="etiqueta">PROYECTO ACADÉMICO · PROGRAMACIÓN WEB 2</p>
+        <h1>CALLAO <span>LIMPIO</span></h1>
+        <p className="subtitulo">Registro ciudadano de puntos con acumulación de residuos</p>
+        <p className="introduccion">Observar es el primer paso. Registra un punto y lleva el seguimiento de su atención.</p>
+      </div>
+    </header>
+  );
+}
+export default Header;
+FIN CÓDIGO
 
-PANTALLA:
-Comparar borrador y original. Mostrar import Header y <Header /> en App. No guardar el borrador sobre src.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ESTE BLOQUE LO TIPEO
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Header.jsx entero.
 
-============================================================
-CASO DE USO
-============================================================
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ESTE BLOQUE LO PUEDO PEGAR
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Rescate si hay retraso: Header completo.
+MIENTRAS/AL TERMINAR DE PEGAR DIGO: “El header agrupa etiqueta académica, título, subtítulo e introducción; no tiene estado.”
+>>> GUARDAR: Ctrl + S.
 
-5. CU00 / Inicio y visualización de la aplicación.
-Realizarlo únicamente entre 05:00 y 05:45 de este bloque.
+>>> 04:00 — CREAR O REEMPLAZAR src/index.css
+>>> PEGAR BLOQUE: todo el archivo siguiente.
+MIENTRAS/AL TERMINAR DE PEGAR DIGO:
+“Pegamos estilos globales para ahorrar escritura repetitiva. box-sizing incluye borde y relleno en el tamaño. :root define tipografía y colores; body elimina el margen. Los controles heredan la fuente, focus-visible destaca el foco de teclado y las reglas finales organizan títulos y párrafos.”
 
-PANTALLA:
-En PowerShell, ejecutar:
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ARCHIVO COMPLETO
+src/index.css
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+INICIO CÓDIGO
+* { box-sizing: border-box; }
+:root { font-family: "Segoe UI", Arial, sans-serif; color: #203b35; background: #f4f6f3; font-synthesis: none; text-rendering: optimizeLegibility; }
+body { margin: 0; min-width: 320px; }
+button, input, select, textarea { font: inherit; border-radius: 7px; }
+button { cursor: pointer; }
+button:focus-visible, input:focus-visible, select:focus-visible, textarea:focus-visible { outline: 3px solid #b27a20; outline-offset: 3px; }
+h1, h2, h3, p { margin-top: 0; }
+h2 { font-size: 21px; letter-spacing: -.4px; margin-bottom: 10px; }
+h3 { font-size: 17px; }
+p { line-height: 1.6; }
+FIN CÓDIGO
 
-cd "C:\Users\ACER\Documents\GitHub\2026_B\ProgramaciónWeb2\Semana05\proyecto"
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ESTE BLOQUE LO TIPEO
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+No requiere tipeo de CSS: señalar las reglas mientras se explican.
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ESTE BLOQUE LO PUEDO PEGAR
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+index.css completo.
+MIENTRAS/AL TERMINAR DE PEGAR DIGO: “Este bloque da la base visual común y el foco accesible de los controles.”
+>>> GUARDAR: Ctrl + S.
+
+>>> 04:35 — REEMPLAZAR src/App.jsx CON VERSIÓN TEMPORAL
+>>> ESCRIBIR: exactamente esta App mínima. No importar App.css todavía.
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ARCHIVO COMPLETO — VERSIÓN TEMPORAL DE JOSÉ
+src/App.jsx
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+INICIO CÓDIGO
+import Header from './components/Header';
+
+function App() {
+  return <Header />;
+}
+
+export default App;
+FIN CÓDIGO
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ESTE BLOQUE LO TIPEO
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Toda la App mínima; Jesús la reemplazará por la implementación real.
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ESTE BLOQUE LO PUEDO PEGAR
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+App mínima si es necesario.
+MIENTRAS/AL TERMINAR DE PEGAR DIGO: “App solo monta Header; todavía no existen los demás componentes.”
+>>> INTEGRAR Y GUARDAR
+DIGO:
+“App importa Header, que ya existe. Tenemos una entrada válida; el diseño completo llegará después.”
+Ctrl + S. No añadir funciones falsas ni estados de prueba.
+
+>>> 05:00 — COMPROBAR / CASO DE USO CU00: ARRANQUE
+En la terminal de proyecto_tutorial:
 npm run dev
+Abrir en Microsoft Edge la URL exacta que imprima Vite. Mantener esa terminal abierta durante las cinco intervenciones.
+DIGO:
+“CALLAO LIMPIO ya aparece. La cabecera aún no tiene el estilo final; React ya está ejecutando nuestro primer componente.”
+No registrar ni presentar otros casos de uso. Si Vite elige otro puerto, conservar esa misma dirección durante el video.
 
-Mostrar la dirección que imprime Vite y abrirla en Microsoft Edge. Mantener la terminal abierta. Mostrar CALLAO LIMPIO, sin registrar reportes ni pulsar acciones.
+>>> 05:45 — TRANSICIÓN DEFINITIVA
+“Ya tenemos un proyecto React funcional y nuestro primer componente. Diego continuará construyendo el formulario.”
 
-HABLAR:
-“Vite ya sirve la aplicación. React montó App en root y App compone la interfaz que estamos viendo”.
+ANEXO DE AUXILIARES — CONSULTA, NO SE RECITA
+Estos archivos se generan y normalizan en 00:55; los bloques siguientes son respaldo exacto. No hace falta tipearlos.
+ESTE BLOQUE LO PUEDO PEGAR:
+Si se inserta un auxiliar manualmente, MIENTRAS/AL TERMINAR DE PEGAR DIGO:
+“Estamos usando la configuración de la referencia: scripts y dependencias, entrada HTML, plugin React e instrucciones de lint y Git.”
+package-lock.json es un archivo generado extenso: se toma exactamente de la referencia mediante el comando anterior; no se transcribe ni se sustituye por un fragmento.
 
-============================================================
-PREGUNTAS QUE DEBO PODER RESPONDER
-============================================================
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ARCHIVO COMPLETO
+package.json
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+INICIO CÓDIGO
+{
+  "name": "proyecto",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "dev": "vite",
+    "build": "vite build",
+    "lint": "oxlint",
+    "preview": "vite preview"
+  },
+  "dependencies": {
+    "react": "^19.2.8",
+    "react-dom": "^19.2.8"
+  },
+  "devDependencies": {
+    "@types/react": "^19.2.18",
+    "@types/react-dom": "^19.2.7",
+    "@vitejs/plugin-react": "^6.1.1",
+    "oxlint": "^1.81.0",
+    "vite": "^8.3.0"
+  }
+}
+FIN CÓDIGO
 
-¿React es una base de datos? No, construye interfaces.
-¿Qué es JSX? Sintaxis para describir la interfaz dentro de JavaScript.
-¿Qué es root? El elemento HTML donde se monta App.
-¿Qué hace Vite? Ejecuta el entorno de desarrollo y compila.
-¿Qué es un componente? Aquí, una función que devuelve JSX.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ARCHIVO COMPLETO
+vite.config.js
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+INICIO CÓDIGO
+import react from '@vitejs/plugin-react'
+import { defineConfig } from 'vite'
 
-============================================================
-ERRORES QUE NO DEBO COMETER
-============================================================
+// https://vite.dev/config/
+export default defineConfig({
+  plugins: [react()],
+})
+FIN CÓDIGO
 
-No atribuir el prototipo a autoridades.
-No confundir Vite con React.
-No afirmar que el borrador está ejecutándose.
-No registrar datos ni volver a intervenir después.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ARCHIVO COMPLETO
+index.html
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+INICIO CÓDIGO
+<!doctype html>
+<html lang="es">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta name="theme-color" content="#173e35" />
+    <meta name="description" content="Callao Limpio: prototipo académico de registro de puntos con acumulación de residuos." />
+    <title>Callao Limpio | Registro ciudadano</title>
+  </head>
+  <body>
+    <div id="root"></div>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
+FIN CÓDIGO
 
-6. TRANSICIÓN — 05:45–06:00, últimas palabras:
-“Ya vimos cómo React inicia la aplicación y cómo se construye un componente. Ahora Diego explicará cómo capturamos información mediante el formulario”.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ARCHIVO COMPLETO
+.gitignore
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+INICIO CÓDIGO
+# Logs
+logs
+*.log
+npm-debug.log*
+yarn-debug.log*
+yarn-error.log*
+pnpm-debug.log*
+lerna-debug.log*
 
+node_modules
+dist
+dist-ssr
+*.local
+
+# Editor directories and files
+.vscode/*
+!.vscode/extensions.json
+.idea
+.DS_Store
+*.suo
+*.ntvs*
+*.njsproj
+*.sln
+*.sw?
+FIN CÓDIGO
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ARCHIVO COMPLETO
+.oxlintrc.json
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+INICIO CÓDIGO
+{
+  "$schema": "./node_modules/oxlint/configuration_schema.json",
+  "plugins": ["react", "oxc"],
+  "rules": {
+    "react/rules-of-hooks": "error",
+    "react/only-export-components": ["warn", { "allowConstantExport": true }]
+  }
+}
+FIN CÓDIGO

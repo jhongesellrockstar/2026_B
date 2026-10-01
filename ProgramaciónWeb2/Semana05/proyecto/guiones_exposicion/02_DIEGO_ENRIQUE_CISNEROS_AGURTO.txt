@@ -3,119 +3,129 @@ Este documento es una guía para leer y apoyar la exposición.
 No es necesario memorizarlo palabra por palabra.
 Comprende primero el código que vas a escribir.
 
-============================================================
-INTEGRANTE
-============================================================
+INTEGRANTE: DIEGO ENRIQUE CISNEROS AGURTO
+TIEMPO GLOBAL: 06:00–12:00; una única intervención de aproximadamente seis minutos.
 
-Nombre completo: DIEGO ENRIQUE CISNEROS AGURTO
-Tiempo: 06:00–12:00 del video; 6 minutos.
-Módulo: Formulario y estado local.
-Archivo: src/components/FormularioReporte.jsx.
-Consulta: src/App.jsx, solo la prop agregarReporte.
-
-============================================================
 ANTES DE GRABAR
-============================================================
+Esta guía sustituye los guiones anteriores. Construimos directamente en proyecto_tutorial, creado por José durante el video. Nunca editamos proyecto/src. Un solo equipo y una sola carpeta continúan entre integrantes. Los tiempos siguientes son locales a mi bloque; escritura y explicación ocurren a la vez. Tener este TXT en la segunda pantalla y el editor en la primera.
+Los marcadores INICIO CÓDIGO y FIN CÓDIGO delimitan lo que se transcribe: no se copian. El código completo también sirve de reserva si hay retraso: insertar el tramo pendiente y explicar inmediatamente su propósito. No leer cada signo ni todos los atributos en voz alta. Guardar cada archivo completo antes de comprobarlo; durante la escritura puede aparecer un error transitorio de sintaxis.
 
-Abrir FormularioReporte.jsx y un borrador SIN GUARDAR en el editor. Tener Edge con la aplicación iniciada por José y la terminal de Vite abierta; no ejecutar otro servidor. Visualizar el formulario solo como referencia estática.
+CRONOGRAMA
+00:00–00:30 Crear archivo e import.
+00:30–01:10 Cinco estados.
+01:10–03:00 enviarReporte completo.
+03:00–05:15 JSX, opciones y explicación de controles.
+05:15–05:40 Guardar y revisar.
+05:40–06:00 Entrega definitiva.
 
-Practicar las declaraciones, el input y la llamada agregarReporte. Escribir los fragmentos en el borrador, nunca sobre src. No se ejecutan aislados: dependen del componente completo. Comparar con el archivo real para mostrar dónde pertenecen.
+>>> 00:00 — CREAR ARCHIVO src/components/FormularioReporte.jsx
+PANTALLA: misma carpeta proyecto_tutorial; App de José sigue funcionando.
+ESCRIBO: import de useState, cabecera de función y cinco estados del archivo completo que aparece abajo.
+MIENTRAS ESCRIBO DIGO:
+“Construyo el formulario real. Recibe agregarReporte por props: App proporcionará esa función. useState conserva cada valor; el segundo elemento es su setter. distrito, ubicacion, tipo y descripcion guardan los campos; mensaje conserva avisos.”
 
-Esta versión dura 30 minutos y sustituye el plan anterior para la grabación. No realizar un envío ni otro recorrido funcional: José realiza la única demostración de inicio. Mi explicación del envío será sobre el código. Las preguntas son preparación fuera del tiempo grabado.
+>>> 01:10 — ESCRIBIR enviarReporte COMPLETO
+ESCRIBO: desde function enviarReporte(event) hasta su llave de cierre, incluyendo todos los setters.
+MIENTRAS ESCRIBO DIGO:
+“El evento llega al enviar. preventDefault evita la recarga del formulario tradicional. trim quita espacios de los extremos; si falta información mostramos el aviso y return termina la función. Creamos un objeto con id, campos y estado Pendiente. Date.now produce un número basado en milisegundos para este registro manual. La prop agregarReporte entrega el objeto al padre. Después vaciamos los campos y confirmamos el registro.”
+No suprimir validación, limpieza ni mensaje. No definir agregarReporte aquí.
 
-============================================================
-CRONOGRAMA DE 6 MINUTOS
-============================================================
+>>> 03:00 — CONSTRUIR EL JSX COMPLETO
+ESCRIBO: return, section, etiqueta, h2, ayuda y form onSubmit.
+ESCRIBO: labels y aperturas/cierres de select, input, textarea, botón, mensaje y cierres del componente.
+MIENTRAS ESCRIBO DIGO:
+“value refleja el estado y onChange actualiza el valor desde event.target.value. Son controles controlados. htmlFor conecta la etiqueta con el id; required, maxLength y rows configuran validación y presentación. El submit ejecuta nuestra función. mensaje se presenta como estado accesible.”
 
-Tiempo local:
-00:00–01:00 Conectar con José y ubicar el formulario.
-01:00–02:00 Escribir estados y explicar useState.
-02:00–03:00 Escribir input y explicar value/onChange.
-03:00–04:00 Mostrar validación y onSubmit.
-04:00–05:00 Escribir objeto entregado a agregarReporte.
-05:00–06:00 Mostrar limpieza, resultado estático y transición.
-Reservar pausas para escribir; no leer cada signo como una palabra.
+>>> PEGAR BLOQUE: únicamente las option completas de distrito y luego las de tipo, dentro de sus respectivos select. Están delimitadas por las etiquetas select del archivo siguiente.
+MIENTRAS/AL TERMINAR DE PEGAR DIGO:
+“Estas opciones son datos estáticos del formulario; las pegamos completas para no consumir tiempo tipeando textos repetitivos. Tenemos siete distritos y seis tipos, además de las opciones vacías iniciales.”
 
-============================================================
-GUION HABLADO + ACCIÓN EN PANTALLA
-============================================================
+CÓDIGO FUENTE DE TODA LA SECUENCIA
 
-1. HABLAR:
-“Ahora veremos uno de esos componentes: el formulario. Su trabajo es capturar distrito, ubicación, tipo y descripción. Recibe agregarReporte desde App. Por ahora pensemos en esa función como la conexión con el padre; Jesús explicará cómo actualiza la lista”.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ARCHIVO COMPLETO
+src/components/FormularioReporte.jsx
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+INICIO CÓDIGO
+import { useState } from 'react';
 
-PANTALLA:
-Señalar function FormularioReporte({ agregarReporte }) y el import de useState.
+function FormularioReporte({ agregarReporte }) {
+  const [distrito, setDistrito] = useState('');
+  const [ubicacion, setUbicacion] = useState('');
+  const [tipo, setTipo] = useState('');
+  const [descripcion, setDescripcion] = useState('');
+  const [mensaje, setMensaje] = useState('');
 
-2. CÓDIGO QUE DEBE ESCRIBIR — ESCRIBIR:
-En el borrador, estas declaraciones reales del componente:
+  function enviarReporte(event) {
+    event.preventDefault();
+    if (!distrito || !ubicacion.trim() || !tipo || !descripcion.trim()) {
+      setMensaje('Completa todos los campos. No se aceptan solo espacios.');
+      return;
+    }
+    // La función recibida por props entrega el reporte a App.
+    agregarReporte({
+      id: Date.now(), distrito, ubicacion: ubicacion.trim(), tipo,
+      descripcion: descripcion.trim(), estado: 'Pendiente',
+    });
+    setDistrito('');
+    setUbicacion('');
+    setTipo('');
+    setDescripcion('');
+    setMensaje('Reporte registrado. Puedes consultarlo en el filtro Todos o Pendientes.');
+  }
 
-const [distrito, setDistrito] = useState('');
-const [ubicacion, setUbicacion] = useState('');
-const [tipo, setTipo] = useState('');
-const [descripcion, setDescripcion] = useState('');
-const [mensaje, setMensaje] = useState('');
+  return (
+    <section className="panel formulario" aria-labelledby="titulo-formulario">
+      <p className="etiqueta">PARTICIPA</p>
+      <h2 id="titulo-formulario">Registrar nuevo reporte</h2>
+      <p className="ayuda">Todos los campos son obligatorios.</p>
+      <form onSubmit={enviarReporte}>
+        <label htmlFor="distrito">Distrito</label>
+        <select id="distrito" value={distrito} onChange={(event) => setDistrito(event.target.value)} required>
+          <option value="">Selecciona un distrito</option>
+          <option>Callao</option><option>Bellavista</option>
+          <option>Carmen de la Legua-Reynoso</option><option>La Perla</option>
+          <option>La Punta</option><option>Mi Perú</option><option>Ventanilla</option>
+        </select>
+        <label htmlFor="ubicacion">Ubicación referencial</label>
+        <input id="ubicacion" value={ubicacion} onChange={(event) => setUbicacion(event.target.value)}
+          placeholder="Ej. Cerca al parque principal" maxLength={160} required />
+        <label htmlFor="tipo">Tipo de residuo</label>
+        <select id="tipo" value={tipo} onChange={(event) => setTipo(event.target.value)} required>
+          <option value="">Selecciona un tipo</option><option>Residuos domésticos</option>
+          <option>Plásticos</option><option>Cartón y papel</option><option>Escombros</option>
+          <option>Residuos orgánicos</option><option>Otros</option>
+        </select>
+        <label htmlFor="descripcion">Descripción</label>
+        <textarea id="descripcion" value={descripcion} onChange={(event) => setDescripcion(event.target.value)}
+          placeholder="Describe los residuos que observaste…" rows={4} maxLength={600} required />
+        <p className="ayuda">El reporte se registrará como pendiente.</p>
+        <button className="boton-principal" type="submit">Registrar reporte <span aria-hidden="true">＋</span></button>
+        <p className="mensaje" role="status">{mensaje}</p>
+      </form>
+    </section>
+  );
+}
+export default FormularioReporte;
+FIN CÓDIGO
 
-HABLAR MIENTRAS ESCRIBE:
-“Cada estado guarda un valor y su función permite actualizarlo. Comienzan vacíos. mensaje guarda la validación o la confirmación. Estas declaraciones van dentro del componente, antes del return”.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ESTE BLOQUE LO TIPEO
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Import, función, cinco estados y enviarReporte íntegro. Luego JSX completo excepto options repetitivas. Seguir exactamente el orden del archivo.
 
-3. ESCRIBIR:
-Fragmento real situado dentro del form:
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ESTE BLOQUE LO PUEDO PEGAR
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Las option de ambos select. Si a 04:30 todavía falta JSX, insertar desde return hasta export default completos, sustituyendo únicamente el JSX incompleto, sin duplicar la lógica ya escrita.
+MIENTRAS/AL TERMINAR DE PEGAR DIGO: “Este bloque contiene la sección, título, controles con value y onChange, botón submit y mensaje. Se conecta con enviarReporte y los cinco estados que acabamos de construir.”
+>>> 05:15 — GUARDAR Y COMPROBAR
+Ctrl + S. Revisar que no queden llaves ni etiquetas abiertas y que export default esté al final. App sigue mostrando Header: el componente existe pero aún NO está montado. No añadir un callback vacío para probarlo.
+DIGO:
+“Ya tenemos el componente que captura y prepara el objeto. Jesús lo conectará al estado principal. Por ahora no modificamos App; conservar la cabecera en pantalla es el resultado esperado.”
 
-<label htmlFor="ubicacion">Ubicación referencial</label>
-<input id="ubicacion" value={ubicacion} onChange={(event) => setUbicacion(event.target.value)}
-  placeholder="Ej. Cerca al parque principal" maxLength={160} required />
+>>> 05:40 — ENTREGA DEFINITIVA
+“FormularioReporte está completo y guardado. Rodrigo construirá la lista y las tarjetas que mostrarán esos objetos.”
 
-HABLAR MIENTRAS ESCRIBE:
-“value muestra ubicacion. Cuando el usuario escribe, onChange recibe el evento y setUbicacion toma el texto del input. React vuelve a renderizar con ese valor. Por eso lo llamamos un campo controlado”.
-
-PANTALLA:
-Comparar con el original; señalar que los select y textarea siguen el mismo patrón. No completar ni enviar el formulario en Edge.
-
-4. CÓDIGO QUE SOLO DEBE MOSTRAR:
-En el archivo real, señalar <form onSubmit={enviarReporte}>, event.preventDefault() y el if de validación.
-
-HABLAR:
-“onSubmit llama enviarReporte. preventDefault evita el envío tradicional y la recarga. required comprueba campos vacíos desde el navegador. trim elimina espacios de los extremos; así también rechazamos textos que solo tienen espacios. Si falta algo, mostramos el mensaje y return detiene la función”.
-
-5. ESCRIBIR:
-Este bloque real va después de la validación, dentro de enviarReporte:
-
-agregarReporte({
-  id: Date.now(), distrito, ubicacion: ubicacion.trim(), tipo,
-  descripcion: descripcion.trim(), estado: 'Pendiente',
-});
-
-HABLAR MIENTRAS ESCRIBE:
-“Aquí creamos el objeto. Date.now da un número basado en milisegundos, suficiente para nuestro formulario manual, aunque no garantiza ids universales. El reporte empieza Pendiente. distrito equivale a escribir distrito: distrito. Entregamos los datos a la función recibida mediante props”.
-
-6. CÓDIGO QUE SOLO DEBE MOSTRAR:
-Los cuatro setters que vacían campos y setMensaje al final del manejador.
-
-HABLAR:
-“El recorrido es escribir, actualizar el estado local, validar y entregar el objeto. Después limpiamos los campos. Este componente no guarda en localStorage ni mantiene toda la lista”.
-
-PANTALLA:
-Mostrar el formulario final sin interactuar y volver al bloque de limpieza. No guardar cambios en la aplicación. El borrador sirve para evidenciar cómo escribimos el código.
-
-============================================================
-PREGUNTAS QUE DEBO PODER RESPONDER
-============================================================
-
-¿Qué hace useState? Conserva valores y permite pedir actualizaciones.
-¿Por qué value y onChange? El estado controla lo que muestra el input.
-¿Qué evita preventDefault? El envío tradicional y la recarga.
-¿Por qué trim además de required? Una cadena de espacios no debe aceptarse.
-¿Dónde se guarda la lista? En App; el formulario entrega un objeto por una función recibida.
-
-============================================================
-ERRORES QUE NO DEBO COMETER
-============================================================
-
-No llamar setEstado a una función inexistente: aquí es setUbicacion.
-No confundir estado local con la lista principal.
-No afirmar que Date.now garantiza unicidad absoluta.
-No ejecutar registro durante este bloque ni repetir la explicación general de React.
-
-7. TRANSICIÓN — últimas palabras del bloque:
-“Ya vimos cómo se preparan los datos del reporte. Rodrigo mostrará cómo estos objetos se transforman en componentes visibles”.
-
+ANTES DE PASAR
+Archivo real dentro de src/components, no un borrador. Siete distritos y seis tipos completos; mensajes de éxito y validación presentes. No registrar desde la interfaz ni iniciar otro servidor.

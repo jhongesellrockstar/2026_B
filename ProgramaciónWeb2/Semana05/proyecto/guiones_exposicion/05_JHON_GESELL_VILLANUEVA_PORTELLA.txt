@@ -3,123 +3,440 @@ Este documento es una guía para leer y apoyar la exposición.
 No es necesario memorizarlo palabra por palabra.
 Comprende primero el código que vas a escribir.
 
-============================================================
-INTEGRANTE
-============================================================
+INTEGRANTE: JHON GESELL VILLANUEVA PORTELLA
+TIEMPO GLOBAL: 24:00–30:00; una única intervención de aproximadamente seis minutos.
 
-Nombre completo: JHON GESELL VILLANUEVA PORTELLA
-Tiempo: 24:00–30:00 del video; 6 minutos.
-Módulo: Estadísticas, gráficos e integración final.
-Archivos: src/components/Estadisticas.jsx, src/components/ResumenEstadistico.jsx y src/App.css.
-Consulta: src/App.jsx para las props reportes.
-
-============================================================
 ANTES DE GRABAR
-============================================================
+Esta guía sustituye los guiones anteriores. Construimos directamente en proyecto_tutorial, creado por José durante el video. Nunca editamos proyecto/src. Un solo equipo y una sola carpeta continúan entre integrantes. Los tiempos siguientes son locales a mi bloque; escritura y explicación ocurren a la vez. Tener este TXT en la segunda pantalla y el editor en la primera.
+Los marcadores INICIO CÓDIGO y FIN CÓDIGO delimitan lo que se transcribe: no se copian. El código completo también sirve de reserva si hay retraso: insertar el tramo pendiente y explicar inmediatamente su propósito. No leer cada signo ni todos los atributos en voz alta. Guardar cada archivo completo antes de comprobarlo; durante la escritura puede aparecer un error transitorio de sintaxis.
 
-Abrir esos archivos y un borrador SIN GUARDAR. Tener Edge con el resultado preparado y PowerShell con Vite iniciado por José. No iniciar otra terminal de desarrollo.
+CRONOGRAMA
+00:00–01:05 Estadisticas completo.
+01:05–02:05 Conteos y porcentajes del resumen.
+02:05–03:00 Conteo por distrito y fondo circular.
+03:00–04:05 Insertar JSX y explicar sus bloques.
+04:05–04:40 CSS de gráficos.
+04:40–05:05 Habilitar App.
+05:05–05:40 Comprobación breve en Edge.
+05:40–06:00 Cierre.
 
-Practicar cálculos y estilo dinámico. Escribir en el borrador, sin modificar src ni guardar datos ficticios en código. Los números son ejemplos verbales, nunca datos para insertar en App.
+>>> 00:00 — CREAR ARCHIVO src/components/Estadisticas.jsx
+>>> ESCRIBIR: todo el archivo.
+>>> EXPLICAR MIENTRAS ESCRIBO:
+“Recibimos reportes por props. filter selecciona cada estado y length cuenta resultados. No guardamos otro estado: los indicadores se calculan desde el array cada vez que React ejecuta el componente. El JSX presenta total, pendientes y atendidos.”
 
-Seguir este plan de 30 minutos, no la demostración integral de las guías anteriores. José ya hizo la única demostración de inicio. Cierro la exposición; nadie vuelve. Preguntas solo para estudiar.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ARCHIVO COMPLETO
+src/components/Estadisticas.jsx
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+INICIO CÓDIGO
+function Estadisticas({ reportes }) {
+  // Se calculan desde el array, sin guardar otro estado.
+  const pendientes = reportes.filter((reporte) => reporte.estado === 'Pendiente').length;
+  const atendidos = reportes.filter((reporte) => reporte.estado === 'Atendido').length;
+  return (
+    <section className="estadisticas" aria-label="Estadísticas de reportes" aria-live="polite">
+      <div className="estadistica"><span>Total de reportes</span><strong>{reportes.length}</strong><small>Puntos registrados</small></div>
+      <div className="estadistica pendiente"><span>Pendientes</span><strong>{pendientes}</strong><small>Por atender</small></div>
+      <div className="estadistica atendido"><span>Atendidos</span><strong>{atendidos}</strong><small>Atención registrada</small></div>
+    </section>
+  );
+}
+export default Estadisticas;
+FIN CÓDIGO
 
-============================================================
-CRONOGRAMA DE 6 MINUTOS
-============================================================
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ESTE BLOQUE LO TIPEO
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Estadisticas.jsx completo, incluyendo las tres tarjetas.
 
-Tiempo local:
-00:00–01:00 Props e indicadores derivados.
-01:00–02:00 Escribir total y conteos.
-02:00–03:00 Escribir porcentajes y condición de cero.
-03:00–04:00 Escribir fondo circular y señalar CSS.
-04:00–05:00 Mostrar conteo por distrito y barras.
-05:00–06:00 Resultado estático e integración; conclusión general.
-Practicar la línea del gradiente.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ESTE BLOQUE LO PUEDO PEGAR
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Solo como recuperación de tiempo: tarjetas repetitivas.
+MIENTRAS/AL TERMINAR DE PEGAR DIGO: “Las tres tarjetas presentan los conteos derivados, con sus etiquetas y clases; no contienen datos fijos.”
+>>> GUARDAR: Ctrl + S.
 
-============================================================
-GUION HABLADO + ACCIÓN EN PANTALLA
-============================================================
+>>> 01:05 — CREAR ARCHIVO src/components/ResumenEstadistico.jsx
+ESCRIBO: función, total, pendientes, atendidos, porcentajes iniciales y if (total > 0).
+MIENTRAS ESCRIBO DIGO:
+“Partimos de cero y dividimos solo si existen reportes. Con cinco pendientes entre ocho serían 62,5 por ciento; es un ejemplo explicado, no un dato que escribimos en App.”
 
-1. HABLAR:
-“Jesús explicó el estado principal. Ahora usamos ese mismo array para calcular indicadores. App entrega reportes por props a Estadisticas y ResumenEstadistico. No guardamos otro estado para los números: se calculan cuando React ejecuta los componentes”.
+>>> 02:05 — ESCRIBIR AGRUPACIÓN Y FONDO COMPLETOS
+ESCRIBO: cantidadesPorDistrito, mayorCantidad, for completo, Object.keys y fondoCircular con su if y conic-gradient.
+MIENTRAS ESCRIBO DIGO:
+“El objeto relaciona nombres de distrito con contadores. El for incrementa cada contador; Math.max conserva el máximo para escalar barras. Object.keys obtiene los nombres. conic-gradient reparte los colores según el porcentaje pendiente. Sin registros dejamos el círculo neutro; al cien por ciento queda un solo color.”
 
-PANTALLA:
-Mostrar las dos llamadas en App. CÓDIGO QUE SOLO DEBE MOSTRAR: conteos y tarjetas de Estadisticas.jsx.
+>>> 03:00 — PEGAR BLOQUE: return COMPLETO, CIERRE Y export default
+MIENTRAS/AL TERMINAR DE PEGAR DIGO:
+“El título presenta el resumen. El círculo recibe background y la leyenda muestra cantidades y porcentajes redondeados. Sin datos mostramos un mensaje. La lista de distritos usa map: obtiene cantidad, calcula ancho respecto al distrito de mayor conteo y lo aplica con style. Una barra completa indica el máximo, no el cien por ciento de todos los reportes. Los gráficos visuales tienen la información también en texto.”
 
-HABLAR:
-“El total es reportes.length. filter selecciona pendientes o atendidos y length cuenta los resultados. Los filtros de la lista no afectan estos indicadores porque recibimos el array completo”.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ARCHIVO COMPLETO
+src/components/ResumenEstadistico.jsx
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+INICIO CÓDIGO
+function ResumenEstadistico({ reportes }) {
+  const total = reportes.length;
+  const pendientes = reportes.filter((reporte) => reporte.estado === 'Pendiente').length;
+  const atendidos = reportes.filter((reporte) => reporte.estado === 'Atendido').length;
+  let porcentajePendientes = 0;
+  let porcentajeAtendidos = 0;
 
-2. CÓDIGO QUE DEBE ESCRIBIR — ESCRIBIR:
-Declaraciones reales de ResumenEstadistico, antes del return:
+  // Evita dividir entre cero cuando todavía no hay reportes.
+  if (total > 0) {
+    porcentajePendientes = pendientes / total * 100;
+    porcentajeAtendidos = atendidos / total * 100;
+  }
 
-const total = reportes.length;
-const pendientes = reportes.filter((reporte) => reporte.estado === 'Pendiente').length;
-const atendidos = reportes.filter((reporte) => reporte.estado === 'Atendido').length;
-let porcentajePendientes = 0;
-let porcentajeAtendidos = 0;
+  const cantidadesPorDistrito = {};
+  let mayorCantidad = 0;
+  // Cuenta cada distrito y conserva la cantidad más alta para escalar las barras.
+  for (let i = 0; i < reportes.length; i++) {
+    const distrito = reportes[i].distrito;
+    if (!cantidadesPorDistrito[distrito]) {
+      cantidadesPorDistrito[distrito] = 0;
+    }
+    cantidadesPorDistrito[distrito]++;
+    mayorCantidad = Math.max(mayorCantidad, cantidadesPorDistrito[distrito]);
+  }
+  const distritos = Object.keys(cantidadesPorDistrito);
 
-HABLAR MIENTRAS ESCRIBE:
-“Los conteos salen de reportes. Los porcentajes comienzan en cero, sin useState adicional”.
+  let fondoCircular = '#e4e9e2';
+  if (total > 0) {
+    fondoCircular = `conic-gradient(#c0923d 0% ${porcentajePendientes}%, #6c9b67 ${porcentajePendientes}% 100%)`;
+  }
 
-3. ESCRIBIR:
-Continuación real del cálculo:
-
-if (total > 0) {
-  porcentajePendientes = pendientes / total * 100;
-  porcentajeAtendidos = atendidos / total * 100;
+  return (
+    <section className="panel resumen-estadistico" aria-labelledby="titulo-resumen">
+      <p className="etiqueta">PANORAMA GENERAL</p>
+      <h2 id="titulo-resumen">Resumen estadístico</h2>
+      <p className="ayuda">Incluye todos los reportes, independientemente del filtro seleccionado.</p>
+      <div className="graficos-resumen">
+        <div>
+          <h3>Estado de los reportes</h3>
+          <div className="resumen-estados">
+            <div className="grafico-circular" style={{ background: fondoCircular }} aria-hidden="true" />
+            <div className="leyenda-estados">
+              <p><span className="muestra-color color-pendiente" aria-hidden="true" />Pendientes: <strong>{pendientes}</strong> ({Math.round(porcentajePendientes * 10) / 10} %)</p>
+              <p><span className="muestra-color color-atendido" aria-hidden="true" />Atendidos: <strong>{atendidos}</strong> ({Math.round(porcentajeAtendidos * 10) / 10} %)</p>
+              {total === 0 && <p className="ayuda">Aún no hay datos para representar.</p>}
+            </div>
+          </div>
+        </div>
+        <div>
+          <h3>Reportes por distrito</h3>
+          {total === 0 ? <p className="ayuda">Aún no hay datos para representar.</p> : (
+            <ul className="barras-distritos">
+              {distritos.map((distrito) => {
+                const cantidad = cantidadesPorDistrito[distrito];
+                const ancho = cantidad / mayorCantidad * 100;
+                return (
+                  <li key={distrito}>
+                    <div className="etiqueta-barra"><span>{distrito}</span><strong>{cantidad}</strong></div>
+                    <div className="fondo-barra" aria-hidden="true">
+                      <div className="barra-distrito" style={{ width: `${ancho}%` }} />
+                    </div>
+                  </li>
+                );
+              })}
+            </ul>
+          )}
+        </div>
+      </div>
+    </section>
+  );
 }
 
-HABLAR MIENTRAS ESCRIBE:
-“La condición evita dividir entre cero. Si fueran ocho reportes, cinco pendientes representan 62,5 por ciento y tres atendidos representan 37,5 por ciento”.
+export default ResumenEstadistico;
+FIN CÓDIGO
 
-4. ESCRIBIR:
-Bloque real posterior al conteo por distrito; luego, el div situado dentro del JSX:
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ESTE BLOQUE LO TIPEO
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Todo desde function ResumenEstadistico hasta antes de return: conteos, condición de cero, objeto, for, Math.max, Object.keys y gradiente.
 
-let fondoCircular = '#e4e9e2';
-if (total > 0) {
-  fondoCircular = `conic-gradient(#c0923d 0% ${porcentajePendientes}%, #6c9b67 ${porcentajePendientes}% 100%)`;
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ESTE BLOQUE LO PUEDO PEGAR
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Desde return hasta export default completos. Si a 03:00 no está terminada la lógica, insertar su tramo pendiente y explicarlo antes de continuar.
+MIENTRAS/AL TERMINAR DE PEGAR DIGO: “Los valores salen del array: el círculo representa porcentajes y cada barra cantidad respecto al máximo. CSS recibe esos números mediante style; no usamos Chart.js ni otra biblioteca de gráficos.”
+>>> GUARDAR: Ctrl + S. Todavía no descomentar App hasta que ambos archivos estén guardados.
+
+>>> 04:05 — MODIFICAR src/App.css
+>>> PEGAR BLOQUE: añadir al FINAL del CSS de Rodrigo, una sola vez.
+MIENTRAS/AL TERMINAR DE PEGAR DIGO:
+“Este bloque organiza los dos gráficos. grafico-circular tiene ancho y alto de 132 píxeles y border-radius de 50 por ciento para hacerlo circular. barra-distrito define el color y la altura; su ancho viene de React. La media query coloca los gráficos en una columna en pantallas angostas.”
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+BLOQUE COMPLETO PARA AÑADIR — GRÁFICOS
+src/App.css
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+INICIO CÓDIGO
+.resumen-estadistico { margin-bottom: 24px; }
+.graficos-resumen { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+.graficos-resumen > div { min-width: 0; }
+.graficos-resumen h3 { font-size: 15px; margin-bottom: 18px; }
+.resumen-estados { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+.grafico-circular { width: 132px; height: 132px; border-radius: 50%; flex-shrink: 0; }
+.leyenda-estados { font-size: 13px; }
+.leyenda-estados p { margin-bottom: 10px; }
+.muestra-color { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 8px; }
+.color-pendiente { background: #c0923d; }
+.color-atendido { background: #6c9b67; }
+.barras-distritos { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+.etiqueta-barra { display: flex; justify-content: space-between; gap: 12px; font-size: 13px; margin-bottom: 5px; overflow-wrap: anywhere; }
+.fondo-barra { background: #eef2eb; height: 10px; border-radius: 5px; overflow: hidden; }
+.barra-distrito { background: #517365; height: 100%; border-radius: 5px; }
+@media (max-width: 800px) {
+  .graficos-resumen { grid-template-columns: 1fr; gap: 24px; }
+}
+FIN CÓDIGO
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ESTE BLOQUE LO TIPEO
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+No tipear propiedades CSS repetitivas; explicar grafico-circular y barra-distrito.
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ESTE BLOQUE LO PUEDO PEGAR
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Todo el bloque gráfico anterior al final, sin reemplazar el CSS principal.
+MIENTRAS/AL TERMINAR DE PEGAR DIGO: “Añadimos leyenda, colores, barras y distribución responsive a los estilos ya escritos por Rodrigo.”
+>>> GUARDAR: Ctrl + S.
+La referencia sitúa este bloque después de .contenedor. Añadirlo al final conserva todas sus reglas exactas y el mismo resultado: no se superpone con los selectores del bloque principal. Si se quiere también el mismo orden textual, usar el archivo completo de respaldo al final de este TXT, reemplazando todo App.css, NO añadiéndolo otra vez.
+
+>>> 04:40 — INTEGRAR EN src/App.jsx
+Descomentar exactamente estas dos líneas:
+import Estadisticas from './components/Estadisticas';
+import ResumenEstadistico from './components/ResumenEstadistico';
+
+Cambiar estas dos llamadas comentadas:
+{/* <Estadisticas reportes={reportes} /> */}
+{/* <ResumenEstadistico reportes={reportes} /> */}
+
+por estas dos llamadas activas:
+<Estadisticas reportes={reportes} />
+<ResumenEstadistico reportes={reportes} />
+
+No cambiar nada más de la App de Jesús.
+DIGO:
+“Ahora existen ambos componentes. Reciben reportes completos, mientras la lista recibe reportesFiltrados. Cambiar el filtro no reduce las estadísticas.”
+>>> GUARDAR: Ctrl + S. La App ya tiene exactamente su implementación final.
+
+>>> 05:05 — COMPROBAR RESULTADO
+PANTALLA: Microsoft Edge con el servidor de José; si se detuvo, ejecutar npm run dev en proyecto_tutorial y abrir la URL indicada.
+Mostrar cabecera, formulario, estadísticas, sección de reportes, filtros y resumen con círculo y zona de barras. No repetir una exposición completa ni pedir que regrese otro integrante.
+DIGO:
+“Los cinco módulos ya están integrados y React está ejecutando la aplicación final.”
+Si localStorage está vacío, mostrar indicadores cero, círculo neutro y “Aún no hay datos para representar.” No afirmar que se ven barras pobladas: aparecen al registrar datos. Si ya existen datos del mismo origen, mostrar sus barras sin alterarlos. No hardcodear reportes ni preparar datos desde App.
+Esta revisión breve no reemplaza el ensayo funcional fuera del video.
+
+>>> 05:40 — CIERRE DEFINITIVO
+“Partimos de una carpeta vacía, generamos la base con Vite y construimos los siete componentes. App conserva el estado y conecta formulario, tarjetas y filtros; localStorage mantiene los reportes en este navegador. Los mismos datos alimentan indicadores y gráficos hechos con CSS. Callao Limpio queda integrado como prototipo académico funcional. Gracias.”
+
+ANEXOS DE RESPALDO — NO SE RECITAN
+App.jsx completo permite recuperar la integración sin consultar otro TXT.
+ESTE BLOQUE LO PUEDO PEGAR: reemplazar App completa SOLO con los dos componentes ya guardados.
+MIENTRAS/AL TERMINAR DE PEGAR DIGO:
+“Esta App reúne todos los componentes, conserva el estado, las acciones y la persistencia, y entrega los datos por props.”
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ARCHIVO COMPLETO
+src/App.jsx
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+INICIO CÓDIGO
+import { useEffect, useState } from 'react';
+import Header from './components/Header';
+import Estadisticas from './components/Estadisticas';
+import ResumenEstadistico from './components/ResumenEstadistico';
+import FormularioReporte from './components/FormularioReporte';
+import FiltroReportes from './components/FiltroReportes';
+import ListaReportes from './components/ListaReportes';
+import './App.css';
+
+const claveReportes = 'callao-limpio-reportes';
+
+function recuperarReportes() {
+  // Lee antes del primer renderizado para no sobrescribir los datos guardados.
+  try {
+    const datos = JSON.parse(localStorage.getItem(claveReportes) || '[]');
+    if (!Array.isArray(datos)) return [];
+    return datos.filter((reporte) =>
+      reporte && typeof reporte.id === 'number' &&
+      typeof reporte.distrito === 'string' && typeof reporte.ubicacion === 'string' &&
+      typeof reporte.tipo === 'string' && typeof reporte.descripcion === 'string' &&
+      (reporte.estado === 'Pendiente' || reporte.estado === 'Atendido')
+    );
+  } catch {
+    return [];
+  }
 }
 
-<div className="grafico-circular" style={{ background: fondoCircular }} aria-hidden="true" />
+function App() {
+  const [reportes, setReportes] = useState(recuperarReportes);
+  const [filtro, setFiltro] = useState('Todos');
+  const [errorGuardado, setErrorGuardado] = useState('');
 
-HABLAR MIENTRAS ESCRIBE:
-“conic-gradient pinta hasta el porcentaje pendiente con un color y completa el círculo con el otro. Sin datos queda el color neutro. style recibe un objeto JavaScript”.
+  // Guarda los reportes cada vez que cambia el array.
+  useEffect(() => {
+    try {
+      localStorage.setItem(claveReportes, JSON.stringify(reportes));
+      // oxlint-disable-next-line react/set-state-in-effect -- Refleja el resultado del almacenamiento externo.
+      setErrorGuardado('');
+    } catch {
+      // oxlint-disable-next-line react/set-state-in-effect -- Informa si el navegador rechaza el guardado.
+      setErrorGuardado('No se pudo guardar en este navegador. Los cambios se perderán al recargar.');
+    }
+  }, [reportes]);
 
-PANTALLA:
-Comparar con el original; mostrar .grafico-circular en App.css: ancho y alto de 132 píxeles y border-radius de 50 %. Señalar la leyenda textual y su redondeo a un decimal. No guardar el borrador en src.
+  function agregarReporte(reporte) {
+    setReportes([...reportes, reporte]);
+  }
 
-5. CÓDIGO QUE SOLO DEBE MOSTRAR:
-for, cantidadesPorDistrito, mayorCantidad y Object.keys; después distritos.map, cantidad, ancho y style de barra-distrito.
+  function eliminarReporte(id) {
+    setReportes(reportes.filter((reporte) => reporte.id !== id));
+  }
 
-HABLAR:
-“El for cuenta cada distrito en un objeto local. Math.max conserva el mayor conteo. Object.keys obtiene los nombres y map crea las barras. El ancho es cantidad dividida entre mayorCantidad, por cien. Con tres, dos, dos y uno, los anchos son cien, 66,7, 66,7 y 33,3 por ciento. Esta proporción usa el máximo, no el total”.
+  function cambiarEstado(id) {
+    // map crea un array nuevo y cambia solamente el reporte elegido.
+    setReportes(reportes.map((reporte) => {
+      if (reporte.id === id) {
+        return { ...reporte, estado: reporte.estado === 'Pendiente' ? 'Atendido' : 'Pendiente' };
+      }
+      return reporte;
+    }));
+  }
 
-HABLAR:
-“No usamos Chart.js, Recharts, D3 ni Plotly. Todo está hecho con React, JavaScript, JSX y CSS. Si cambia reportes, se recalculan números y estilos. Sin datos no aparecen barras”.
+  const reportesFiltrados = reportes.filter((reporte) =>
+    filtro === 'Todos' || reporte.estado === filtro
+  );
 
-6. PANTALLA:
-Mostrar el resultado visual final sin registrar, filtrar, eliminar ni recargar. Si está vacío, señalar el círculo neutro. No iniciar una demostración funcional extensa.
+  return (
+    <>
+      <Header />
+      <main className="contenedor">
+        <Estadisticas reportes={reportes} />
+        <ResumenEstadistico reportes={reportes} />
+        {errorGuardado && <p className="error" role="alert">{errorGuardado}</p>}
+        <div className="contenido">
+          <FormularioReporte agregarReporte={agregarReporte} />
+          <section className="panel registros" aria-labelledby="titulo-reportes">
+            <div className="titulo-seccion">
+              <div><p className="etiqueta">SEGUIMIENTO</p><h2 id="titulo-reportes">Reportes ciudadanos</h2></div>
+              <span className="cantidad">{reportesFiltrados.length} visibles</span>
+            </div>
+            <FiltroReportes filtro={filtro} setFiltro={setFiltro} />
+            <ListaReportes reportes={reportesFiltrados} totalReportes={reportes.length}
+              eliminarReporte={eliminarReporte} cambiarEstado={cambiarEstado} />
+          </section>
+        </div>
+        <footer>Prototipo académico · Ingeniería de Sistemas · Programación Web 2
+          <br />Los reportes se conservan en este navegador. No se envían a ninguna autoridad.
+        </footer>
+      </main>
+    </>
+  );
+}
+export default App;
+FIN CÓDIGO
+App.css completo: todas las reglas exactas en el orden de la referencia, para recuperación.
+ESTE BLOQUE LO PUEDO PEGAR: REEMPLAZAR todo App.css, nunca añadir este archivo íntegro al existente.
+MIENTRAS/AL TERMINAR DE PEGAR DIGO:
+“Este respaldo reúne los estilos principales de Rodrigo y los gráficos. Conserva también los ajustes móviles; no añade funciones.”
 
-============================================================
-PREGUNTAS QUE DEBO PODER RESPONDER
-============================================================
-
-¿Por qué no guardar estadísticas? Ya se derivan del array reportes.
-¿Qué evita total > 0? Dividir entre cero.
-¿Qué indica una barra al 100 %? El distrito con mayor cantidad.
-¿Qué hace Object.keys? Devuelve los nombres de propiedades del objeto.
-¿Quién representa los gráficos? CSS, usando valores calculados en JavaScript.
-
-============================================================
-ERRORES QUE NO DEBO COMETER
-============================================================
-
-No afirmar que usamos bibliotecas de gráficos.
-No confundir porcentaje del total con proporción respecto al máximo.
-No hardcodear ejemplos ni modificar el diseño.
-No ejecutar otro recorrido funcional ni pedir que un compañero regrese.
-
-7. CIERRE GENERAL — últimas palabras, antes de 30:00:
-“Vimos cómo inicia React, cómo el formulario prepara datos, cómo aparecen las tarjetas y cómo App administra el estado. Con ese mismo array obtenemos estadísticas y gráficos. Los módulos trabajan juntos en una sola aplicación. Callao Limpio es un prototipo académico con datos locales. Gracias”.
-
-
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ARCHIVO COMPLETO
+src/App.css
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+INICIO CÓDIGO
+.contenedor { max-width: 1160px; margin: 0 auto; padding: 0 28px; }
+.resumen-estadistico { margin-bottom: 24px; }
+.graficos-resumen { display: grid; grid-template-columns: 1fr 1fr; gap: 32px; }
+.graficos-resumen > div { min-width: 0; }
+.graficos-resumen h3 { font-size: 15px; margin-bottom: 18px; }
+.resumen-estados { display: flex; align-items: center; gap: 24px; flex-wrap: wrap; }
+.grafico-circular { width: 132px; height: 132px; border-radius: 50%; flex-shrink: 0; }
+.leyenda-estados { font-size: 13px; }
+.leyenda-estados p { margin-bottom: 10px; }
+.muestra-color { display: inline-block; width: 10px; height: 10px; border-radius: 3px; margin-right: 8px; }
+.color-pendiente { background: #c0923d; }
+.color-atendido { background: #6c9b67; }
+.barras-distritos { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+.etiqueta-barra { display: flex; justify-content: space-between; gap: 12px; font-size: 13px; margin-bottom: 5px; overflow-wrap: anywhere; }
+.fondo-barra { background: #eef2eb; height: 10px; border-radius: 5px; overflow: hidden; }
+.barra-distrito { background: #517365; height: 100%; border-radius: 5px; }
+@media (max-width: 800px) {
+  .graficos-resumen { grid-template-columns: 1fr; gap: 24px; }
+}
+.cabecera { background: #173e35; color: white; padding: 38px 0 36px; border-bottom: 5px solid #a9c69b; }
+.etiqueta { font-size: 11px; font-weight: 700; letter-spacing: 1.6px; margin-bottom: 12px; }
+.cabecera .etiqueta { color: #c2d6c5; }
+h1 { font-size: clamp(30px, 5vw, 44px); letter-spacing: -1.5px; margin-bottom: 12px; }
+h1 span { color: #bdd6a8; }
+.subtitulo { font-size: 18px; margin-bottom: 7px; }
+.introduccion { color: #c2d6cb; font-size: 14px; margin-bottom: 0; }
+.estadisticas { display: grid; grid-template-columns: repeat(3, 1fr); gap: 18px; margin: 28px 0; }
+.estadistica { background: white; border: 1px solid #dde4dd; border-top: 3px solid #517365; border-radius: 9px; padding: 18px 24px; display: flex; flex-direction: column; gap: 5px; }
+.estadistica span { font-size: 13px; font-weight: 600; }
+.estadistica strong { font-size: 33px; line-height: 1.2; }
+.estadistica small { color: #63746b; font-size: 12px; }
+.estadistica.pendiente { border-top-color: #c0923d; }
+.estadistica.atendido { border-top-color: #6c9b67; }
+.contenido { display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.3fr); gap: 24px; align-items: start; }
+.panel { background: white; border: 1px solid #dde4dd; border-radius: 10px; padding: 25px; box-shadow: 0 3px 12px #203b3505; min-width: 0; }
+.panel .etiqueta { color: #6c8073; margin-bottom: 8px; }
+.ayuda { color: #65736a; font-size: 12px; margin-bottom: 20px; }
+form { display: flex; flex-direction: column; }
+label { font-size: 13px; font-weight: 600; margin-bottom: 7px; }
+input, select, textarea { width: 100%; background: #fcfdfb; color: #283c32; border: 1px solid #ccd7cd; padding: 11px 12px; margin-bottom: 18px; font-size: 14px; }
+textarea { resize: vertical; min-height: 100px; }
+input::placeholder, textarea::placeholder { color: #768079; }
+.boton-principal { background: #245c47; border: 1px solid #245c47; color: white; padding: 12px 16px; display: flex; justify-content: space-between; align-items: center; font-weight: 600; }
+.boton-principal:hover { background: #173e35; }
+.mensaje { font-size: 13px; color: #245c47; margin: 12px 0 0; }
+.mensaje:empty { display: none; }
+.titulo-seccion { display: flex; gap: 12px; align-items: center; justify-content: space-between; }
+.cantidad { font-size: 11px; color: #63746b; white-space: nowrap; }
+.filtros { display: flex; gap: 5px; border-bottom: 1px solid #e4e9e2; padding: 12px 0 18px; margin-bottom: 20px; }
+.filtros button { border: 1px solid transparent; padding: 8px 14px; color: #53695a; background: #f4f6f2; font-size: 13px; }
+.filtros button[aria-pressed="true"] { color: white; background: #245c47; }
+.vacio { text-align: center; padding: 65px 12px 75px; color: #63746b; }
+.simbolo-vacio { display: inline-flex; align-items: center; justify-content: center; width: 62px; height: 62px; background: #eef3e9; color: #557849; border-radius: 50%; font-size: 40px; margin-bottom: 22px; }
+.vacio h3 { font-size: 16px; color: #395545; margin-bottom: 8px; }
+.vacio p { font-size: 13px; }
+.lista-reportes { display: grid; gap: 15px; }
+.reporte { border: 1px solid #dce4db; border-radius: 8px; padding: 19px; overflow-wrap: anywhere; }
+.titulo-reporte { display: flex; flex-wrap: wrap; align-items: center; justify-content: space-between; gap: 10px; margin-bottom: 10px; }
+.titulo-reporte h3 { margin: 0; }
+.estado { font-size: 11px; font-weight: 600; padding: 5px 9px; border-radius: 20px; }
+.estado.pendiente { color: #805513; background: #fbf0d7; }
+.estado.atendido { color: #2d643b; background: #e8f2e4; }
+.ubicacion { font-size: 14px; margin-bottom: 8px; }
+.tipo-residuo { display: inline-block; font-size: 11px; background: #f2f4ef; color: #54664f; padding: 3px 8px; border-radius: 4px; margin-bottom: 10px; }
+.descripcion { font-size: 13px; color: #63746b; white-space: pre-wrap; }
+.acciones { display: flex; flex-wrap: wrap; gap: 10px; border-top: 1px solid #edf0e9; padding-top: 14px; }
+.acciones button { padding: 8px 11px; font-size: 12px; background: white; }
+.boton-estado { color: #245c47; border: 1px solid #b8cbbb; }
+.boton-estado:hover { background: #eef5eb; }
+.boton-eliminar { color: #9c4440; border: 1px solid #e2cecb; margin-left: auto; }
+.boton-eliminar:hover { background: #fff2ef; }
+.error { color: #963c32; background: #ffefeb; padding: 14px; border-radius: 7px; }
+footer { padding: 28px 0; color: #6c776c; font-size: 12px; line-height: 1.8; text-align: center; }
+@media (max-width: 800px) {
+  .contenido { grid-template-columns: 1fr; }
+  .contenedor { padding: 0 18px; }
+}
+@media (max-width: 480px) {
+  .cabecera { padding: 28px 0; }
+  .subtitulo { font-size: 16px; }
+  .estadisticas { gap: 8px; }
+  .estadistica { padding: 13px 10px; }
+  .estadistica span { font-size: 11px; }
+  .estadistica strong { font-size: 28px; }
+  .estadistica small { font-size: 10px; }
+  .panel { padding: 20px 16px; }
+  .titulo-seccion { flex-wrap: wrap; }
+  .filtros button { padding: 9px 11px; }
+}
+FIN CÓDIGO

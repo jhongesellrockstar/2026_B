@@ -3,123 +3,314 @@ Este documento es una guía para leer y apoyar la exposición.
 No es necesario memorizarlo palabra por palabra.
 Comprende primero el código que vas a escribir.
 
-============================================================
-INTEGRANTE
-============================================================
+INTEGRANTE: JESÚS THENEE SOTO SALDARRIAGA
+TIEMPO GLOBAL: 18:00–24:00; una única intervención de aproximadamente seis minutos.
 
-Nombre completo: JESÚS THENEE SOTO SALDARRIAGA
-Tiempo: 18:00–24:00 del video; 6 minutos.
-Módulo: Estado principal, acciones, filtros y persistencia.
-Archivos: src/App.jsx y src/components/FiltroReportes.jsx.
-
-============================================================
 ANTES DE GRABAR
-============================================================
+Esta guía sustituye los guiones anteriores. Construimos directamente en proyecto_tutorial, creado por José durante el video. Nunca editamos proyecto/src. Un solo equipo y una sola carpeta continúan entre integrantes. Los tiempos siguientes son locales a mi bloque; escritura y explicación ocurren a la vez. Tener este TXT en la segunda pantalla y el editor en la primera.
+Los marcadores INICIO CÓDIGO y FIN CÓDIGO delimitan lo que se transcribe: no se copian. El código completo también sirve de reserva si hay retraso: insertar el tramo pendiente y explicar inmediatamente su propósito. No leer cada signo ni todos los atributos en voz alta. Guardar cada archivo completo antes de comprobarlo; durante la escritura puede aparecer un error transitorio de sintaxis.
 
-Tener App.jsx abierto en estados, acciones y useEffect; abrir FiltroReportes.jsx. PowerShell conserva Vite y Edge la aplicación iniciada por José. No ejecutar otro servidor.
+CRONOGRAMA
+00:00–00:45 FiltroReportes completo.
+00:45–01:15 Imports y clave.
+01:15–02:00 recuperarReportes.
+02:00–02:50 Estados y useEffect.
+02:50–04:20 Acciones y filtrado.
+04:20–05:10 Insertar y explicar return.
+05:10–05:40 Guardar e integrar.
+05:40–06:00 Entrega.
 
-Practicar eliminarReporte y reportesFiltrados. Escribir en un borrador SIN GUARDAR; no modificar App ni localStorage. Los fragmentos se comparan con su ubicación real, no se ejecutan como un archivo independiente.
+>>> 00:00 — CREAR ARCHIVO src/components/FiltroReportes.jsx
+>>> ESCRIBIR: archivo completo.
+>>> EXPLICAR MIENTRAS ESCRIBO:
+“Este componente recibe filtro y setFiltro. Los botones actualizan el estado del padre; aria-pressed indica el activo. Las etiquetas están en plural, pero los valores Pendiente y Atendido coinciden con los estados del reporte.”
 
-Esta grabación usa seis minutos por persona, reemplazando el plan anterior. No hacer otro recorrido funcional: explicar los efectos de los botones sobre el código sin pulsarlos ni recargar. Las preguntas son material de preparación.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ARCHIVO COMPLETO
+src/components/FiltroReportes.jsx
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+INICIO CÓDIGO
+function FiltroReportes({ filtro, setFiltro }) {
+  return (
+    <div className="filtros" role="group" aria-label="Filtrar por estado">
+      <button type="button" aria-pressed={filtro === 'Todos'} onClick={() => setFiltro('Todos')}>Todos</button>
+      <button type="button" aria-pressed={filtro === 'Pendiente'} onClick={() => setFiltro('Pendiente')}>Pendientes</button>
+      <button type="button" aria-pressed={filtro === 'Atendido'} onClick={() => setFiltro('Atendido')}>Atendidos</button>
+    </div>
+  );
+}
+export default FiltroReportes;
+FIN CÓDIGO
 
-============================================================
-CRONOGRAMA DE 6 MINUTOS
-============================================================
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ESTE BLOQUE LO TIPEO
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Todo FiltroReportes.jsx.
 
-Tiempo local:
-00:00–01:00 Ubicar estado y lectura inicial.
-01:00–02:00 Escribir agregar y eliminar.
-02:00–03:00 Mostrar cambiarEstado.
-03:00–04:00 Escribir filtro y mostrar botones.
-04:00–05:00 Explicar useEffect y JSON.
-05:00–06:00 Aclarar persistencia, conectar con gráficos y transición.
-Ensayar el cambio de posición en App para no perder tiempo buscando.
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ESTE BLOQUE LO PUEDO PEGAR
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Rescate por retraso: archivo completo.
+MIENTRAS/AL TERMINAR DE PEGAR DIGO: “Los tres botones seleccionan Todos, Pendiente o Atendido mediante setFiltro; no borran reportes.”
+>>> GUARDAR: Ctrl + S antes de importarlo.
 
-============================================================
-GUION HABLADO + ACCIÓN EN PANTALLA
-============================================================
+>>> 00:45 — REEMPLAZAR src/App.jsx MÍNIMA
+PANTALLA: App de proyecto_tutorial. Desactivar guardado automático durante la escritura del archivo incompleto; guardar al terminar.
+ESCRIBO: imports reales y claveReportes, como en la versión temporal completa de abajo.
+ATENCIÓN: escribir comentados SOLO import Estadisticas e import ResumenEstadistico. Todavía no existen. NO crear componentes vacíos.
+DIGO:
+“App administra el array y entrega funciones a los hijos. Dejamos dos imports comentados porque Jhon creará esas estadísticas. Los habilitará junto con sus dos llamadas JSX.”
 
-1. HABLAR:
-“Las tarjetas que explicó Rodrigo reciben datos y funciones desde App. Aquí conservamos el array completo y el filtro. El formulario entrega un objeto; las tarjetas entregan un id cuando solicitan una acción”.
+>>> 01:15 — ESCRIBIR recuperarReportes
+ESCRIBO: función, try, JSON.parse con getItem, Array.isArray, return datos.filter y catch con return [].
+>>> PEGAR BLOQUE: solo la condición multilínea dentro de filter, si hace falta.
+MIENTRAS/AL TERMINAR DE PEGAR DIGO:
+“La condición comprueba que exista el objeto, que id sea numérico, que los cuatro campos sean texto y que estado sea Pendiente o Atendido. Si el JSON no sirve, devolvemos un array vacío.”
+MIENTRAS ESCRIBO DIGO:
+“localStorage es almacenamiento del navegador. JSON.parse recupera valores desde texto. Leemos antes del primer guardado para conservar los datos existentes.”
 
-PANTALLA:
-Mostrar useState(recuperarReportes), useState('Todos') y errorGuardado.
+>>> 02:00 — ESCRIBIR ESTADOS Y useEffect COMPLETO
+ESCRIBO: function App, tres estados y el efecto con try/catch, stringify, setItem, ambos setErrorGuardado y dependencia [reportes].
+>>> PEGAR BLOQUE: los dos comentarios oxlint si se necesita.
+MIENTRAS/AL TERMINAR DE PEGAR DIGO:
+“Los comentarios justifican avisos de lint en estas dos actualizaciones; no cambian la ejecución.”
+MIENTRAS ESCRIBO DIGO:
+“useState recibe recuperarReportes sin ejecutarlo aquí. El efecto guarda después de renderizar y cuando cambia reportes. stringify transforma el array a texto; si guardar falla, informamos al usuario. El filtro empieza en Todos.”
 
-HABLAR:
-“Pasamos recuperarReportes como inicializador, sin paréntesis. Lee antes del primer guardado para no reemplazar lo almacenado por un array vacío. errorGuardado permite avisar si el navegador rechaza guardar”.
+>>> 02:50 — ESCRIBIR FUNCIONES COMPLETAS Y reportesFiltrados
+ESCRIBO: agregarReporte, eliminarReporte, cambiarEstado y cálculo de filtrado sin omitir líneas.
+MIENTRAS ESCRIBO DIGO:
+“Spread crea un array nuevo con el reporte añadido. filter elimina conservando ids diferentes. map devuelve otro array y copia únicamente el objeto cuyo estado alternamos mediante un ternario. Conservamos inmutabilidad: no modificamos el array anterior. setReportes solicita un nuevo renderizado. reportesFiltrados selecciona visibles; no elimina registros.”
 
-2. CÓDIGO QUE DEBE ESCRIBIR — ESCRIBIR:
-Funciones reales dentro de App, antes del return:
+>>> 04:20 — PEGAR BLOQUE return COMPLETO DE LA VERSIÓN TEMPORAL
+MIENTRAS/AL TERMINAR DE PEGAR DIGO:
+“Header encabeza la página. Formulario recibe agregarReporte; Filtro recibe filtro y setFiltro; Lista recibe los visibles, el total y dos acciones. errorGuardado muestra el aviso y el footer explica el almacenamiento local. Las dos llamadas a estadísticas están dentro de comentarios JSX hasta que existan.”
+IMPORTANTE: usar {/* ... */} en las dos llamadas JSX; // no comenta una etiqueta JSX.
 
-function agregarReporte(reporte) {
-  setReportes([...reportes, reporte]);
+VERSIÓN QUE GUARDO AHORA: las únicas diferencias frente al final son cuatro comentarios.
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ARCHIVO COMPLETO — ETAPA DE JESÚS, DOS COMPONENTES PENDIENTES
+src/App.jsx
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+INICIO CÓDIGO
+import { useEffect, useState } from 'react';
+import Header from './components/Header';
+// import Estadisticas from './components/Estadisticas';
+// import ResumenEstadistico from './components/ResumenEstadistico';
+import FormularioReporte from './components/FormularioReporte';
+import FiltroReportes from './components/FiltroReportes';
+import ListaReportes from './components/ListaReportes';
+import './App.css';
+
+const claveReportes = 'callao-limpio-reportes';
+
+function recuperarReportes() {
+  // Lee antes del primer renderizado para no sobrescribir los datos guardados.
+  try {
+    const datos = JSON.parse(localStorage.getItem(claveReportes) || '[]');
+    if (!Array.isArray(datos)) return [];
+    return datos.filter((reporte) =>
+      reporte && typeof reporte.id === 'number' &&
+      typeof reporte.distrito === 'string' && typeof reporte.ubicacion === 'string' &&
+      typeof reporte.tipo === 'string' && typeof reporte.descripcion === 'string' &&
+      (reporte.estado === 'Pendiente' || reporte.estado === 'Atendido')
+    );
+  } catch {
+    return [];
+  }
 }
 
-function eliminarReporte(id) {
-  setReportes(reportes.filter((reporte) => reporte.id !== id));
+function App() {
+  const [reportes, setReportes] = useState(recuperarReportes);
+  const [filtro, setFiltro] = useState('Todos');
+  const [errorGuardado, setErrorGuardado] = useState('');
+
+  // Guarda los reportes cada vez que cambia el array.
+  useEffect(() => {
+    try {
+      localStorage.setItem(claveReportes, JSON.stringify(reportes));
+      // oxlint-disable-next-line react/set-state-in-effect -- Refleja el resultado del almacenamiento externo.
+      setErrorGuardado('');
+    } catch {
+      // oxlint-disable-next-line react/set-state-in-effect -- Informa si el navegador rechaza el guardado.
+      setErrorGuardado('No se pudo guardar en este navegador. Los cambios se perderán al recargar.');
+    }
+  }, [reportes]);
+
+  function agregarReporte(reporte) {
+    setReportes([...reportes, reporte]);
+  }
+
+  function eliminarReporte(id) {
+    setReportes(reportes.filter((reporte) => reporte.id !== id));
+  }
+
+  function cambiarEstado(id) {
+    // map crea un array nuevo y cambia solamente el reporte elegido.
+    setReportes(reportes.map((reporte) => {
+      if (reporte.id === id) {
+        return { ...reporte, estado: reporte.estado === 'Pendiente' ? 'Atendido' : 'Pendiente' };
+      }
+      return reporte;
+    }));
+  }
+
+  const reportesFiltrados = reportes.filter((reporte) =>
+    filtro === 'Todos' || reporte.estado === filtro
+  );
+
+  return (
+    <>
+      <Header />
+      <main className="contenedor">
+        {/* <Estadisticas reportes={reportes} /> */}
+        {/* <ResumenEstadistico reportes={reportes} /> */}
+        {errorGuardado && <p className="error" role="alert">{errorGuardado}</p>}
+        <div className="contenido">
+          <FormularioReporte agregarReporte={agregarReporte} />
+          <section className="panel registros" aria-labelledby="titulo-reportes">
+            <div className="titulo-seccion">
+              <div><p className="etiqueta">SEGUIMIENTO</p><h2 id="titulo-reportes">Reportes ciudadanos</h2></div>
+              <span className="cantidad">{reportesFiltrados.length} visibles</span>
+            </div>
+            <FiltroReportes filtro={filtro} setFiltro={setFiltro} />
+            <ListaReportes reportes={reportesFiltrados} totalReportes={reportes.length}
+              eliminarReporte={eliminarReporte} cambiarEstado={cambiarEstado} />
+          </section>
+        </div>
+        <footer>Prototipo académico · Ingeniería de Sistemas · Programación Web 2
+          <br />Los reportes se conservan en este navegador. No se envían a ninguna autoridad.
+        </footer>
+      </main>
+    </>
+  );
+}
+export default App;
+FIN CÓDIGO
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ESTE BLOQUE LO TIPEO
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Imports (dos comentados), clave, recuperarReportes, estados, useEffect y todas las acciones y filtro. Escribir la estructura siguiendo el archivo anterior.
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ESTE BLOQUE LO PUEDO PEGAR
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+Condición de datos.filter, comentarios oxlint y return completo. Si el cronómetro llega a 04:20 sin concluir la lógica, insertar el tramo restante exacto de esta versión y explicarlo antes del JSX.
+MIENTRAS/AL TERMINAR DE PEGAR DIGO: “La lógica restante crea arrays nuevos al agregar, eliminar o alternar estado; luego filtra lo visible y conecta los callbacks con los hijos. No omitimos ninguna función.”
+>>> 05:10 — GUARDAR / INTEGRAR / COMPROBAR
+Ctrl + S. El servidor de José actualiza la página; no iniciar otro.
+PANTALLA: Edge muestra Header, formulario, lista vacía, filtros y footer con estilos. Confirmar que Vite no muestra un error de import o sintaxis. Estadísticas todavía no deben aparecer.
+DIGO:
+“Los componentes ya están conectados. Ahora el código permite registrar, listar, cambiar estado, eliminar, filtrar y persistir en este navegador. No hacemos aquí un recorrido extenso.”
+No confundir revisión de compilación con una prueba completa de todas las acciones. Si no hay datos, el mensaje vacío es correcto.
+
+>>> 05:40 — ENTREGA DEFINITIVA
+“Dejo la aplicación principal integrada. Jhon creará las estadísticas y habilitará los dos imports y las dos llamadas que faltan.”
+
+ANEXO — App.jsx FINAL EXACTA, SOLO PARA CONSULTA/RESPALDO
+NO guardar esta versión aún: importa archivos que creará Jhon. Tras su integración, App debe coincidir con este bloque.
+ESTE BLOQUE LO PUEDO PEGAR: únicamente DESPUÉS de que Jhon guarde los dos componentes.
+MIENTRAS/AL TERMINAR DE PEGAR DIGO:
+“Esta es la misma App, ahora con Estadisticas y ResumenEstadistico activos y ambos recibiendo el array completo.”
+
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+ARCHIVO COMPLETO
+src/App.jsx
+>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>>
+INICIO CÓDIGO
+import { useEffect, useState } from 'react';
+import Header from './components/Header';
+import Estadisticas from './components/Estadisticas';
+import ResumenEstadistico from './components/ResumenEstadistico';
+import FormularioReporte from './components/FormularioReporte';
+import FiltroReportes from './components/FiltroReportes';
+import ListaReportes from './components/ListaReportes';
+import './App.css';
+
+const claveReportes = 'callao-limpio-reportes';
+
+function recuperarReportes() {
+  // Lee antes del primer renderizado para no sobrescribir los datos guardados.
+  try {
+    const datos = JSON.parse(localStorage.getItem(claveReportes) || '[]');
+    if (!Array.isArray(datos)) return [];
+    return datos.filter((reporte) =>
+      reporte && typeof reporte.id === 'number' &&
+      typeof reporte.distrito === 'string' && typeof reporte.ubicacion === 'string' &&
+      typeof reporte.tipo === 'string' && typeof reporte.descripcion === 'string' &&
+      (reporte.estado === 'Pendiente' || reporte.estado === 'Atendido')
+    );
+  } catch {
+    return [];
+  }
 }
 
-HABLAR MIENTRAS ESCRIBE:
-“Agregar crea un array nuevo con los anteriores y el nuevo objeto. Los tres puntos copian los elementos. Eliminar conserva los que tienen un id diferente. No usamos push ni borramos posiciones del array existente”.
+function App() {
+  const [reportes, setReportes] = useState(recuperarReportes);
+  const [filtro, setFiltro] = useState('Todos');
+  const [errorGuardado, setErrorGuardado] = useState('');
 
-3. CÓDIGO QUE SOLO DEBE MOSTRAR:
-La función cambiarEstado completa en App.
+  // Guarda los reportes cada vez que cambia el array.
+  useEffect(() => {
+    try {
+      localStorage.setItem(claveReportes, JSON.stringify(reportes));
+      // oxlint-disable-next-line react/set-state-in-effect -- Refleja el resultado del almacenamiento externo.
+      setErrorGuardado('');
+    } catch {
+      // oxlint-disable-next-line react/set-state-in-effect -- Informa si el navegador rechaza el guardado.
+      setErrorGuardado('No se pudo guardar en este navegador. Los cambios se perderán al recargar.');
+    }
+  }, [reportes]);
 
-HABLAR:
-“map recorre todos los reportes. Cuando el id coincide, devolvemos una copia del objeto cambiando solo estado. El ternario alterna Pendiente y Atendido. Para los demás devolvemos el mismo objeto. setReportes recibe el array resultante y React vuelve a renderizar”.
+  function agregarReporte(reporte) {
+    setReportes([...reportes, reporte]);
+  }
 
-PANTALLA:
-Seguir con el cursor la comparación, la copia y el return. No cambiar un estado desde la interfaz.
+  function eliminarReporte(id) {
+    setReportes(reportes.filter((reporte) => reporte.id !== id));
+  }
 
-4. ESCRIBIR:
-Cálculo real, también dentro de App:
+  function cambiarEstado(id) {
+    // map crea un array nuevo y cambia solamente el reporte elegido.
+    setReportes(reportes.map((reporte) => {
+      if (reporte.id === id) {
+        return { ...reporte, estado: reporte.estado === 'Pendiente' ? 'Atendido' : 'Pendiente' };
+      }
+      return reporte;
+    }));
+  }
 
-const reportesFiltrados = reportes.filter((reporte) =>
-  filtro === 'Todos' || reporte.estado === filtro
-);
+  const reportesFiltrados = reportes.filter((reporte) =>
+    filtro === 'Todos' || reporte.estado === filtro
+  );
 
-PANTALLA:
-Mostrar los tres botones reales de FiltroReportes.jsx; señalar setFiltro y aria-pressed.
-
-HABLAR MIENTRAS ESCRIBE:
-“Todos acepta cada reporte. En otro caso comparamos su estado. El botón dice Pendientes, pero guarda Pendiente, en singular. Este filter selecciona lo visible; no modifica reportes. aria-pressed identifica el filtro activo”.
-
-5. CÓDIGO QUE SOLO DEBE MOSTRAR:
-En recuperarReportes: getItem, JSON.parse, validación y catch.
-Después, el useEffect real completo, incluidos try/catch y [reportes].
-
-HABLAR:
-“localStorage no pertenece a React; es una API del navegador. Guarda texto. JSON.stringify convierte el array a texto JSON, y JSON.parse recupera sus valores. Al iniciar validamos el array y sus campos. Si la lectura falla, usamos una lista vacía”.
-
-HABLAR:
-“useEffect guarda después del renderizado inicial y cuando cambia reportes. El try/catch permite mostrar un aviso si falla. Los comentarios oxlint justifican actualizar el aviso desde el efecto; no son lógica de React”.
-
-6. PANTALLA:
-Comparar el borrador con App; mostrar en el JSX las props hacia lista y estadísticas. No guardar cambios ni recargar durante el bloque.
-
-HABLAR:
-“Al recargar, la lectura inicial recupera los datos de la misma dirección y puerto. El filtro vuelve a Todos porque no se almacena. Otro navegador no comparte estos datos. Estadisticas y ResumenEstadistico reciben el array completo; la lista recibe reportesFiltrados”.
-
-============================================================
-PREGUNTAS QUE DEBO PODER RESPONDER
-============================================================
-
-¿localStorage es React? No; es una API del navegador.
-¿Eliminar y filtrar son iguales? Eliminar cambia reportes; filtrar calcula visibles.
-¿Por qué stringify y parse? Convierten entre valores JavaScript y texto JSON.
-¿Por qué [reportes]? El efecto sincroniza el almacenamiento cuando cambia ese array.
-¿Por qué leer al inicializar? Para conservar los datos previos antes del primer guardado.
-
-============================================================
-ERRORES QUE NO DEBO COMETER
-============================================================
-
-No afirmar que localStorage sincroniza equipos.
-No decir que el filtro elimina datos.
-No reconstruir App desde cero ni omitir el manejo real de errores.
-No ejecutar acciones ni añadir otra demostración.
-No extender la explicación del formulario: eso corresponde a Diego.
-
-7. TRANSICIÓN — últimas palabras:
-“Con el estado principal ya actualizado, Jhon mostrará cómo usamos esos mismos datos para obtener estadísticas y representaciones gráficas”.
-
+  return (
+    <>
+      <Header />
+      <main className="contenedor">
+        <Estadisticas reportes={reportes} />
+        <ResumenEstadistico reportes={reportes} />
+        {errorGuardado && <p className="error" role="alert">{errorGuardado}</p>}
+        <div className="contenido">
+          <FormularioReporte agregarReporte={agregarReporte} />
+          <section className="panel registros" aria-labelledby="titulo-reportes">
+            <div className="titulo-seccion">
+              <div><p className="etiqueta">SEGUIMIENTO</p><h2 id="titulo-reportes">Reportes ciudadanos</h2></div>
+              <span className="cantidad">{reportesFiltrados.length} visibles</span>
+            </div>
+            <FiltroReportes filtro={filtro} setFiltro={setFiltro} />
+            <ListaReportes reportes={reportesFiltrados} totalReportes={reportes.length}
+              eliminarReporte={eliminarReporte} cambiarEstado={cambiarEstado} />
+          </section>
+        </div>
+        <footer>Prototipo académico · Ingeniería de Sistemas · Programación Web 2
+          <br />Los reportes se conservan en este navegador. No se envían a ninguna autoridad.
+        </footer>
+      </main>
+    </>
+  );
+}
+export default App;
+FIN CÓDIGO

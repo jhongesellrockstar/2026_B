@@ -1,25 +1,65 @@
-1. 00:00–06:00
-JOSÉ ALEJANDRO ANCALLA ALARCON
-React, Vite y estructura
-Archivos principales: index.html; src/main.jsx; src/components/Header.jsx.
+GUIONES DE RECONSTRUCCIÓN TOTAL — CALLAO LIMPIO
+30 minutos aproximados. Cinco integrantes, una sola aparición cada uno.
+Referencia única: C:\Users\ACER\Documents\GitHub\2026_B\ProgramaciónWeb2\Semana05\proyecto
+Destino durante el video: C:\Users\ACER\Documents\GitHub\2026_B\ProgramaciónWeb2\Semana05\proyecto_tutorial
+El destino NO existe al comenzar. Estos TXT no lo crean por sí mismos.
+Solo se reemplazan los guiones; el proyecto funcional se conserva.
 
-2. 06:00–12:00
-DIEGO ENRIQUE CISNEROS AGURTO
-Formulario y estado local
-Archivo principal: src/components/FormularioReporte.jsx.
+TIEMPO | INTEGRANTE | ARCHIVOS QUE CREA/MODIFICA | ACCIONES IMPORTANTES
 
-3. 12:00–18:00
-RODRIGO ALONSO BRINGAS MARTINEZ
-Props, listas y tarjetas de reportes
-Archivos principales: src/components/ListaReportes.jsx; src/components/Reporte.jsx.
+00:00–06:00 | JOSÉ ALEJANDRO ANCALLA ALARCON
+Crea proyecto_tutorial con Vite; crea src/components/Header.jsx.
+Reemplaza los ejemplos src/main.jsx, src/index.css y src/App.jsx (mínima).
+Vite genera package.json, vite.config.*, index.html, .gitignore y configuración de lint según plantilla. npm install genera node_modules y genera/actualiza package-lock.json.
+Normaliza auxiliares con copias exactas de la referencia: package.json, package-lock.json, vite.config.js, index.html, .gitignore y .oxlintrc.json. No copia src.
+Crea/conserva public y src/components. Retira ejemplos sin uso solo en el destino.
+Ejecuta npm install y npm run dev. CU00: muestra Header en Edge.
+Salida: compila; la cabecera todavía no tiene su CSS final.
 
-4. 18:00–24:00
-JESÚS THENEE SOTO SALDARRIAGA
-Estado principal, acciones, filtros y persistencia
-Archivos principales: src/App.jsx; src/components/FiltroReportes.jsx.
+06:00–12:00 | DIEGO ENRIQUE CISNEROS AGURTO
+Crea src/components/FormularioReporte.jsx completo.
+No modifica App. Cinco estados, enviarReporte completo, controles y mensajes.
+Salida: componente listo pero no montado; la página conserva Header.
 
-5. 24:00–30:00
-JHON GESELL VILLANUEVA PORTELLA
-Estadísticas, gráficos e integración final
-Archivos principales: src/components/Estadisticas.jsx; src/components/ResumenEstadistico.jsx; src/App.css.
+12:00–18:00 | RODRIGO ALONSO BRINGAS MARTINEZ
+Crea src/components/ListaReportes.jsx y src/components/Reporte.jsx.
+Crea/reemplaza src/App.css con bloque principal y responsive general, sin gráficos.
+No modifica App. Guarda Reporte antes de guardar ListaReportes.
+Salida: archivos listos, todavía sin integrar; App sigue mostrando Header.
 
+18:00–24:00 | JESÚS THENEE SOTO SALDARRIAGA
+Crea src/components/FiltroReportes.jsx.
+Reemplaza src/App.jsx por implementación real con SOLO dos imports y dos llamadas JSX temporalmente comentados: Estadisticas y ResumenEstadistico.
+Integra formulario, lista, filtros, acciones, persistencia y App.css.
+Salida: compilación válida y funcionalidad principal, todavía sin estadísticas.
+
+24:00–30:00 | JHON GESELL VILLANUEVA PORTELLA
+Crea src/components/Estadisticas.jsx y src/components/ResumenEstadistico.jsx.
+Amplía src/App.css con gráficos y su @media.
+Modifica src/App.jsx descomentando los dos imports y dos llamadas.
+Salida: los siete componentes integrados y aplicación final operativa.
+Muestra brevemente resultado y concluye. Nadie vuelve a intervenir.
+
+CONTROL DE TIEMPO
+Ensayar escritura, selección de bloques y navegación antes de grabar. No hay límite de líneas ni de palabras: los TXT contienen código de consulta que no se recita.
+La instalación depende de la red: 30 minutos es objetivo aproximado, no garantía. Preparar Node/npm/Edge y caché mediante ensayo en otra ubicación, sin dejar creado proyecto_tutorial al comenzar la toma. Si hay retraso, explicar el bloque al insertarlo, sin saltarse archivos.
+Los módulos 4 y 5 concentran más lógica: seguir sus tiempos de corte y reserva de copia explicada.
+
+VERIFICACIÓN LÓGICA DE RECONSTRUCCIÓN
+1. main importa App e index.css; App mínima solo importa Header, ya creado.
+2. Formulario existe sin invocarse; no necesita callback falso.
+3. Lista importa Reporte; ambos existen antes de integrarse. CSS principal no requiere gráficos.
+4. Filtro existe antes de guardar App. Los dos componentes futuros NO se importan ni se renderizan todavía. Usar comentarios JSX, no // dentro del JSX.
+5. Jhon guarda ambos componentes antes de descomentar App. Todos los imports finales resuelven.
+6. App final coincide con referencia. Los dos bloques CSS contienen todas las reglas exactas; el bloque gráfico se añade al final sin conflictos de cascada con el principal. Jhon incluye además App.css completo en orden original para respaldo.
+7. public puede estar vacío: los componentes finales no importan imágenes ni logos de ejemplo.
+8. node_modules se instala, no se copia ni se escribe. npm run dev sirve la aplicación y npm run build compila. Los datos se crean en la interfaz, nunca se codifican en App.
+
+COBERTURA FINAL
+Auxiliares: package.json, package-lock.json, vite.config.js, index.html, .gitignore, .oxlintrc.json.
+Entrada: src/main.jsx y src/index.css.
+Integración: src/App.jsx y src/App.css.
+Componentes: Header, FormularioReporte, ListaReportes, Reporte, FiltroReportes, Estadisticas, ResumenEstadistico.
+Directorios: src/components, public y node_modules.
+No se requiere copiar capturas ni documentación para ejecutar.
+No backend, APIs remotas, login, mapas ni bibliotecas de gráficos.
