@@ -1,0 +1,125 @@
+IMPORTANTE:
+Este documento es una guía para leer y apoyar la exposición.
+No es necesario memorizarlo palabra por palabra.
+Comprende primero el código que vas a escribir.
+
+============================================================
+INTEGRANTE
+============================================================
+
+Nombre completo: JESÚS THENEE SOTO SALDARRIAGA
+Tiempo: 18:00–24:00 del video; 6 minutos.
+Módulo: Estado principal, acciones, filtros y persistencia.
+Archivos: src/App.jsx y src/components/FiltroReportes.jsx.
+
+============================================================
+ANTES DE GRABAR
+============================================================
+
+Tener App.jsx abierto en estados, acciones y useEffect; abrir FiltroReportes.jsx. PowerShell conserva Vite y Edge la aplicación iniciada por José. No ejecutar otro servidor.
+
+Practicar eliminarReporte y reportesFiltrados. Escribir en un borrador SIN GUARDAR; no modificar App ni localStorage. Los fragmentos se comparan con su ubicación real, no se ejecutan como un archivo independiente.
+
+Esta grabación usa seis minutos por persona, reemplazando el plan anterior. No hacer otro recorrido funcional: explicar los efectos de los botones sobre el código sin pulsarlos ni recargar. Las preguntas son material de preparación.
+
+============================================================
+CRONOGRAMA DE 6 MINUTOS
+============================================================
+
+Tiempo local:
+00:00–01:00 Ubicar estado y lectura inicial.
+01:00–02:00 Escribir agregar y eliminar.
+02:00–03:00 Mostrar cambiarEstado.
+03:00–04:00 Escribir filtro y mostrar botones.
+04:00–05:00 Explicar useEffect y JSON.
+05:00–06:00 Aclarar persistencia, conectar con gráficos y transición.
+Ensayar el cambio de posición en App para no perder tiempo buscando.
+
+============================================================
+GUION HABLADO + ACCIÓN EN PANTALLA
+============================================================
+
+1. HABLAR:
+“Las tarjetas que explicó Rodrigo reciben datos y funciones desde App. Aquí conservamos el array completo y el filtro. El formulario entrega un objeto; las tarjetas entregan un id cuando solicitan una acción”.
+
+PANTALLA:
+Mostrar useState(recuperarReportes), useState('Todos') y errorGuardado.
+
+HABLAR:
+“Pasamos recuperarReportes como inicializador, sin paréntesis. Lee antes del primer guardado para no reemplazar lo almacenado por un array vacío. errorGuardado permite avisar si el navegador rechaza guardar”.
+
+2. CÓDIGO QUE DEBE ESCRIBIR — ESCRIBIR:
+Funciones reales dentro de App, antes del return:
+
+function agregarReporte(reporte) {
+  setReportes([...reportes, reporte]);
+}
+
+function eliminarReporte(id) {
+  setReportes(reportes.filter((reporte) => reporte.id !== id));
+}
+
+HABLAR MIENTRAS ESCRIBE:
+“Agregar crea un array nuevo con los anteriores y el nuevo objeto. Los tres puntos copian los elementos. Eliminar conserva los que tienen un id diferente. No usamos push ni borramos posiciones del array existente”.
+
+3. CÓDIGO QUE SOLO DEBE MOSTRAR:
+La función cambiarEstado completa en App.
+
+HABLAR:
+“map recorre todos los reportes. Cuando el id coincide, devolvemos una copia del objeto cambiando solo estado. El ternario alterna Pendiente y Atendido. Para los demás devolvemos el mismo objeto. setReportes recibe el array resultante y React vuelve a renderizar”.
+
+PANTALLA:
+Seguir con el cursor la comparación, la copia y el return. No cambiar un estado desde la interfaz.
+
+4. ESCRIBIR:
+Cálculo real, también dentro de App:
+
+const reportesFiltrados = reportes.filter((reporte) =>
+  filtro === 'Todos' || reporte.estado === filtro
+);
+
+PANTALLA:
+Mostrar los tres botones reales de FiltroReportes.jsx; señalar setFiltro y aria-pressed.
+
+HABLAR MIENTRAS ESCRIBE:
+“Todos acepta cada reporte. En otro caso comparamos su estado. El botón dice Pendientes, pero guarda Pendiente, en singular. Este filter selecciona lo visible; no modifica reportes. aria-pressed identifica el filtro activo”.
+
+5. CÓDIGO QUE SOLO DEBE MOSTRAR:
+En recuperarReportes: getItem, JSON.parse, validación y catch.
+Después, el useEffect real completo, incluidos try/catch y [reportes].
+
+HABLAR:
+“localStorage no pertenece a React; es una API del navegador. Guarda texto. JSON.stringify convierte el array a texto JSON, y JSON.parse recupera sus valores. Al iniciar validamos el array y sus campos. Si la lectura falla, usamos una lista vacía”.
+
+HABLAR:
+“useEffect guarda después del renderizado inicial y cuando cambia reportes. El try/catch permite mostrar un aviso si falla. Los comentarios oxlint justifican actualizar el aviso desde el efecto; no son lógica de React”.
+
+6. PANTALLA:
+Comparar el borrador con App; mostrar en el JSX las props hacia lista y estadísticas. No guardar cambios ni recargar durante el bloque.
+
+HABLAR:
+“Al recargar, la lectura inicial recupera los datos de la misma dirección y puerto. El filtro vuelve a Todos porque no se almacena. Otro navegador no comparte estos datos. Estadisticas y ResumenEstadistico reciben el array completo; la lista recibe reportesFiltrados”.
+
+============================================================
+PREGUNTAS QUE DEBO PODER RESPONDER
+============================================================
+
+¿localStorage es React? No; es una API del navegador.
+¿Eliminar y filtrar son iguales? Eliminar cambia reportes; filtrar calcula visibles.
+¿Por qué stringify y parse? Convierten entre valores JavaScript y texto JSON.
+¿Por qué [reportes]? El efecto sincroniza el almacenamiento cuando cambia ese array.
+¿Por qué leer al inicializar? Para conservar los datos previos antes del primer guardado.
+
+============================================================
+ERRORES QUE NO DEBO COMETER
+============================================================
+
+No afirmar que localStorage sincroniza equipos.
+No decir que el filtro elimina datos.
+No reconstruir App desde cero ni omitir el manejo real de errores.
+No ejecutar acciones ni añadir otra demostración.
+No extender la explicación del formulario: eso corresponde a Diego.
+
+7. TRANSICIÓN — últimas palabras:
+“Con el estado principal ya actualizado, Jhon mostrará cómo usamos esos mismos datos para obtener estadísticas y representaciones gráficas”.
+

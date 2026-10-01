@@ -1,0 +1,25 @@
+1. 00:00–06:00
+JOSÉ ALEJANDRO ANCALLA ALARCON
+React, Vite y estructura
+Archivos principales: index.html; src/main.jsx; src/components/Header.jsx.
+
+2. 06:00–12:00
+DIEGO ENRIQUE CISNEROS AGURTO
+Formulario y estado local
+Archivo principal: src/components/FormularioReporte.jsx.
+
+3. 12:00–18:00
+RODRIGO ALONSO BRINGAS MARTINEZ
+Props, listas y tarjetas de reportes
+Archivos principales: src/components/ListaReportes.jsx; src/components/Reporte.jsx.
+
+4. 18:00–24:00
+JESÚS THENEE SOTO SALDARRIAGA
+Estado principal, acciones, filtros y persistencia
+Archivos principales: src/App.jsx; src/components/FiltroReportes.jsx.
+
+5. 24:00–30:00
+JHON GESELL VILLANUEVA PORTELLA
+Estadísticas, gráficos e integración final
+Archivos principales: src/components/Estadisticas.jsx; src/components/ResumenEstadistico.jsx; src/App.css.
+

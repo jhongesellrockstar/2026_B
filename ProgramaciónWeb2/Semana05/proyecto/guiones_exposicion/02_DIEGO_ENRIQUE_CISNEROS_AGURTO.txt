@@ -1,0 +1,121 @@
+IMPORTANTE:
+Este documento es una guía para leer y apoyar la exposición.
+No es necesario memorizarlo palabra por palabra.
+Comprende primero el código que vas a escribir.
+
+============================================================
+INTEGRANTE
+============================================================
+
+Nombre completo: DIEGO ENRIQUE CISNEROS AGURTO
+Tiempo: 06:00–12:00 del video; 6 minutos.
+Módulo: Formulario y estado local.
+Archivo: src/components/FormularioReporte.jsx.
+Consulta: src/App.jsx, solo la prop agregarReporte.
+
+============================================================
+ANTES DE GRABAR
+============================================================
+
+Abrir FormularioReporte.jsx y un borrador SIN GUARDAR en el editor. Tener Edge con la aplicación iniciada por José y la terminal de Vite abierta; no ejecutar otro servidor. Visualizar el formulario solo como referencia estática.
+
+Practicar las declaraciones, el input y la llamada agregarReporte. Escribir los fragmentos en el borrador, nunca sobre src. No se ejecutan aislados: dependen del componente completo. Comparar con el archivo real para mostrar dónde pertenecen.
+
+Esta versión dura 30 minutos y sustituye el plan anterior para la grabación. No realizar un envío ni otro recorrido funcional: José realiza la única demostración de inicio. Mi explicación del envío será sobre el código. Las preguntas son preparación fuera del tiempo grabado.
+
+============================================================
+CRONOGRAMA DE 6 MINUTOS
+============================================================
+
+Tiempo local:
+00:00–01:00 Conectar con José y ubicar el formulario.
+01:00–02:00 Escribir estados y explicar useState.
+02:00–03:00 Escribir input y explicar value/onChange.
+03:00–04:00 Mostrar validación y onSubmit.
+04:00–05:00 Escribir objeto entregado a agregarReporte.
+05:00–06:00 Mostrar limpieza, resultado estático y transición.
+Reservar pausas para escribir; no leer cada signo como una palabra.
+
+============================================================
+GUION HABLADO + ACCIÓN EN PANTALLA
+============================================================
+
+1. HABLAR:
+“Ahora veremos uno de esos componentes: el formulario. Su trabajo es capturar distrito, ubicación, tipo y descripción. Recibe agregarReporte desde App. Por ahora pensemos en esa función como la conexión con el padre; Jesús explicará cómo actualiza la lista”.
+
+PANTALLA:
+Señalar function FormularioReporte({ agregarReporte }) y el import de useState.
+
+2. CÓDIGO QUE DEBE ESCRIBIR — ESCRIBIR:
+En el borrador, estas declaraciones reales del componente:
+
+const [distrito, setDistrito] = useState('');
+const [ubicacion, setUbicacion] = useState('');
+const [tipo, setTipo] = useState('');
+const [descripcion, setDescripcion] = useState('');
+const [mensaje, setMensaje] = useState('');
+
+HABLAR MIENTRAS ESCRIBE:
+“Cada estado guarda un valor y su función permite actualizarlo. Comienzan vacíos. mensaje guarda la validación o la confirmación. Estas declaraciones van dentro del componente, antes del return”.
+
+3. ESCRIBIR:
+Fragmento real situado dentro del form:
+
+<label htmlFor="ubicacion">Ubicación referencial</label>
+<input id="ubicacion" value={ubicacion} onChange={(event) => setUbicacion(event.target.value)}
+  placeholder="Ej. Cerca al parque principal" maxLength={160} required />
+
+HABLAR MIENTRAS ESCRIBE:
+“value muestra ubicacion. Cuando el usuario escribe, onChange recibe el evento y setUbicacion toma el texto del input. React vuelve a renderizar con ese valor. Por eso lo llamamos un campo controlado”.
+
+PANTALLA:
+Comparar con el original; señalar que los select y textarea siguen el mismo patrón. No completar ni enviar el formulario en Edge.
+
+4. CÓDIGO QUE SOLO DEBE MOSTRAR:
+En el archivo real, señalar <form onSubmit={enviarReporte}>, event.preventDefault() y el if de validación.
+
+HABLAR:
+“onSubmit llama enviarReporte. preventDefault evita el envío tradicional y la recarga. required comprueba campos vacíos desde el navegador. trim elimina espacios de los extremos; así también rechazamos textos que solo tienen espacios. Si falta algo, mostramos el mensaje y return detiene la función”.
+
+5. ESCRIBIR:
+Este bloque real va después de la validación, dentro de enviarReporte:
+
+agregarReporte({
+  id: Date.now(), distrito, ubicacion: ubicacion.trim(), tipo,
+  descripcion: descripcion.trim(), estado: 'Pendiente',
+});
+
+HABLAR MIENTRAS ESCRIBE:
+“Aquí creamos el objeto. Date.now da un número basado en milisegundos, suficiente para nuestro formulario manual, aunque no garantiza ids universales. El reporte empieza Pendiente. distrito equivale a escribir distrito: distrito. Entregamos los datos a la función recibida mediante props”.
+
+6. CÓDIGO QUE SOLO DEBE MOSTRAR:
+Los cuatro setters que vacían campos y setMensaje al final del manejador.
+
+HABLAR:
+“El recorrido es escribir, actualizar el estado local, validar y entregar el objeto. Después limpiamos los campos. Este componente no guarda en localStorage ni mantiene toda la lista”.
+
+PANTALLA:
+Mostrar el formulario final sin interactuar y volver al bloque de limpieza. No guardar cambios en la aplicación. El borrador sirve para evidenciar cómo escribimos el código.
+
+============================================================
+PREGUNTAS QUE DEBO PODER RESPONDER
+============================================================
+
+¿Qué hace useState? Conserva valores y permite pedir actualizaciones.
+¿Por qué value y onChange? El estado controla lo que muestra el input.
+¿Qué evita preventDefault? El envío tradicional y la recarga.
+¿Por qué trim además de required? Una cadena de espacios no debe aceptarse.
+¿Dónde se guarda la lista? En App; el formulario entrega un objeto por una función recibida.
+
+============================================================
+ERRORES QUE NO DEBO COMETER
+============================================================
+
+No llamar setEstado a una función inexistente: aquí es setUbicacion.
+No confundir estado local con la lista principal.
+No afirmar que Date.now garantiza unicidad absoluta.
+No ejecutar registro durante este bloque ni repetir la explicación general de React.
+
+7. TRANSICIÓN — últimas palabras del bloque:
+“Ya vimos cómo se preparan los datos del reporte. Rodrigo mostrará cómo estos objetos se transforman en componentes visibles”.
+

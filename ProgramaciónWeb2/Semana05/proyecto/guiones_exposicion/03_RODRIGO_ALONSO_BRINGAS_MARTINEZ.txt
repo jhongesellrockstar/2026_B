@@ -1,0 +1,122 @@
+IMPORTANTE:
+Este documento es una guía para leer y apoyar la exposición.
+No es necesario memorizarlo palabra por palabra.
+Comprende primero el código que vas a escribir.
+
+============================================================
+INTEGRANTE
+============================================================
+
+Nombre completo: RODRIGO ALONSO BRINGAS MARTINEZ
+Tiempo: 12:00–18:00 del video; 6 minutos.
+Módulo: Visualización de reportes.
+Archivos: src/components/ListaReportes.jsx y src/components/Reporte.jsx.
+Consulta: src/App.jsx, únicamente el paso de props a ListaReportes.
+
+============================================================
+ANTES DE GRABAR
+============================================================
+
+Abrir los dos componentes y un borrador SIN GUARDAR. Dejar PowerShell con Vite funcionando y Edge en la aplicación iniciada por José. Se pueden mostrar tarjetas ya existentes, sin pulsar botones ni registrar ejemplos.
+
+Practicar el map, los datos de una tarjeta y sus callbacks. Escribir únicamente en el borrador. No sustituir archivos ni borrar componentes. La comparación con el archivo real demuestra dónde encaja cada fragmento; un borrador no renderiza por sí mismo.
+
+Los seis TXT son el plan vigente de 30 minutos. No seguir las demostraciones del plan anterior. Mi participación es única; las preguntas son para estudiar, no para volver después.
+
+============================================================
+CRONOGRAMA DE 6 MINUTOS
+============================================================
+
+Tiempo local:
+00:00–01:00 Conexión y props.
+01:00–02:00 Escribir map y componente hijo.
+02:00–03:00 Explicar key y datos.
+03:00–04:00 Escribir presentación y botones.
+04:00–05:00 Explicar condiciones de lista vacía y estado.
+05:00–06:00 Relacionar código con tarjetas estáticas y transición.
+La escritura y el cambio entre archivos forman parte del tiempo.
+
+============================================================
+GUION HABLADO + ACCIÓN EN PANTALLA
+============================================================
+
+1. HABLAR:
+“Diego explicó cómo se prepara un reporte. Ahora veremos cómo una lista de objetos se convierte en tarjetas. App entrega esa lista a ListaReportes. Las acciones también vienen de App; Jesús explicará su implementación”.
+
+PANTALLA:
+En ListaReportes, señalar las props reportes, totalReportes, eliminarReporte y cambiarEstado. Mostrar brevemente que App envía reportesFiltrados bajo la prop llamada reportes.
+
+HABLAR:
+“reportes contiene los visibles; totalReportes cuenta toda la lista. Las otras dos props son funciones. Recibir información no significa que este componente sea dueño del estado”.
+
+2. CÓDIGO QUE DEBE ESCRIBIR — ESCRIBIR:
+Fragmento real dentro del return de ListaReportes:
+
+<div className="lista-reportes">
+  {reportes.map((reporte) => (
+    <Reporte key={reporte.id} reporte={reporte}
+      eliminarReporte={eliminarReporte} cambiarEstado={cambiarEstado} />
+  ))}
+</div>
+
+HABLAR MIENTRAS ESCRIBE:
+“map recorre el array y devuelve un componente Reporte por objeto. No modifica el array original. Las llaves permiten usar JavaScript dentro de JSX. Cada tarjeta recibe su objeto y las funciones de acción”.
+
+3. PANTALLA:
+Señalar key y el import de Reporte en el original.
+
+HABLAR:
+“key ayuda a React a reconocer cada elemento entre renderizados. Usamos el id, no la posición, porque al eliminar una tarjeta las posiciones cambian. key no es una prop normal que podamos leer dentro de Reporte: el id está en el objeto reporte”.
+
+4. ESCRIBIR:
+Fragmentos reales de Reporte.jsx. Están en diferentes posiciones del componente: la declaración antes del return; el párrafo dentro de article; los botones dentro de acciones.
+
+const atendido = reporte.estado === 'Atendido';
+
+<p className="descripcion">{reporte.descripcion}</p>
+
+<button type="button" className="boton-estado" onClick={() => cambiarEstado(reporte.id)}>
+  {atendido ? 'Volver a pendiente' : 'Marcar atendido'}
+</button>
+<button type="button" className="boton-eliminar" onClick={() => eliminarReporte(reporte.id)}>Eliminar</button>
+
+HABLAR MIENTRAS ESCRIBE:
+“atendido es una condición, no otro estado. El ternario elige el texto del botón. onClick recibe una función que llamará a la acción con el id correcto. Si ejecutáramos eliminarReporte directamente al renderizar, actuaríamos sin esperar el clic”.
+
+PANTALLA:
+Comparar lo escrito con Reporte.jsx; no guardar el borrador sobre el componente.
+
+5. CÓDIGO QUE SOLO DEBE MOSTRAR:
+El if de ListaReportes y las dos frases que dependen de totalReportes. En Reporte, mostrar distrito, ubicación, tipo y la clase del estado.
+
+HABLAR:
+“Si no hay visibles, distinguimos dos situaciones: todavía no existe ningún reporte o el filtro no encontró resultados. Y en cada tarjeta, el texto y el color dependen del estado recibido. No hacemos consultas externas ni creamos HTML manualmente”.
+
+6. PANTALLA:
+Mostrar las tarjetas existentes como resultado estático; si no hay datos, señalar el mensaje vacío y explicarlo. No pulsar Marcar atendido ni Eliminar.
+
+HABLAR:
+“Los datos bajan del padre al hijo. Los botones solicitan cambios llamando funciones del padre; no modificamos las props. Así se conectan las tarjetas con el estado central”.
+
+============================================================
+PREGUNTAS QUE DEBO PODER RESPONDER
+============================================================
+
+¿Qué son props? Datos o funciones entregados por el componente padre.
+¿map cambia el array original? No; devuelve otro array.
+¿Para qué sirve key? Para identificar elementos de forma estable.
+¿Por qué una flecha en onClick? Para esperar el evento y pasar el id.
+¿Quién elimina realmente? La función eliminarReporte definida en App.
+
+============================================================
+ERRORES QUE NO DEBO COMETER
+============================================================
+
+No confundir funciones de acción con datos del reporte.
+No usar el índice como explicación del id.
+No decir que el hijo modifica las props.
+No convertir la muestra estática en otra demostración funcional.
+
+7. TRANSICIÓN — últimas palabras:
+“Las tarjetas reciben información y acciones. Jesús explicará dónde se administra realmente ese estado”.
+

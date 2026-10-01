@@ -1,0 +1,125 @@
+IMPORTANTE:
+Este documento es una guía para leer y apoyar la exposición.
+No es necesario memorizarlo palabra por palabra.
+Comprende primero el código que vas a escribir.
+
+============================================================
+INTEGRANTE
+============================================================
+
+Nombre completo: JHON GESELL VILLANUEVA PORTELLA
+Tiempo: 24:00–30:00 del video; 6 minutos.
+Módulo: Estadísticas, gráficos e integración final.
+Archivos: src/components/Estadisticas.jsx, src/components/ResumenEstadistico.jsx y src/App.css.
+Consulta: src/App.jsx para las props reportes.
+
+============================================================
+ANTES DE GRABAR
+============================================================
+
+Abrir esos archivos y un borrador SIN GUARDAR. Tener Edge con el resultado preparado y PowerShell con Vite iniciado por José. No iniciar otra terminal de desarrollo.
+
+Practicar cálculos y estilo dinámico. Escribir en el borrador, sin modificar src ni guardar datos ficticios en código. Los números son ejemplos verbales, nunca datos para insertar en App.
+
+Seguir este plan de 30 minutos, no la demostración integral de las guías anteriores. José ya hizo la única demostración de inicio. Cierro la exposición; nadie vuelve. Preguntas solo para estudiar.
+
+============================================================
+CRONOGRAMA DE 6 MINUTOS
+============================================================
+
+Tiempo local:
+00:00–01:00 Props e indicadores derivados.
+01:00–02:00 Escribir total y conteos.
+02:00–03:00 Escribir porcentajes y condición de cero.
+03:00–04:00 Escribir fondo circular y señalar CSS.
+04:00–05:00 Mostrar conteo por distrito y barras.
+05:00–06:00 Resultado estático e integración; conclusión general.
+Practicar la línea del gradiente.
+
+============================================================
+GUION HABLADO + ACCIÓN EN PANTALLA
+============================================================
+
+1. HABLAR:
+“Jesús explicó el estado principal. Ahora usamos ese mismo array para calcular indicadores. App entrega reportes por props a Estadisticas y ResumenEstadistico. No guardamos otro estado para los números: se calculan cuando React ejecuta los componentes”.
+
+PANTALLA:
+Mostrar las dos llamadas en App. CÓDIGO QUE SOLO DEBE MOSTRAR: conteos y tarjetas de Estadisticas.jsx.
+
+HABLAR:
+“El total es reportes.length. filter selecciona pendientes o atendidos y length cuenta los resultados. Los filtros de la lista no afectan estos indicadores porque recibimos el array completo”.
+
+2. CÓDIGO QUE DEBE ESCRIBIR — ESCRIBIR:
+Declaraciones reales de ResumenEstadistico, antes del return:
+
+const total = reportes.length;
+const pendientes = reportes.filter((reporte) => reporte.estado === 'Pendiente').length;
+const atendidos = reportes.filter((reporte) => reporte.estado === 'Atendido').length;
+let porcentajePendientes = 0;
+let porcentajeAtendidos = 0;
+
+HABLAR MIENTRAS ESCRIBE:
+“Los conteos salen de reportes. Los porcentajes comienzan en cero, sin useState adicional”.
+
+3. ESCRIBIR:
+Continuación real del cálculo:
+
+if (total > 0) {
+  porcentajePendientes = pendientes / total * 100;
+  porcentajeAtendidos = atendidos / total * 100;
+}
+
+HABLAR MIENTRAS ESCRIBE:
+“La condición evita dividir entre cero. Si fueran ocho reportes, cinco pendientes representan 62,5 por ciento y tres atendidos representan 37,5 por ciento”.
+
+4. ESCRIBIR:
+Bloque real posterior al conteo por distrito; luego, el div situado dentro del JSX:
+
+let fondoCircular = '#e4e9e2';
+if (total > 0) {
+  fondoCircular = `conic-gradient(#c0923d 0% ${porcentajePendientes}%, #6c9b67 ${porcentajePendientes}% 100%)`;
+}
+
+<div className="grafico-circular" style={{ background: fondoCircular }} aria-hidden="true" />
+
+HABLAR MIENTRAS ESCRIBE:
+“conic-gradient pinta hasta el porcentaje pendiente con un color y completa el círculo con el otro. Sin datos queda el color neutro. style recibe un objeto JavaScript”.
+
+PANTALLA:
+Comparar con el original; mostrar .grafico-circular en App.css: ancho y alto de 132 píxeles y border-radius de 50 %. Señalar la leyenda textual y su redondeo a un decimal. No guardar el borrador en src.
+
+5. CÓDIGO QUE SOLO DEBE MOSTRAR:
+for, cantidadesPorDistrito, mayorCantidad y Object.keys; después distritos.map, cantidad, ancho y style de barra-distrito.
+
+HABLAR:
+“El for cuenta cada distrito en un objeto local. Math.max conserva el mayor conteo. Object.keys obtiene los nombres y map crea las barras. El ancho es cantidad dividida entre mayorCantidad, por cien. Con tres, dos, dos y uno, los anchos son cien, 66,7, 66,7 y 33,3 por ciento. Esta proporción usa el máximo, no el total”.
+
+HABLAR:
+“No usamos Chart.js, Recharts, D3 ni Plotly. Todo está hecho con React, JavaScript, JSX y CSS. Si cambia reportes, se recalculan números y estilos. Sin datos no aparecen barras”.
+
+6. PANTALLA:
+Mostrar el resultado visual final sin registrar, filtrar, eliminar ni recargar. Si está vacío, señalar el círculo neutro. No iniciar una demostración funcional extensa.
+
+============================================================
+PREGUNTAS QUE DEBO PODER RESPONDER
+============================================================
+
+¿Por qué no guardar estadísticas? Ya se derivan del array reportes.
+¿Qué evita total > 0? Dividir entre cero.
+¿Qué indica una barra al 100 %? El distrito con mayor cantidad.
+¿Qué hace Object.keys? Devuelve los nombres de propiedades del objeto.
+¿Quién representa los gráficos? CSS, usando valores calculados en JavaScript.
+
+============================================================
+ERRORES QUE NO DEBO COMETER
+============================================================
+
+No afirmar que usamos bibliotecas de gráficos.
+No confundir porcentaje del total con proporción respecto al máximo.
+No hardcodear ejemplos ni modificar el diseño.
+No ejecutar otro recorrido funcional ni pedir que un compañero regrese.
+
+7. CIERRE GENERAL — últimas palabras, antes de 30:00:
+“Vimos cómo inicia React, cómo el formulario prepara datos, cómo aparecen las tarjetas y cómo App administra el estado. Con ese mismo array obtenemos estadísticas y gráficos. Los módulos trabajan juntos en una sola aplicación. Callao Limpio es un prototipo académico con datos locales. Gracias”.
+
+

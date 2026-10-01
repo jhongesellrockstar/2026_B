@@ -1,0 +1,128 @@
+IMPORTANTE:
+Este documento es una guía para leer y apoyar la exposición.
+No es necesario memorizarlo palabra por palabra.
+Comprende primero el código que vas a escribir.
+
+============================================================
+INTEGRANTE
+============================================================
+
+Nombre completo: JOSÉ ALEJANDRO ANCALLA ALARCON
+Tiempo: 00:00–06:00 del video; 6 minutos.
+Módulo: React, Vite y estructura.
+Archivos: index.html, src/main.jsx, src/components/Header.jsx.
+Consulta breve: src/App.jsx y package.json.
+
+============================================================
+ANTES DE GRABAR
+============================================================
+
+Tener esos archivos abiertos, PowerShell en el proyecto y Microsoft Edge disponible. Practicar el montaje y las etiquetas interiores de Header. Escribir solo en una pestaña nueva del editor SIN GUARDAR; los fragmentos no se ejecutan allí. Compararlos luego con los archivos reales.
+
+No borrar componentes ni modificar src. Las guías Markdown anteriores corresponden al plan de 40 minutos; esta grabación sigue exclusivamente los seis TXT de 30 minutos. Cada persona interviene una sola vez. Las preguntas finales son para estudiar, no otro bloque del video.
+
+Ensayar el arranque antes de grabar y detener ese servidor de ensayo para ejecutar npm run dev al final de esta intervención. No instalar dependencias durante la grabación. Si ya hay datos guardados, dejarlos: visualizar la pantalla no exige vaciarla.
+
+============================================================
+CRONOGRAMA DE 6 MINUTOS
+============================================================
+
+Tiempo local del bloque:
+00:00–01:00 Problema y alcance.
+01:00–02:00 React y Vite.
+02:00–03:00 index.html, root y main.jsx.
+03:00–04:00 Escribir montaje y explicar imports.
+04:00–05:00 Escribir fragmento de Header y ubicarlo en App.
+05:00–06:00 CU00 y transición definitiva.
+Hablar mientras se escribe; los silencios de escritura y navegación están incluidos.
+
+============================================================
+GUION HABLADO + ACCIÓN EN PANTALLA
+============================================================
+
+1. HABLAR:
+“Somos estudiantes de Ingeniería de Sistemas de la Universidad Nacional del Callao. Para Programación Web 2 presentamos Callao Limpio. Partimos de la acumulación de residuos en Lima y Callao. Es un prototipo académico: permite organizar reportes, pero no los envía a una municipalidad”.
+
+PANTALLA:
+Mostrar la carpeta del proyecto. Señalar src y components.
+
+2. HABLAR:
+“React es una biblioteca de JavaScript para construir interfaces con componentes. Antes modificábamos elementos con getElementById; aquí describimos la pantalla y React la actualiza. Vite nos ayuda a ejecutar el proyecto y compilarlo”.
+
+PANTALLA:
+Mostrar package.json: dev ejecuta vite. En index.html, señalar el div con id root y el script que carga main.jsx.
+
+3. PANTALLA:
+Abrir main.jsx. CÓDIGO QUE SOLO DEBE MOSTRAR: imports de StrictMode, createRoot, index.css y App.
+
+CÓDIGO QUE DEBE ESCRIBIR — ESCRIBIR:
+En el borrador, copiar de memoria este bloque real de main.jsx:
+
+createRoot(document.getElementById('root')).render(
+  <StrictMode>
+    <App />
+  </StrictMode>,
+)
+
+HABLAR MIENTRAS ESCRIBE:
+“Buscamos root y montamos App dentro. StrictMode activa comprobaciones de desarrollo. App es el componente que reúne las partes de nuestra pantalla”.
+
+4. PANTALLA:
+Abrir Header.jsx; señalar function Header, return y export default. Escribir únicamente este fragmento interior real, no el archivo completo.
+
+ESCRIBIR:
+<header className="cabecera">
+  <div className="contenedor">
+    <p className="etiqueta">PROYECTO ACADÉMICO · PROGRAMACIÓN WEB 2</p>
+    <h1>CALLAO <span>LIMPIO</span></h1>
+    <p className="subtitulo">Registro ciudadano de puntos con acumulación de residuos</p>
+    <p className="introduccion">Observar es el primer paso. Registra un punto y lleva el seguimiento de su atención.</p>
+  </div>
+</header>
+
+HABLAR MIENTRAS ESCRIBE:
+“Esto es JSX. Se parece a HTML; className conecta con nuestras clases CSS. Header devuelve estas etiquetas. No estamos escribiendo otro sistema: es un fragmento del componente final”.
+
+PANTALLA:
+Comparar borrador y original. Mostrar import Header y <Header /> en App. No guardar el borrador sobre src.
+
+============================================================
+CASO DE USO
+============================================================
+
+5. CU00 / Inicio y visualización de la aplicación.
+Realizarlo únicamente entre 05:00 y 05:45 de este bloque.
+
+PANTALLA:
+En PowerShell, ejecutar:
+
+cd "C:\Users\ACER\Documents\GitHub\2026_B\ProgramaciónWeb2\Semana05\proyecto"
+npm run dev
+
+Mostrar la dirección que imprime Vite y abrirla en Microsoft Edge. Mantener la terminal abierta. Mostrar CALLAO LIMPIO, sin registrar reportes ni pulsar acciones.
+
+HABLAR:
+“Vite ya sirve la aplicación. React montó App en root y App compone la interfaz que estamos viendo”.
+
+============================================================
+PREGUNTAS QUE DEBO PODER RESPONDER
+============================================================
+
+¿React es una base de datos? No, construye interfaces.
+¿Qué es JSX? Sintaxis para describir la interfaz dentro de JavaScript.
+¿Qué es root? El elemento HTML donde se monta App.
+¿Qué hace Vite? Ejecuta el entorno de desarrollo y compila.
+¿Qué es un componente? Aquí, una función que devuelve JSX.
+
+============================================================
+ERRORES QUE NO DEBO COMETER
+============================================================
+
+No atribuir el prototipo a autoridades.
+No confundir Vite con React.
+No afirmar que el borrador está ejecutándose.
+No registrar datos ni volver a intervenir después.
+
+6. TRANSICIÓN — 05:45–06:00, últimas palabras:
+“Ya vimos cómo React inicia la aplicación y cómo se construye un componente. Ahora Diego explicará cómo capturamos información mediante el formulario”.
+
