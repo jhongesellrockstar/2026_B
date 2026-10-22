@@ -1,0 +1,35 @@
+LABORATORIO 5 – DISEÑO Y GESTIÓN DE PROCESOS ORGANIZACIONALES
+Grupo 9 – UNAC
+
+Esta versión corrige los diagramas con base en los documentos oficiales entregados por Juan Santos.
+
+1. ESTRATÉGICO
+Gestión de Comunicación Institucional.
+Se modeló el subprocedimiento 7.1.1 “Aprobación y ejecución del Plan anual de eventos y comunicación”, siguiendo el diagrama oficial del procedimiento E.PIN.02-PR-01, versión 02.
+
+2. MISIONAL
+Biblioteca.
+Se modeló el subprocedimiento 7.2.2 “Adquisición de material bibliográfico”, siguiendo el diagrama oficial del procedimiento M.FAP.11-PR-01, versión 02. La caracterización 2026 clasifica Biblioteca como proceso misional.
+
+3. APOYO
+Gestión de Tecnologías de la Información.
+Se modeló 7.1.2 “Gestión del mantenimiento correctivo”, conforme al procedimiento A.GTI-PR-01, versión 02.
+
+IMPORTAR EN BIZAGI MODELER
+IMPORTANTE: no use “Importar > Bizagi”, porque esa ventana filtra modelos nativos .bpm y por eso no muestra los archivos .bpmn.
+Use:
+Exportar / Importar → grupo Importar → BPMN → seleccione el archivo .bpmn.
+
+Los archivos PNG son vistas previas para comprobar el trazado antes de importar.
+
+VALIDACIÓN DE TRAZADO
+01_Estrategico_Comunicacion_Institucional_UNAC: OK - sin cruces/superposiciones entre flujos
+02_Misional_Biblioteca_Adquisicion_UNAC: OK - sin cruces/superposiciones entre flujos
+03_Apoyo_GTI_Mantenimiento_Correctivo_UNAC: OK - sin cruces/superposiciones entre flujos
+
+Criterios:
+- Actividades con verbo + objeto.
+- Carriles por responsable/unidad.
+- Eventos de inicio y fin.
+- Compuertas solo donde el procedimiento exige una decisión.
+- Flechas ortogonales y separadas.

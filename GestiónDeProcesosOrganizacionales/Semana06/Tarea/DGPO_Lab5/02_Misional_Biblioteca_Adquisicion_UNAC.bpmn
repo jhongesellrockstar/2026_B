@@ -1,0 +1,126 @@
+<?xml version='1.0' encoding='utf-8'?>
+<definitions xmlns="http://www.omg.org/spec/BPMN/20100524/MODEL" xmlns:bpmndi="http://www.omg.org/spec/BPMN/20100524/DI" xmlns:dc="http://www.omg.org/spec/DD/20100524/DC" xmlns:di="http://www.omg.org/spec/DD/20100524/DI" id="Defs_Proc_Biblioteca" targetNamespace="http://unac.edu.pe/dgpo/lab5">
+  <process id="Proc_Biblioteca" name="Misional — Biblioteca: adquisición de material bibliográfico" isExecutable="false">
+    <laneSet id="LaneSet_Proc_Biblioteca">
+      <lane id="B_L1" name="Jefe/a de la UBCBLL">
+        <flowNodeRef>B_S</flowNodeRef>
+        <flowNodeRef>B_T1</flowNodeRef>
+      </lane>
+      <lane id="B_L2" name="Área de Procesos Técnicos de la UBCBLL">
+        <flowNodeRef>B_T2</flowNodeRef>
+      </lane>
+      <lane id="B_L3" name="Dirección de Asuntos Académicos">
+        <flowNodeRef>B_T3</flowNodeRef>
+      </lane>
+      <lane id="B_L4" name="Vicerrectorado Académico">
+        <flowNodeRef>B_T4</flowNodeRef>
+        <flowNodeRef>B_E</flowNodeRef>
+      </lane>
+    </laneSet>
+    <startEvent id="B_S" name="Inicio">
+      <outgoing>B_F1</outgoing>
+    </startEvent>
+    <userTask id="B_T1" name="Revisar requerimiento de material bibliográfico">
+      <incoming>B_F1</incoming>
+      <outgoing>B_F2</outgoing>
+    </userTask>
+    <userTask id="B_T2" name="Evaluar y seleccionar requerimiento de adquisición">
+      <incoming>B_F2</incoming>
+      <outgoing>B_F3</outgoing>
+    </userTask>
+    <userTask id="B_T3" name="Aprobar cuadro para adquisición de material bibliográfico">
+      <incoming>B_F3</incoming>
+      <outgoing>B_F4</outgoing>
+    </userTask>
+    <userTask id="B_T4" name="Gestionar adquisición de material bibliográfico">
+      <incoming>B_F4</incoming>
+      <outgoing>B_F5</outgoing>
+    </userTask>
+    <endEvent id="B_E" name="Fin">
+      <incoming>B_F5</incoming>
+    </endEvent>
+    <sequenceFlow id="B_F1" sourceRef="B_S" targetRef="B_T1" />
+    <sequenceFlow id="B_F2" sourceRef="B_T1" targetRef="B_T2" />
+    <sequenceFlow id="B_F3" sourceRef="B_T2" targetRef="B_T3" />
+    <sequenceFlow id="B_F4" sourceRef="B_T3" targetRef="B_T4" />
+    <sequenceFlow id="B_F5" sourceRef="B_T4" targetRef="B_E" />
+  </process>
+  <bpmndi:BPMNDiagram id="Diagram_Proc_Biblioteca">
+    <bpmndi:BPMNPlane id="Plane_Proc_Biblioteca" bpmnElement="Proc_Biblioteca">
+      <bpmndi:BPMNShape id="B_L1_di" bpmnElement="B_L1" isHorizontal="true">
+        <dc:Bounds x="80" y="80" width="1300" height="150" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="B_L2_di" bpmnElement="B_L2" isHorizontal="true">
+        <dc:Bounds x="80" y="230" width="1300" height="150" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="B_L3_di" bpmnElement="B_L3" isHorizontal="true">
+        <dc:Bounds x="80" y="380" width="1300" height="150" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="B_L4_di" bpmnElement="B_L4" isHorizontal="true">
+        <dc:Bounds x="80" y="530" width="1300" height="150" />
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="B_S_di" bpmnElement="B_S">
+        <dc:Bounds x="125" y="135" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="115" y="175" width="76" height="34" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="B_T1_di" bpmnElement="B_T1">
+        <dc:Bounds x="220" y="115" width="190" height="75" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="210" y="194" width="230" height="34" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="B_T2_di" bpmnElement="B_T2">
+        <dc:Bounds x="500" y="265" width="190" height="75" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="490" y="344" width="230" height="34" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="B_T3_di" bpmnElement="B_T3">
+        <dc:Bounds x="780" y="415" width="200" height="75" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="770" y="494" width="240" height="34" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="B_T4_di" bpmnElement="B_T4">
+        <dc:Bounds x="1060" y="565" width="190" height="75" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1050" y="644" width="230" height="34" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNShape id="B_E_di" bpmnElement="B_E">
+        <dc:Bounds x="1300" y="585" width="36" height="36" />
+        <bpmndi:BPMNLabel>
+          <dc:Bounds x="1290" y="625" width="76" height="34" />
+        </bpmndi:BPMNLabel>
+      </bpmndi:BPMNShape>
+      <bpmndi:BPMNEdge id="B_F1_di" bpmnElement="B_F1">
+        <di:waypoint x="161" y="153" />
+        <di:waypoint x="220" y="153" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="B_F2_di" bpmnElement="B_F2">
+        <di:waypoint x="410" y="152.5" />
+        <di:waypoint x="455" y="152.5" />
+        <di:waypoint x="455" y="302.5" />
+        <di:waypoint x="500" y="302.5" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="B_F3_di" bpmnElement="B_F3">
+        <di:waypoint x="690" y="302.5" />
+        <di:waypoint x="735" y="302.5" />
+        <di:waypoint x="735" y="452.5" />
+        <di:waypoint x="780" y="452.5" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="B_F4_di" bpmnElement="B_F4">
+        <di:waypoint x="980" y="452.5" />
+        <di:waypoint x="1020" y="452.5" />
+        <di:waypoint x="1020" y="602.5" />
+        <di:waypoint x="1060" y="602.5" />
+      </bpmndi:BPMNEdge>
+      <bpmndi:BPMNEdge id="B_F5_di" bpmnElement="B_F5">
+        <di:waypoint x="1250" y="602.5" />
+        <di:waypoint x="1300" y="603" />
+      </bpmndi:BPMNEdge>
+    </bpmndi:BPMNPlane>
+  </bpmndi:BPMNDiagram>
+</definitions>

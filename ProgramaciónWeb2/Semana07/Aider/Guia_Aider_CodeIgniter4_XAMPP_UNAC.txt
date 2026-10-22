@@ -1,0 +1,314 @@
+GUÍA DE TRABAJO: AIDER LOCAL + OLLAMA + XAMPP + CODEIGNITER 4
+Proyecto de Programación Web II
+Ruta del proyecto:
+C:\xampp\htdocs\S7\codeigniter4
+
+Entorno:
+- Windows
+- XAMPP
+- PHP 8.2.12
+- CodeIgniter 4
+- Aider instalado en el entorno Conda "aider"
+- Ollama como servidor de modelos locales
+- Modelo local recomendado para este Acer: qwen2.5-coder:3b
+
+============================================================
+1. IDEA GENERAL
+============================================================
+
+Aider NO depende de que el proyecto sea Python.
+
+El entorno Conda "aider" solo sirve para ejecutar Aider y sus dependencias.
+Aider puede leer y modificar archivos PHP, HTML, CSS, JavaScript, JSON, SQL, Fortran, C/C++, etc.
+
+En este proyecto:
+
+Aider
+  -> lee/modifica archivos de CodeIgniter 4
+
+Ollama
+  -> ejecuta el modelo local offline
+
+XAMPP
+  -> proporciona Apache + PHP + MySQL/MariaDB
+
+Git
+  -> permite controlar y revertir cambios
+
+============================================================
+2. INICIO DE CADA SESIÓN
+============================================================
+
+PASO 1: Abrir Ollama.
+
+Comprobar:
+ollama list
+ollama ps
+
+PASO 2: Abrir Anaconda Prompt.
+
+Activar Aider:
+conda activate aider
+
+PASO 3: Ir al proyecto:
+cd /d C:\xampp\htdocs\S7\codeigniter4
+
+PASO 4: Indicar la dirección local de Ollama:
+set OLLAMA_API_BASE=http://127.0.0.1:11434
+
+PASO 5: Comprobar PHP de XAMPP:
+C:\xampp\php\php.exe -v
+
+PASO 6: Iniciar Aider:
+python -m aider --model ollama_chat/qwen2.5-coder:3b
+
+============================================================
+3. PREPARAR GIT SOLO LA PRIMERA VEZ
+============================================================
+
+Comprobar:
+git status
+
+Si NO es un repositorio:
+git init
+
+No sobrescribir el .gitignore existente de CodeIgniter.
+
+Agregar Aider al .gitignore:
+echo .aider*>>.gitignore
+
+Revisar:
+git status
+
+IMPORTANTE:
+No versionar secretos ni credenciales. Normalmente .env no debe entrar al repositorio.
+
+Si todo está correcto:
+git add .
+git commit -m "Baseline limpio CodeIgniter4 S7"
+
+Comprobar:
+git status
+
+============================================================
+4. COMANDOS BÁSICOS DENTRO DE AIDER
+============================================================
+
+/ls
+/clear
+/drop
+/add archivo
+/ask
+/code
+/diff
+/undo
+/exit
+
+============================================================
+5. PRIMERA PRUEBA: COMPRENDER EL PROYECTO
+============================================================
+
+/ask Responde únicamente en español. Analiza el repo-map de este proyecto CodeIgniter 4 sin modificar archivos. Identifica la estructura principal: app/Config, app/Controllers, app/Models, app/Views, public, writable y tests. Explica en máximo 20 líneas qué función tiene cada carpeta y qué archivos parecen pertenecer al trabajo de mi curso. No inventes archivos que no aparezcan en el repositorio.
+
+============================================================
+6. ANALIZAR LAS RUTAS
+============================================================
+
+/add app\Config\Routes.php
+
+/ask Responde en español. Analiza únicamente app\Config\Routes.php. Enumera las rutas definidas, el controlador y método al que apuntan y explica cómo accedería a cada ruta desde el navegador. No modifiques nada.
+
+============================================================
+7. ANALIZAR UN CONTROLADOR
+============================================================
+
+/add app\Controllers\Home.php
+
+/ask Responde únicamente en español. Analiza este controlador de CodeIgniter 4. Explica: 1) namespace, 2) clase base, 3) métodos públicos, 4) vistas que carga, 5) datos que envía a las vistas y 6) rutas que probablemente lo invocan. No modifiques nada y diferencia lo confirmado de lo inferido.
+
+============================================================
+8. ANALIZAR MODELO + CONTROLADOR + VISTA
+============================================================
+
+/add app\Models\NombreModelo.php
+/add app\Controllers\NombreControlador.php
+/add app\Views\nombre_vista.php
+
+/ask Responde en español. Reconstruye el flujo MVC entre estos archivos. Quiero la trazabilidad:
+petición HTTP -> ruta -> controlador -> modelo -> consulta o datos -> controlador -> vista -> respuesta HTML.
+Indica qué relaciones están confirmadas por el código. No modifiques nada.
+
+============================================================
+9. PEDIR UNA MODIFICACIÓN PEQUEÑA
+============================================================
+
+/ask Quiero agregar [DESCRIBIR CAMBIO]. Antes de modificar, indícame qué archivos tendrían que cambiar, qué harías en cada uno y qué efecto tendría. No edites todavía.
+
+Si la propuesta es correcta:
+
+/code Aplica únicamente la modificación propuesta. No hagas refactorizaciones adicionales ni cambies archivos no necesarios.
+
+Después:
+/diff
+
+Si está mal:
+/undo
+
+============================================================
+10. CREAR UNA NUEVA PÁGINA
+============================================================
+
+/ask Quiero crear una página nueva llamada "estudiantes" siguiendo MVC de CodeIgniter 4. Antes de editar, dime qué ruta, controlador y vista serían necesarios. No hagas cambios todavía.
+
+Luego:
+
+/code Crea únicamente lo necesario para implementar la página "estudiantes". Mantén el estilo y estructura existentes del proyecto. No modifiques otros módulos.
+
+Después:
+/diff
+
+============================================================
+11. EJECUTAR COMANDOS PHP DESDE AIDER
+============================================================
+
+/run C:\xampp\php\php.exe spark
+
+Para listar rutas:
+/run C:\xampp\php\php.exe spark routes
+
+Para revisar sintaxis PHP:
+/run C:\xampp\php\php.exe -l app\Controllers\Home.php
+
+No permitir todavía cambios destructivos en base de datos sin revisar.
+
+============================================================
+12. XAMPP Y NAVEGADOR
+============================================================
+
+1. Abrir XAMPP Control Panel.
+2. Iniciar Apache.
+3. Si el proyecto usa base de datos, iniciar MySQL.
+4. Probar la aplicación en el navegador.
+
+Aider modifica el código.
+XAMPP ejecuta la aplicación.
+
+============================================================
+13. PHP Y COMPOSER
+============================================================
+
+PHP:
+C:\xampp\php\php.exe -v
+
+Composer:
+composer --version
+
+Restaurar dependencias si corresponde:
+composer install
+
+============================================================
+14. FLUJO RECOMENDADO PARA TAREAS DE LA UNIVERSIDAD
+============================================================
+
+1. Guardar el enunciado.
+2. Abrir Aider en la raíz del proyecto.
+3. Usar /ask.
+4. Pedir qué archivos intervienen.
+5. Cargar con /add solo los relevantes.
+6. Pedir explicación antes de modificar.
+7. Cambiar a /code.
+8. Hacer un cambio pequeño.
+9. Revisar /diff.
+10. Probar con PHP/XAMPP.
+11. Corregir errores.
+12. Hacer commit cuando esté correcto.
+
+============================================================
+15. PROMPT BASE PARA CLASE
+============================================================
+
+/ask Responde únicamente en español.
+
+Estoy trabajando en Programación Web II con CodeIgniter 4, PHP 8.2 y XAMPP.
+
+Quiero resolver la siguiente tarea:
+[PEGAR AQUÍ EL ENUNCIADO]
+
+Primero NO modifiques nada.
+
+Analiza el repositorio y dime:
+1. qué solicita exactamente la tarea;
+2. qué archivos existentes intervienen;
+3. qué archivos nuevos serían necesarios;
+4. qué rutas, controladores, modelos y vistas participan;
+5. qué pasos propones implementar;
+6. cómo comprobaría el resultado en XAMPP.
+
+No inventes archivos ni funciones que no hayas verificado.
+Si necesitas leer un archivo completo, dime exactamente cuál debo agregar con /add.
+
+============================================================
+16. PROMPT PARA DETECTAR ERRORES
+============================================================
+
+/ask Responde en español. Analiza el error que te proporcionaré y relaciónalo con los archivos cargados. No modifiques nada todavía. Indica causa probable, evidencia en el código, archivo afectado y corrección propuesta.
+
+============================================================
+17. PROMPT PARA REVISAR ANTES DE ENTREGAR
+============================================================
+
+/ask Responde en español. Revisa los archivos cargados como si fueras un docente de Programación Web II. Comprueba sintaxis, estructura MVC, rutas, nombres de clases/métodos, seguridad básica, coherencia con CodeIgniter 4 y posibles errores de ejecución. No modifiques nada. Devuélveme una lista priorizada de problemas.
+
+============================================================
+18. MODELO LOCAL RECOMENDADO
+============================================================
+
+Recomendado:
+qwen2.5-coder:3b
+
+Comando:
+python -m aider --model ollama_chat/qwen2.5-coder:3b
+
+Regla inicial:
+- repo-map para visión general;
+- 1 a 4 archivos completos con /add;
+- /ask para análisis;
+- /code solo cuando ya esté claro el cambio.
+
+============================================================
+19. FINALIZAR CORRECTAMENTE
+============================================================
+
+Dentro de Aider:
+/exit
+
+Luego:
+ollama ps
+
+Si el modelo continúa cargado:
+ollama stop qwen2.5-coder:3b
+
+============================================================
+20. RECORDATORIO
+============================================================
+
+Anaconda/Conda:
+solo ejecuta Aider.
+
+Aider:
+asistente de código.
+
+Ollama:
+servidor del modelo local.
+
+CodeIgniter:
+framework PHP.
+
+XAMPP:
+Apache + PHP + MySQL/MariaDB.
+
+Git:
+control de versiones.
+
+Proyecto:
+C:\xampp\htdocs\S7\codeigniter4

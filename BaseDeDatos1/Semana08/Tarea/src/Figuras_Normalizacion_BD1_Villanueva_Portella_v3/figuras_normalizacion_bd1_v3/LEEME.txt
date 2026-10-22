@@ -1,0 +1,8 @@
+VERSIÓN CORREGIDA – FIGURAS DE NORMALIZACIÓN BD1
+
+Cambios aplicados:
+- Se eliminaron tablas embebidas en HTML que podían renderizarse mal en draw.io 29.0.6/Windows 11.
+- Todas las tablas del archivo .drawio ahora están construidas con celdas rectangulares nativas.
+- Se retiró la paleta azul predominante.
+- Se usó una presentación más sobria: bordes negros, fondos neutros y acentos discretos.
+- Se mantuvieron archivos editables .drawio y versiones .png listas para insertar en la PPT.

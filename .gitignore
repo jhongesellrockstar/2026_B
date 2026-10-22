@@ -1,0 +1,15 @@
+# Sesiones y perfiles locales generados por el constructor
+.runtime/
+/ProgramaciónWeb2/Semana05/PW2_CallaoLimpio_Builder/.vscode-profile/
+
+# Cachés de Chromium / Electron
+**/Code Cache/
+**/GPUCache/
+**/Cache/
+
+# Dependencias instaladas y bytecode regenerable
+node_modules/
+__pycache__/
+
+# Copias automáticas de draw.io (se conservan los originales)
+**/.$*.drawio.bkp
