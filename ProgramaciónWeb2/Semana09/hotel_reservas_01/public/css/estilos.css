@@ -1,0 +1,27 @@
+* { box-sizing: border-box; }
+body { margin: 0; background: #f2f2f0; color: #292929; font: 16px Arial, sans-serif; line-height: 1.5; }
+.contenedor { max-width: 1120px; margin: 30px auto; padding: 25px; background: white; border: 1px solid #d5d5d2; }
+.curso { color: #666; font-size: .9rem; margin-top: 0; border-bottom: 1px solid #ddd; padding-bottom: 12px; }
+h1 { font-size: 1.7rem; margin: 12px 0; }
+a { color: #672b3d; }
+button, .boton { display: inline-block; padding: 8px 13px; border: 1px solid #777; border-radius: 2px; background: #f2f2f2; color: #292929; font: inherit; cursor: pointer; text-decoration: none; }
+.principal { background: #355f49; border-color: #355f49; color: white; }
+.eliminar { padding: 3px 8px; color: #672b3d; background: white; border-color: #b4a4a9; }
+.tabla { overflow-x: auto; }
+table { width: 100%; border-collapse: collapse; margin: 20px 0; }
+th, td { padding: 10px; border: 1px solid #ccc; text-align: left; }
+th { background: #e9e9e6; }
+.acciones { white-space: nowrap; }
+.acciones form { display: inline; margin-left: 8px; }
+.formulario { max-width: 560px; }
+label { display: block; margin: 15px 0 4px; font-weight: bold; }
+input, select { width: 100%; padding: 9px; border: 1px solid #888; border-radius: 2px; font: inherit; background: white; }
+input[readonly] { background: #eeeeeb; color: #444; }
+.ayuda { font-size: .9rem; color: #555; }
+.botones { margin-top: 22px; display: flex; gap: 10px; }
+.mensaje { padding: 12px; border: 1px solid #54705a; background: #edf5ed; }
+.errores { padding: 10px; border: 1px solid #87404d; background: #fff0f1; }
+.errores ul { margin: 0; }
+:focus-visible { outline: 3px solid #735126; outline-offset: 3px; }
+footer { text-align: center; color: #666; padding: 10px 20px 25px; font-size: .9rem; }
+@media (max-width: 700px) { .contenedor { margin: 12px; padding: 16px; } th, td { padding: 7px; } h1 { font-size: 1.4rem; } }

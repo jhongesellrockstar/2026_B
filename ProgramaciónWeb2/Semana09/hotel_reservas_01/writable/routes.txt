@@ -1,0 +1,17 @@
+
+CodeIgniter v4.7.5 Command Line Tool - Server Time: 2026-10-27 14:54:38 UTC-05:00
+
++--------+----------------------------------+------+----------------------------------------------+----------------+---------------+
+| Method | Route                            | Name | Handler                                      | Before Filters | After Filters |
++--------+----------------------------------+------+----------------------------------------------+----------------+---------------+
+| GET    | /                                | »    | \App\Controllers\Habitaciones::index         | csrf           |               |
+| GET    | habitaciones                     | »    | \App\Controllers\Habitaciones::index         | csrf           |               |
+| GET    | habitaciones/crear               | »    | \App\Controllers\Habitaciones::crear         | csrf           |               |
+| GET    | habitaciones/editar/([0-9]+)     | »    | \App\Controllers\Habitaciones::editar/$1     | csrf           |               |
+| POST   | habitaciones/guardar             | »    | \App\Controllers\Habitaciones::guardar       | csrf           |               |
+| POST   | habitaciones/actualizar/([0-9]+) | »    | \App\Controllers\Habitaciones::actualizar/$1 | csrf           |               |
+| POST   | habitaciones/eliminar/([0-9]+)   | »    | \App\Controllers\Habitaciones::eliminar/$1   | csrf           |               |
++--------+----------------------------------+------+----------------------------------------------+----------------+---------------+
+
+Required Before Filters: forcehttps, pagecache
+ Required After Filters: pagecache, performance

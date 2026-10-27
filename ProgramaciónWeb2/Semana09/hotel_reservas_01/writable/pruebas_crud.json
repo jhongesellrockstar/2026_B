@@ -1,0 +1,198 @@
+[
+  {
+    "prueba": "READ: Apache muestra el listado",
+    "resultado": "OK"
+  },
+  {
+    "prueba": "Datos demo visibles",
+    "resultado": "OK"
+  },
+  {
+    "prueba": "CSRF: POST sin token rechazado",
+    "resultado": "OK"
+  },
+  {
+    "prueba": "CREATE sencilla / disponible",
+    "resultado": "OK"
+  },
+  {
+    "prueba": "Regla PHP y fecha sencilla / disponible",
+    "resultado": "OK"
+  },
+  {
+    "prueba": "UPDATE recalcula sencilla a doble",
+    "resultado": "OK"
+  },
+  {
+    "prueba": "CREATE sencilla / mantenimiento",
+    "resultado": "OK"
+  },
+  {
+    "prueba": "Regla PHP y fecha sencilla / mantenimiento",
+    "resultado": "OK"
+  },
+  {
+    "prueba": "UPDATE recalcula sencilla a doble",
+    "resultado": "OK"
+  },
+  {
+    "prueba": "CREATE sencilla / ocupada",
+    "resultado": "OK"
+  },
+  {
+    "prueba": "Regla PHP y fecha sencilla / ocupada",
+    "resultado": "OK"
+  },
+  {
+    "prueba": "UPDATE recalcula sencilla a doble",
+    "resultado": "OK"
+  },
+  {
+    "prueba": "CREATE doble / disponible",
+    "resultado": "OK"
+  },
+  {
+    "prueba": "Regla PHP y fecha doble / disponible",
+    "resultado": "OK"
+  },
+  {
+    "prueba": "UPDATE recalcula doble a triple",
+    "resultado": "OK"
+  },
+  {
+    "prueba": "CREATE doble / mantenimiento",
+    "resultado": "OK"
+  },
+  {
+    "prueba": "Regla PHP y fecha doble / mantenimiento",
+    "resultado": "OK"
+  },
+  {
+    "prueba": "UPDATE recalcula doble a triple",
+    "resultado": "OK"
+  },
+  {
+    "prueba": "CREATE doble / ocupada",
+    "resultado": "OK"
+  },
+  {
+    "prueba": "Regla PHP y fecha doble / ocupada",
+    "resultado": "OK"
+  },
+  {
+    "prueba": "UPDATE recalcula doble a triple",
+    "resultado": "OK"
+  },
+  {
+    "prueba": "CREATE triple / disponible",
+    "resultado": "OK"
+  },
+  {
+    "prueba": "Regla PHP y fecha triple / disponible",
+    "resultado": "OK"
+  },
+  {
+    "prueba": "UPDATE recalcula triple a sencilla",
+    "resultado": "OK"
+  },
+  {
+    "prueba": "CREATE triple / mantenimiento",
+    "resultado": "OK"
+  },
+  {
+    "prueba": "Regla PHP y fecha triple / mantenimiento",
+    "resultado": "OK"
+  },
+  {
+    "prueba": "UPDATE recalcula triple a sencilla",
+    "resultado": "OK"
+  },
+  {
+    "prueba": "CREATE triple / ocupada",
+    "resultado": "OK"
+  },
+  {
+    "prueba": "Regla PHP y fecha triple / ocupada",
+    "resultado": "OK"
+  },
+  {
+    "prueba": "UPDATE recalcula triple a sencilla",
+    "resultado": "OK"
+  },
+  {
+    "prueba": "Código duplicado rechazado con mensaje",
+    "resultado": "OK"
+  },
+  {
+    "prueba": "Validación codigo ''",
+    "resultado": "OK"
+  },
+  {
+    "prueba": "Validación codigo '   '",
+    "resultado": "OK"
+  },
+  {
+    "prueba": "Validación codigo ' H101 '",
+    "resultado": "OK"
+  },
+  {
+    "prueba": "Validación codigo 'XXXXXXXXXXXXXXXXXXXXX'",
+    "resultado": "OK"
+  },
+  {
+    "prueba": "Validación tipo 'suite'",
+    "resultado": "OK"
+  },
+  {
+    "prueba": "Validación tipo ''",
+    "resultado": "OK"
+  },
+  {
+    "prueba": "Validación estado 'otro'",
+    "resultado": "OK"
+  },
+  {
+    "prueba": "Validación estado ''",
+    "resultado": "OK"
+  },
+  {
+    "prueba": "Validación fecha ''",
+    "resultado": "OK"
+  },
+  {
+    "prueba": "Validación fecha '2026-02-30'",
+    "resultado": "OK"
+  },
+  {
+    "prueba": "UPDATE inválido conserva fila",
+    "resultado": "OK"
+  },
+  {
+    "prueba": "Registro inexistente devuelve 404",
+    "resultado": "OK"
+  },
+  {
+    "prueba": "GET no elimina",
+    "resultado": "OK"
+  },
+  {
+    "prueba": "Confirmación de eliminación declarada",
+    "resultado": "OK"
+  },
+  {
+    "prueba": "Servidor no depende de JavaScript ni campos calculados",
+    "resultado": "OK"
+  },
+  {
+    "prueba": "DELETE: fila eliminada en MySQL y listado",
+    "resultado": "OK"
+  },
+  {
+    "prueba": "Listado sin errores PHP visibles",
+    "resultado": "OK"
+  },
+  {
+    "prueba": "Datos originales conservados",
+    "resultado": "OK"
+  }
+]

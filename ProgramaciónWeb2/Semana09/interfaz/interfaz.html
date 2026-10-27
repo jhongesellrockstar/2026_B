@@ -1,0 +1,118 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>CRUD Productos</title>
+</head>
+<body>
+
+<h2>CRUD Productos</h2>
+
+<!-- FORMULARIO -->
+<input type="hidden" id="id">
+
+<input type="text" id="nombre" placeholder="Nombre"><br><br>
+<input type="text" id="descripcion" placeholder="Descripción"><br><br>
+<input type="number" id="precio" placeholder="Precio"><br><br>
+<input type="number" id="stock" placeholder="Stock"><br><br>
+
+<button onclick="guardar()">Guardar</button>
+
+<hr>
+
+<h3>Lista de productos</h3>
+<div id="lista"></div>
+
+<script>
+
+const API = "http://localhost:8080/productos";
+
+// ====================== LISTAR ======================
+function listar() {
+    fetch(API)
+    .then(res => res.json())
+    .then(data => {
+        let html = "";
+
+        data.forEach(p => {
+            html += `
+                <p>
+                    <b>${p.nombre}</b> - ${p.precio}
+                    <button onclick="editar(${p.id}, '${p.nombre}', '${p.descripcion}', ${p.precio}, ${p.stock})">Editar</button>
+                    <button onclick="eliminar(${p.id})">Eliminar</button>
+                </p>
+            `;
+        });
+
+        document.getElementById("lista").innerHTML = html;
+    });
+}
+
+// ====================== GUARDAR ======================
+function guardar() {
+    let id = document.getElementById("id").value;
+
+    let data = {
+        nombre: document.getElementById("nombre").value,
+        descripcion: document.getElementById("descripcion").value,
+        precio: document.getElementById("precio").value,
+        stock: document.getElementById("stock").value
+    };
+
+    let url = API;
+    let method = "POST";
+
+    if (id) {
+        url = API + "/" + id;
+        method = "PUT";
+    }
+
+
+
+
+
+    fetch(url, {
+        method: method,
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(data)
+    })
+    .then(() => {
+        limpiar();
+        listar();
+    });
+}
+
+// ====================== EDITAR ======================
+function editar(id, nombre, descripcion, precio, stock) {
+    document.getElementById("id").value = id;
+    document.getElementById("nombre").value = nombre;
+    document.getElementById("descripcion").value = descripcion;
+    document.getElementById("precio").value = precio;
+    document.getElementById("stock").value = stock;
+}
+
+// ====================== ELIMINAR ======================
+function eliminar(id) {
+    fetch(API + "/" + id, {
+        method: "DELETE"
+    })
+    .then(() => listar());
+}
+
+// ====================== LIMPIAR ======================
+function limpiar() {
+    document.getElementById("id").value = "";
+    document.getElementById("nombre").value = "";
+    document.getElementById("descripcion").value = "";
+    document.getElementById("precio").value = "";
+    document.getElementById("stock").value = "";
+}
+
+// Cargar al inicio
+listar();
+
+</script>
+
+</body>
+</html>

@@ -1,0 +1,101 @@
+SISTEMA DE RESERVA DE HABITACIONES - GUÍA DE ESTUDIO
+Programación Web II - Ingeniería de Sistemas - Universidad Nacional del Callao
+
+1. CODEIGNITER 4
+Es un framework de PHP. Proporciona la estructura y herramientas para rutas,
+formularios, consultas y validación. La base instalada es CodeIgniter 4.7.5.
+system y la configuración estándar pertenecen al framework, no al código del examen.
+
+2. MVC
+Modelo: trabaja con la tabla de la base de datos.
+Vista: presenta formularios y listado en HTML.
+Controlador: recibe la solicitud, valida y conecta modelo con vista.
+
+3. HABITACIONMODEL
+Archivo: app/Models/HabitacionModel.php.
+Indica tabla habitaciones, clave primaria id y campos permitidos para guardar.
+Devuelve arreglos. No usa timestamps porque no hay created_at ni updated_at.
+
+4. HABITACIONES.PHP
+Archivo: app/Controllers/Habitaciones.php.
+index obtiene registros; crear muestra el formulario; guardar inserta;
+editar busca por ID; actualizar modifica; eliminar borra por ID.
+reglas reúne la validación y datosHabitacion calcula precio/capacidad en PHP.
+Son dos ayudas pequeñas para no repetir la misma lógica al crear y actualizar.
+
+5. ROUTES.PHP
+Archivo: app/Config/Routes.php.
+Relaciona URL y método HTTP con una acción del controlador.
+GET abre páginas; POST guarda, actualiza o elimina.
+Auto Routing está desactivado: se utilizan las siete rutas explícitas.
+
+6. MIGRACIÓN
+Archivo: app/Database/Migrations/2026-10-27-000001_CrearHabitaciones.php.
+La ubicación real que CodeIgniter utiliza es app/Database/Migrations.
+up crea la tabla con sus campos y claves. down permite revertir esa creación.
+No ejecutes rollback para demostrar el CRUD: eliminar una fila no es borrar la tabla.
+El seeder HabitacionesSeeder carga sólo los tres ejemplos de instalación.
+
+7. VISTAS
+habitaciones/index.php: tabla de registros y acciones Editar/Eliminar.
+habitaciones/crear.php: formulario de registro.
+habitaciones/editar.php: formulario con los valores de una habitación existente.
+templates/header.php y footer.php: estructura común, mensajes y recursos locales.
+public/css/estilos.css: presentación sencilla; no hay un framework frontend.
+
+8. CREATE
+Nueva habitación -> formulario -> POST habitaciones/guardar.
+El controlador valida, calcula capacidad/precio y llama a insert del modelo.
+MySQL genera el ID. La aplicación vuelve al listado con un mensaje de éxito.
+
+9. READ
+GET habitaciones -> index -> findAll del modelo -> MySQL.
+Los resultados se pasan a la vista y foreach genera una fila por habitación.
+Los registros nuevos aparecen primero por el orden descendente del ID.
+
+10. UPDATE
+Editar -> GET con ID -> find -> formulario con datos actuales.
+Actualizar -> POST con ese ID -> validación -> cálculo -> update -> listado.
+El ID se conserva. Si cambia el tipo, también cambian capacidad y precio.
+
+11. DELETE
+Eliminar -> confirm del navegador -> POST con ID -> delete -> listado.
+Si se cancela el aviso, no se envía el formulario. Un GET no elimina datos.
+Si el ID no existe, se devuelve una respuesta 404.
+
+12. CONEXIÓN MYSQL
+.env indica localhost, hotel_reservas_01, root, contraseña local y puerto 3306.
+El driver es MySQLi. La configuración de esta copia es independiente del maestro.
+id identifica la fila; codigo es único; precio_noche es DECIMAL; fecha es DATE.
+
+13. XAMPP
+Apache sirve las páginas y ejecuta PHP. MySQL/MariaDB conserva las habitaciones.
+Ambos deben estar encendidos. phpMyAdmin permite revisar las filas y la estructura.
+La aplicación no depende de php spark serve.
+
+14. RECORRIDO COMPLETO
+Navegador -> Ruta -> Controlador -> Modelo -> MySQL
+-> Controlador -> Vista -> Navegador.
+
+Ejemplo al listar: el usuario pide /habitaciones, la ruta llama a index,
+el modelo consulta MySQL y el controlador entrega los resultados a index.php.
+Ejemplo al guardar: el POST pasa primero por validación y luego llega al modelo.
+
+REGLAS QUE DEBES PODER EXPLICAR
+sencilla: 1 huésped y S/ 100.00.
+doble: 2 huéspedes y S/ 200.00.
+triple: 3 huéspedes y S/ 300.00.
+Estados: disponible, mantenimiento u ocupada.
+Código obligatorio y único, hasta 20 caracteres, sin espacios al inicio/final.
+Fecha obligatoria y válida. Los errores aparecen en español sin perder los datos.
+
+JavaScript muestra una vista previa del precio y capacidad, pero PHP decide
+los valores guardados. No hay AJAX. No hay login, usuarios, búsqueda o paginación.
+csrf_field protege los formularios; esc evita interpretar como HTML el texto guardado.
+
+DEMOSTRACIÓN
+Crear HAB-010, Doble, Disponible y fecha válida. Ver 2 huéspedes y S/ 200.
+Guardar; comprobar; editar a Ocupada; actualizar; comprobar; eliminar y confirmar.
+Conservar H101, H102 y H103 para futuros ensayos.
+
+URL: http://localhost/hotel_reservas_01/public/

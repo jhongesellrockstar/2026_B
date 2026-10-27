@@ -1,0 +1,157 @@
+GUION PARA MOSTRAR Y EXPLICAR EL CRUD
+Leer con naturalidad; las indicaciones entre corchetes son acciones, no texto oral.
+
+[Mostrar XAMPP con Apache y MySQL encendidos.]
+
+Buenas tardes, profesor. Voy a presentar mi proyecto de gestión de habitaciones
+para el examen de Programación Web II. El objetivo es demostrar un CRUD sencillo
+con PHP, CodeIgniter 4 y MySQL. Voy a explicar los archivos principales y después
+voy a registrar, consultar, modificar y eliminar una habitación desde la interfaz.
+
+En esta instalación utilizo XAMPP. Apache recibe las solicitudes del navegador y
+ejecuta PHP. MySQL, que aquí corresponde a MariaDB, guarda los registros. Ambos
+servicios tienen que estar encendidos. La aplicación se abre en localhost dentro
+de hotel_reservas_01 y su carpeta public; no necesito utilizar Spark Serve.
+
+[Mostrar la carpeta hotel_reservas_01 en VS Code.]
+
+La estructura base la proporciona CodeIgniter. El framework ya incluye system,
+el punto de entrada, la configuración y las herramientas de ejecución. No estoy
+presentando esos archivos internos como si los hubiera escrito manualmente.
+La implementación del ejercicio corresponde principalmente al modelo, el
+controlador, las rutas, la migración, las vistas y las reglas del CRUD.
+
+Para organizar ese trabajo utilizo MVC. El modelo trabaja con los datos, la vista
+presenta la información y el controlador coordina las solicitudes. Puedo seguir
+una operación desde la dirección que abre el navegador hasta la consulta a la
+base de datos y la respuesta que finalmente aparece en pantalla.
+
+[Abrir app/Config/Routes.php.]
+
+En las rutas relaciono cada dirección con una acción de Habitaciones. Las rutas
+GET permiten abrir el listado y los formularios. Las rutas POST reciben los datos
+para guardar, actualizar o eliminar. El enrutamiento automático está desactivado,
+por eso puedo identificar explícitamente qué acción corresponde a cada URL.
+
+La página principal y habitaciones llaman a index. Crear abre el formulario.
+Guardar procesa el registro nuevo. Editar y Actualizar reciben un ID, que permite
+trabajar con una habitación concreta. Eliminar utiliza POST y no un enlace GET
+que cambie los datos sólo por abrir una dirección.
+
+[Abrir phpMyAdmin y seleccionar hotel_reservas_01 > habitaciones.]
+
+Mi base se llama hotel_reservas_01. Está separada del proyecto de referencia.
+La tabla habitaciones tiene los siete campos del enunciado: id, codigo, tipo,
+capacidad, precio_noche, estado y fecha. El ID es la clave primaria y aumenta
+automáticamente. El código también es único, para no registrar dos habitaciones
+con la misma identificación.
+
+Los tipos son sencilla, doble y triple. Cada uno tiene una capacidad y un precio
+definidos: una persona y cien soles, dos personas y doscientos, o tres personas
+y trescientos. El estado puede ser disponible, mantenimiento u ocupada. Para el
+importe utilizo DECIMAL con dos decimales y para la fecha utilizo DATE.
+
+[Mostrar la migración CrearHabitaciones.]
+
+La migración describe esa estructura mediante las herramientas de CodeIgniter.
+En up defino los campos, la clave primaria y el código único, y creo la tabla.
+Down permite revertir la creación si se necesita. La migración está en
+app/Database/Migrations, que es la ubicación utilizada por el framework.
+
+Además dejé un SQL importable para instalar una copia mediante phpMyAdmin. El
+seeder sólo prepara tres ejemplos: H101, H102 y H103. Los registros de la pantalla
+se consultan desde MySQL; no son datos escritos directamente dentro de la vista.
+
+[Abrir HabitacionModel.php.]
+
+El modelo se llama HabitacionModel y extiende Model. Aquí señalo que la tabla es
+habitaciones, la clave primaria es id y los resultados se devuelven como arreglos.
+AllowedFields contiene los seis campos que se pueden guardar o actualizar.
+El ID no se pide en el formulario porque lo genera la base de datos.
+
+No uso timestamps porque la tabla del examen no contiene created_at ni updated_at.
+Con este modelo puedo utilizar findAll, find, insert, update y delete. No necesito
+construir una consulta SQL diferente en cada vista ni mezclar presentación con
+conexión a la base de datos.
+
+[Abrir Habitaciones.php y recorrer sus seis acciones.]
+
+En el controlador index consulta las habitaciones y las envía al listado.
+Crear muestra el formulario sin insertar nada todavía. Guardar recibe el POST,
+valida los campos, prepara los datos y llama a insert. Después vuelve al listado
+con un mensaje que confirma el registro.
+
+Editar busca por ID y carga el formulario con sus valores. Si la habitación no
+existe, devuelve una respuesta 404. Actualizar comprueba el registro, vuelve a
+validar y utiliza update. Eliminar comprueba el ID, llama a delete y regresa al
+listado. De esa forma las acciones se mantienen separadas y fáciles de reconocer.
+
+Hay dos métodos pequeños de ayuda. Reglas reúne la validación que se aplica al
+crear y actualizar. DatosHabitacion prepara los valores y calcula la tarifa y
+la capacidad. Comparto esa lógica para que una operación no termine usando
+reglas distintas de la otra.
+
+La validación exige un código de longitud razonable y que no esté repetido, un
+tipo y estado permitidos y una fecha válida. Al editar, el mismo código de esa
+habitación sigue siendo válido; lo que no puedo hacer es usar el de otra fila.
+Si hay un error, regreso al formulario con los datos anteriores y un mensaje
+en español para poder corregirlo.
+
+La capacidad y el precio se calculan definitivamente en PHP. No confío en un
+valor enviado por el navegador: el tipo determina lo que se guarda. Si actualizo
+una habitación de sencilla a triple, también debe pasar a tres huéspedes y
+trescientos soles. Esa regla está en el servidor, incluso si JavaScript no funciona.
+
+[Mostrar index.php, crear.php, editar.php y los templates.]
+
+Las vistas reciben la información del controlador. Index construye una fila de
+tabla por cada habitación. Crear presenta los campos iniciales y Editar muestra
+los valores del registro seleccionado. Uso la misma cabecera y pie para mantener
+los mensajes y el estilo sin repetirlos en cada página.
+
+Los formularios tienen label, name, action y método POST. El nombre de cada campo
+coincide con lo que lee el controlador. Utilizo esc para presentar texto de forma
+segura y csrf_field para que CodeIgniter compruebe el envío de los formularios.
+El botón Cancelar regresa al listado sin guardar cambios.
+
+[Mostrar el formulario y seleccionar Sencilla, Doble y Triple.]
+
+El JavaScript sólo ayuda a mostrar la capacidad y el precio antes de guardar.
+Al cambiar el selector puedo ver uno y cien, dos y doscientos, o tres y trescientos.
+Esto es una actualización local de los campos; no estoy utilizando AJAX.
+Los campos calculados son de sólo lectura y PHP vuelve a determinar sus valores.
+
+[Mostrar la aplicación. Crear HAB-010 como Doble, Disponible y fecha válida.]
+
+Ahora voy a demostrar Create. Selecciono Nueva habitación, escribo HAB-010,
+elijo Doble, reviso que aparezcan capacidad dos y precio doscientos, selecciono
+Disponible y una fecha válida. Pulso Guardar. La aplicación presenta el mensaje
+de éxito y la nueva fila aparece en el listado.
+
+Aquí también compruebo Read: la información que veo viene de la base de datos.
+Puedo recargar la página o revisar phpMyAdmin y el registro continúa guardado.
+
+[Editar HAB-010, cambiar a Ocupada y pulsar Actualizar.]
+
+Para Update abro Editar en esa fila. El formulario recupera los valores actuales.
+Cambio el estado a Ocupada y pulso Actualizar. Al regresar al listado puedo ver
+el nuevo estado y el mismo ID. No se creó una segunda habitación: se modificó
+la que estaba identificada por ese número.
+
+[Eliminar únicamente HAB-010 y aceptar la confirmación.]
+
+Para Delete pulso Eliminar y el navegador me pide confirmar. Si cancelo, no se
+envía la solicitud. En esta prueba acepto y compruebo que HAB-010 desapareció.
+Los tres registros de demostración permanecen para seguir utilizando el sistema.
+
+[Intentar un código ya existente o mostrar un formulario con datos incompletos.]
+
+Por último, puedo comprobar un caso incorrecto. El navegador marca los campos
+obligatorios y el servidor también valida lo recibido. Un código duplicado o
+una fecha inválida no deben guardar una fila incorrecta; se muestra el mensaje
+para corregir los datos.
+
+Con este recorrido mostré MVC, rutas explícitas, un modelo conectado a MySQL,
+formularios con validación y las cuatro operaciones del CRUD. El alcance se
+mantiene en la gestión de habitaciones del examen, sin añadir login ni módulos
+que no son necesarios. Muchas gracias por su atención.

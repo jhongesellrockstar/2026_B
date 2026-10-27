@@ -1,0 +1,71 @@
+CLIMA Y AGUA · GARZA
+Guion sugerido: 5 a 7 minutos
+
+1. ENTORNO (30 segundos)
+   Mostrar XAMPP Control Panel: Apache y MySQL iniciados.
+   Abrir http://localhost/phpmyadmin/
+   Seleccionar clima_agua_db y mostrar sus cuatro tablas:
+   fuentes, variables, categorias, ambitos.
+   En fuentes, explicar las relaciones categoria_id, ambito_id y variable_id.
+
+2. PRESENTACIÓN (30 segundos)
+   Abrir http://localhost/clima_agua/public/
+   Decir: «CLIMA Y AGUA es un catálogo de fuentes de datos hidroclimáticos
+   para estudiantes que empiezan una investigación».
+   «GARZA representa los ambientes asociados al agua».
+   Lema: «Encuentra datos confiables para tu investigación».
+   Son registros demostrativos: los metadatos sin verificar están indicados.
+
+3. LISTADO Y DETALLE (30 segundos)
+   Mostrar cinco fuentes por página. Abrir PISCO mediante Ver.
+   Mostrar institución, categoría, variable, ámbito, cobertura y URL oficial.
+   Volver al catálogo.
+
+4. CREATE (45 segundos)
+   Registrar fuente: «Fuente de prueba UNAC».
+   Institución: «Universidad Nacional del Callao».
+   Categoría: Hidrología. Ámbito: Río. Variable: Caudal.
+   Cobertura: Perú. Datos no verificados: «Por verificar».
+   Acceso: Por verificar. Estado: Activo. URL puede estar vacía.
+   Guardar y buscar «Fuente de prueba UNAC».
+
+5. UPDATE (30 segundos)
+   Editar el registro de prueba. Cambiar descripción o cobertura y guardar.
+   Abrir Ver para comprobar que el cambio se guardó en MySQL.
+
+6. AJAX (60 segundos)
+   Limpiar el buscador. Escribir lentamente «preci» sin pulsar Buscar.
+   La tabla muestra PISCO, CHIRPS, GPM y RAIN4PE.
+   Cambiar por «NASA»: aparecen GPM y NASA Earthdata.
+   Mostrar el mensaje «Resultados actualizados con AJAX».
+   Opcional: F12 > Red/Network > Fetch/XHR para ver /fuentes/buscar?q=...
+   Explicar: input -> JavaScript -> fetch -> Fuentes::buscarAjax
+   -> FuenteModel::catalogo -> MySQL -> vista parcial tabla.php
+   -> innerHTML actualiza solo el div resultados.
+   El botón Buscar hace un GET normal y también funciona sin JavaScript.
+
+7. FILTROS Y PAGINACIÓN (30 segundos)
+   Limpiar. Ir a las páginas 2 y 3. Volver con Anterior.
+   Filtrar Oceanografía y Océano. Los filtros se conservan al paginar.
+   Explicar que paginate(5) y el paginador pertenecen a CodeIgniter.
+
+8. DELETE (30 segundos)
+   Buscar el registro de prueba. Pulsar Eliminar.
+   Primero cancelar la confirmación para mostrarla.
+   Repetir y aceptar: «¿Está seguro de eliminar esta fuente?».
+   Comprobar que ya no aparece. No eliminar una fuente inicial.
+
+9. MVC (60 segundos)
+   app/Config/Routes.php: relaciona URL y método del Controller.
+   app/Controllers/Fuentes.php: recibe parámetros, valida y decide la respuesta.
+   app/Models/FuenteModel.php: consulta la base de datos y relaciona tablas.
+   app/Views/fuentes/: muestra HTML y formularios.
+   app/Views/template/: header, navbar y footer reutilizados.
+   public/js/fuentes.js: escucha input y solicita HTML con fetch.
+   No se descargan ni procesan archivos científicos.
+
+ANTES DE GRABAR
+   Tener Apache y MySQL iniciados.
+   Cerrar notificaciones y otras pestañas con datos personales.
+   Abrir el código de los cinco archivos anteriores.
+   No volver a importar SQL en la base ya instalada.

@@ -1,0 +1,48 @@
+ERROR - 2026-10-12 19:55:44 --> Error connecting to the database: mysqli_sql_exception: Unknown database 'ci4' in C:\xampp2\htdocs\ci\codeigniter4-framework-a1f129d\system\Database\MySQLi\Connection.php:200
+Stack trace:
+#0 C:\xampp2\htdocs\ci\codeigniter4-framework-a1f129d\system\Database\MySQLi\Connection.php(200): mysqli->real_connect('localhost', 'root', Object(SensitiveParameterValue), 'ci4', 3306, '', 0)
+#1 C:\xampp2\htdocs\ci\codeigniter4-framework-a1f129d\system\Database\BaseConnection.php(550): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#2 C:\xampp2\htdocs\ci\codeigniter4-framework-a1f129d\system\Database\BaseConnection.php(792): CodeIgniter\Database\BaseConnection->initialize()
+#3 C:\xampp2\htdocs\ci\codeigniter4-framework-a1f129d\system\Database\BaseBuilder.php(1660): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#4 C:\xampp2\htdocs\ci\codeigniter4-framework-a1f129d\system\Model.php(256): CodeIgniter\Database\BaseBuilder->get()
+#5 C:\xampp2\htdocs\ci\codeigniter4-framework-a1f129d\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#6 C:\xampp2\htdocs\ci\codeigniter4-framework-a1f129d\app\Controllers\Usuario.php(13): CodeIgniter\BaseModel->findAll()
+#7 C:\xampp2\htdocs\ci\codeigniter4-framework-a1f129d\system\CodeIgniter.php(974): App\Controllers\Usuario->index()
+#8 C:\xampp2\htdocs\ci\codeigniter4-framework-a1f129d\system\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario))
+#9 C:\xampp2\htdocs\ci\codeigniter4-framework-a1f129d\system\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#10 C:\xampp2\htdocs\ci\codeigniter4-framework-a1f129d\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#11 C:\xampp2\htdocs\ci\codeigniter4-framework-a1f129d\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#12 C:\xampp2\htdocs\ci\codeigniter4-framework-a1f129d\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#13 {main}
+
+Next CodeIgniter\Database\Exceptions\DatabaseException: Unknown database 'ci4' in C:\xampp2\htdocs\ci\codeigniter4-framework-a1f129d\system\Database\MySQLi\Connection.php:230
+Stack trace:
+#0 C:\xampp2\htdocs\ci\codeigniter4-framework-a1f129d\system\Database\BaseConnection.php(550): CodeIgniter\Database\MySQLi\Connection->connect(false)
+#1 C:\xampp2\htdocs\ci\codeigniter4-framework-a1f129d\system\Database\BaseConnection.php(792): CodeIgniter\Database\BaseConnection->initialize()
+#2 C:\xampp2\htdocs\ci\codeigniter4-framework-a1f129d\system\Database\BaseBuilder.php(1660): CodeIgniter\Database\BaseConnection->query('SELECT *\nFROM `...', Array, false)
+#3 C:\xampp2\htdocs\ci\codeigniter4-framework-a1f129d\system\Model.php(256): CodeIgniter\Database\BaseBuilder->get()
+#4 C:\xampp2\htdocs\ci\codeigniter4-framework-a1f129d\system\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+#5 C:\xampp2\htdocs\ci\codeigniter4-framework-a1f129d\app\Controllers\Usuario.php(13): CodeIgniter\BaseModel->findAll()
+#6 C:\xampp2\htdocs\ci\codeigniter4-framework-a1f129d\system\CodeIgniter.php(974): App\Controllers\Usuario->index()
+#7 C:\xampp2\htdocs\ci\codeigniter4-framework-a1f129d\system\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario))
+#8 C:\xampp2\htdocs\ci\codeigniter4-framework-a1f129d\system\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(NULL, Object(Config\Cache), false)
+#9 C:\xampp2\htdocs\ci\codeigniter4-framework-a1f129d\system\Boot.php(417): CodeIgniter\CodeIgniter->run()
+#10 C:\xampp2\htdocs\ci\codeigniter4-framework-a1f129d\system\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+#11 C:\xampp2\htdocs\ci\codeigniter4-framework-a1f129d\public\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
+#12 {main}
+CRITICAL - 2026-10-12 19:55:44 --> CodeIgniter\Database\Exceptions\DatabaseException: Unable to connect to the database.
+Main connection [MySQLi]: Unknown database 'ci4'
+[Method: GET, Route: usuarios]
+in SYSTEMPATH\Database\BaseConnection.php on line 601.
+ 1 SYSTEMPATH\Database\BaseConnection.php(792): CodeIgniter\Database\BaseConnection->initialize()
+ 2 SYSTEMPATH\Database\BaseBuilder.php(1660): CodeIgniter\Database\BaseConnection->query('SELECT *
+FROM `usuario`', [], false)
+ 3 SYSTEMPATH\Model.php(256): CodeIgniter\Database\BaseBuilder->get()
+ 4 SYSTEMPATH\BaseModel.php(676): CodeIgniter\Model->doFindAll(0, 0)
+ 5 APPPATH\Controllers\Usuario.php(13): CodeIgniter\BaseModel->findAll()
+ 6 SYSTEMPATH\CodeIgniter.php(974): App\Controllers\Usuario->index()
+ 7 SYSTEMPATH\CodeIgniter.php(520): CodeIgniter\CodeIgniter->runController(Object(App\Controllers\Usuario))
+ 8 SYSTEMPATH\CodeIgniter.php(363): CodeIgniter\CodeIgniter->handleRequest(null, Object(Config\Cache), false)
+ 9 SYSTEMPATH\Boot.php(417): CodeIgniter\CodeIgniter->run()
+10 SYSTEMPATH\Boot.php(68): CodeIgniter\Boot::runCodeIgniter(Object(CodeIgniter\CodeIgniter))
+11 FCPATH\index.php(59): CodeIgniter\Boot::bootWeb(Object(Config\Paths))
